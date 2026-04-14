@@ -39,53 +39,24 @@
     body { font-family: var(--font-body); background: var(--white); color: var(--text-dark); line-height: 1.6; -webkit-font-smoothing: antialiased; }
 
     /* ── LOGO — icon spins, text stays still ── */
-    .logo-mark {
-      display: flex; align-items: center; gap: 12px;
-      text-decoration: none;
-    }
-    .logo-icon-wrap {
-      perspective: 280px;
-      flex-shrink: 0;
-    }
+    .logo-mark { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-icon-wrap { flex-shrink: 0; }
     .logo-icon {
       display: block; width: 48px; height: 48px;
-      animation: coinSpin 9s ease-in-out infinite;
+      animation: coinSpin 5s linear infinite;
     }
     @keyframes coinSpin {
-      0%   { transform: rotateY(0deg); }
-      35%  { transform: rotateY(0deg); }
-      50%  { transform: rotateY(180deg); }
-      85%  { transform: rotateY(180deg); }
-      100% { transform: rotateY(360deg); }
+      from { transform: perspective(500px) rotateY(0deg); }
+      to   { transform: perspective(500px) rotateY(360deg); }
     }
-    .logo-divider {
-      width: 1px; height: 32px; background: var(--border); flex-shrink: 0;
-    }
+    .logo-divider { width: 1px; height: 32px; background: var(--border); flex-shrink: 0; }
     .logo-words { display: flex; flex-direction: column; gap: 3px; }
-    .logo-cdm {
-      font-family: var(--font-display);
-      font-size: 18px; font-weight: 600;
-      color: var(--text-dark); letter-spacing: 4px; line-height: 1;
-    }
-    .logo-sub {
-      font-family: var(--font-body);
-      font-size: 7.5px; font-weight: 300;
-      color: var(--text-light); letter-spacing: 4px; line-height: 1;
-      text-transform: uppercase;
-    }
+    .logo-cdm { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--text-dark); letter-spacing: 4px; line-height: 1; }
+    .logo-sub { font-family: var(--font-body); font-size: 7.5px; font-weight: 300; color: var(--text-light); letter-spacing: 4px; line-height: 1; text-transform: uppercase; }
 
     /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(255,255,252,0.94);
-      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-      height: 70px; display: flex; align-items: center;
-    }
-    .nav-inner {
-      max-width: var(--max-width); margin: 0 auto; padding: 0 36px;
-      width: 100%; display: flex; align-items: center; justify-content: space-between;
-    }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,252,0.94); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); height: 70px; display: flex; align-items: center; }
+    .nav-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 36px; width: 100%; display: flex; align-items: center; justify-content: space-between; }
     .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
     .nav-links a { font-size: 13.5px; font-weight: 400; color: var(--text-mid); text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
     .nav-links a:hover { color: var(--text-dark); }
@@ -233,6 +204,7 @@
     <a href="/" class="logo-mark" aria-label="Carpe DM Strategies">
       <div class="logo-icon-wrap">
         <svg class="logo-icon" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="28" cy="28" r="26" fill="#F0EFEb" stroke="#E4E2DC" stroke-width="0.8"/>
           <path d="M 28,4 A 24,24 0 1,1 28,52" fill="none" stroke="#00C4F0" stroke-width="2.2" stroke-linecap="round"/>
           <path d="M 28,13 A 15,15 0 1,1 28,43" fill="none" stroke="#6C47FF" stroke-width="1.7" stroke-linecap="round"/>
           <path d="M 28,22 A 6,6 0 1,1 28,34" fill="none" stroke="#16140F" stroke-width="1.4" stroke-linecap="round"/>
@@ -328,26 +300,10 @@
     <h2 class="section-heading">Simple from start to finish</h2>
     <p class="section-sub">Most clients are live within 2 weeks. No jargon, no lengthy briefs, no surprises on the invoice.</p>
     <div class="steps">
-      <div class="step">
-        <div class="step-num">01</div>
-        <h3>Free strategy call</h3>
-        <p>We talk through your business and what would make the biggest difference. No obligation, no hard sell.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <h3>We build it</h3>
-        <p>Fixed price, agreed scope. You see it before it goes live. We handle everything — design, copy, tech, hosting.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <h3>You go live</h3>
-        <p>Site live, automations running, leads captured. We hand you the keys and stay on hand.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">04</div>
-        <h3>We keep it growing</h3>
-        <p>Monthly add-ons keep content fresh, rankings climbing and systems running. Cancel any time.</p>
-      </div>
+      <div class="step"><div class="step-num">01</div><h3>Free strategy call</h3><p>We talk through your business and what would make the biggest difference. No obligation, no hard sell.</p></div>
+      <div class="step"><div class="step-num">02</div><h3>We build it</h3><p>Fixed price, agreed scope. You see it before it goes live. We handle everything — design, copy, tech, hosting.</p></div>
+      <div class="step"><div class="step-num">03</div><h3>You go live</h3><p>Site live, automations running, leads captured. We hand you the keys and stay on hand.</p></div>
+      <div class="step"><div class="step-num">04</div><h3>We keep it growing</h3><p>Monthly add-ons keep content fresh, rankings climbing and systems running. Cancel any time.</p></div>
     </div>
   </div>
 </div>
@@ -358,45 +314,12 @@
     <h2 class="section-heading">Stack what you need.<br>Drop what you don't.</h2>
     <p class="section-sub">No bundles you didn't ask for. Monthly, cancel any time, intro pricing for the first 3 months.</p>
     <div class="addons-grid">
-      <div class="addon-card">
-        <div class="badge">Intro offer</div>
-        <div class="addon-price">£99<sub>/mo</sub></div>
-        <div class="price-note">Usually £199/mo · First 3 months</div>
-        <h4>Weekly Blog + SEO Article</h4>
-        <p>One fresh article per week, published to your site automatically. Builds rankings over time.</p>
-      </div>
-      <div class="addon-card">
-        <div class="badge">Intro offer</div>
-        <div class="addon-price">£99<sub>/mo</sub></div>
-        <div class="price-note">Usually £199/mo · First 3 months</div>
-        <h4>Social Media Publishing</h4>
-        <p>Every post published across Facebook, Instagram, LinkedIn and Google Business automatically.</p>
-      </div>
-      <div class="addon-card">
-        <div class="badge">Most popular</div>
-        <div class="addon-price">£175<sub>/mo</sub></div>
-        <div class="price-note">Usually £349/mo · First 3 months</div>
-        <h4>Blog + Social Bundle</h4>
-        <p>Weekly article plus automatic publishing across all platforms. Full content presence, nothing to manage.</p>
-      </div>
-      <div class="addon-card">
-        <div class="addon-price">£29<sub>/mo</sub></div>
-        <div class="price-note">Ongoing</div>
-        <h4>Hosting &amp; Maintenance</h4>
-        <p>Fast hosting, uptime monitoring, security updates and backups. Your site stays live and healthy.</p>
-      </div>
-      <div class="addon-card">
-        <div class="addon-price">£99<sub>/mo</sub></div>
-        <div class="price-note">Ongoing</div>
-        <h4>SEO Health Check</h4>
-        <p>Monthly rankings review, technical fixes and recommendations. Know where you stand on Google.</p>
-      </div>
-      <div class="addon-card">
-        <div class="addon-price">£79<sub>/mo</sub></div>
-        <div class="price-note">Ongoing</div>
-        <h4>Monthly Report</h4>
-        <p>Branded PDF — traffic, rankings, leads, performance. Straight to your inbox every month.</p>
-      </div>
+      <div class="addon-card"><div class="badge">Intro offer</div><div class="addon-price">£99<sub>/mo</sub></div><div class="price-note">Usually £199/mo · First 3 months</div><h4>Weekly Blog + SEO Article</h4><p>One fresh article per week, published to your site automatically. Builds rankings over time.</p></div>
+      <div class="addon-card"><div class="badge">Intro offer</div><div class="addon-price">£99<sub>/mo</sub></div><div class="price-note">Usually £199/mo · First 3 months</div><h4>Social Media Publishing</h4><p>Every post published across Facebook, Instagram, LinkedIn and Google Business automatically.</p></div>
+      <div class="addon-card"><div class="badge">Most popular</div><div class="addon-price">£175<sub>/mo</sub></div><div class="price-note">Usually £349/mo · First 3 months</div><h4>Blog + Social Bundle</h4><p>Weekly article plus automatic publishing across all platforms. Full content presence, nothing to manage.</p></div>
+      <div class="addon-card"><div class="addon-price">£29<sub>/mo</sub></div><div class="price-note">Ongoing</div><h4>Hosting &amp; Maintenance</h4><p>Fast hosting, uptime monitoring, security updates and backups. Your site stays live and healthy.</p></div>
+      <div class="addon-card"><div class="addon-price">£99<sub>/mo</sub></div><div class="price-note">Ongoing</div><h4>SEO Health Check</h4><p>Monthly rankings review, technical fixes and recommendations. Know where you stand on Google.</p></div>
+      <div class="addon-card"><div class="addon-price">£79<sub>/mo</sub></div><div class="price-note">Ongoing</div><h4>Monthly Report</h4><p>Branded PDF — traffic, rankings, leads, performance. Straight to your inbox every month.</p></div>
     </div>
   </div>
 </section>
