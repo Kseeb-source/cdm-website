@@ -13,7 +13,7 @@
   <meta property="og:title" content="Carpe DM Strategies | Built for Trades Businesses">
   <meta property="og:description" content="Bespoke websites, automation and growth systems for trades businesses. We build it. You run your business.">
   <meta name="twitter:card" content="summary_large_image">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Carpe DM Strategies Ltd","url":"https://www.carpedmstrategies.co.uk","description":"Bespoke websites, automation and growth systems for trades businesses and small companies.","address":{"@type":"PostalAddress","streetAddress":"246 Dunkery Road","addressLocality":"London","postalCode":"SE9 4HW","addressCountry":"GB"},"email":"kerim@carpedmstrategies.co.uk","telephone":"+442030519579","areaServed":"GB","priceRange":"£££"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Carpe DM Strategies Ltd","url":"https://www.carpedmstrategies.co.uk","description":"Bespoke websites, automation and growth systems for trades businesses and small companies.","address":{"@type":"PostalAddress","streetAddress":"246 Dunkery Road","addressLocality":"London","postalCode":"SE9 4HW","addressCountry":"GB"},"email":"info@carpedmstrategies.co.uk","telephone":"+442030519579","areaServed":"GB","priceRange":"£££"}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -28,6 +28,8 @@
       --text-light: #918E86;
       --accent: #00C4F0;
       --accent-dark: #0092B8;
+      --purple: #6C47FF;
+      --purple-muted: rgba(108,71,255,0.22);
       --border: #E4E2DC;
       --font-display: 'Cormorant Garamond', Georgia, serif;
       --font-body: 'DM Sans', system-ui, sans-serif;
@@ -65,7 +67,7 @@
     .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-dark); margin-bottom: 32px; }
     .hero-eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--accent); }
     .hero h1 { font-family: var(--font-display); font-size: clamp(56px, 7vw, 96px); line-height: 1.0; letter-spacing: -0.01em; font-weight: 400; color: var(--text-dark); max-width: 860px; margin-bottom: 32px; }
-    .hero h1 em { font-style: italic; font-weight: 400; color: var(--accent-dark); }
+    .hero h1 em { font-style: italic; font-weight: 400; color: var(--purple); }
     .hero-sub { font-size: 17px; font-weight: 300; color: var(--text-mid); max-width: 520px; line-height: 1.75; margin-bottom: 48px; }
     .hero-actions { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
     .btn-primary { background: var(--text-dark); color: var(--white); padding: 14px 30px; border-radius: 5px; font-size: 14px; font-weight: 400; letter-spacing: 0.04em; text-decoration: none; transition: opacity 0.2s, transform 0.15s; display: inline-block; }
@@ -80,7 +82,7 @@
     .trust-bar { background: var(--off-white); padding: 18px 36px; border-bottom: 1px solid var(--border); }
     .trust-bar-inner { max-width: var(--max-width); margin: 0 auto; display: flex; gap: 40px; flex-wrap: wrap; align-items: center; }
     .trust-item { font-size: 12px; font-weight: 400; color: var(--text-light); letter-spacing: 0.06em; text-transform: uppercase; display: flex; align-items: center; gap: 7px; }
-    .trust-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+    .trust-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--purple); flex-shrink: 0; }
 
     /* ── SHARED SECTION ── */
     .section { padding: var(--section-pad) 36px; max-width: var(--max-width); margin: 0 auto; }
@@ -95,23 +97,24 @@
     .service-card:nth-child(3n) { border-right: none; }
     .service-card:nth-child(4), .service-card:nth-child(5), .service-card:nth-child(6) { border-bottom: none; }
     .service-card:hover { background: var(--off-white); }
-    .service-num { font-family: var(--font-display); font-size: 36px; font-weight: 400; color: var(--mid-grey); line-height: 1; margin-bottom: 20px; letter-spacing: -0.02em; }
+    .service-num { font-family: var(--font-display); font-size: 36px; font-weight: 400; color: var(--purple); opacity: 0.35; line-height: 1; margin-bottom: 20px; letter-spacing: -0.02em; transition: opacity 0.2s; }
+    .service-card:hover .service-num { opacity: 0.7; }
     .service-card h3 { font-size: 16px; font-weight: 500; color: var(--text-dark); margin-bottom: 12px; letter-spacing: 0.01em; }
     .service-card p { font-size: 13.5px; font-weight: 300; color: var(--text-mid); line-height: 1.7; }
-    .card-arrow { display: inline-block; margin-top: 20px; font-size: 18px; color: var(--accent-dark); transition: transform 0.2s; }
+    .card-arrow { display: inline-block; margin-top: 20px; font-size: 18px; color: var(--purple); transition: transform 0.2s; }
     .service-card:hover .card-arrow { transform: translateX(4px); }
 
     /* ── HOW SECTION (dark) ── */
     .how-section { background: var(--text-dark); padding: var(--section-pad) 36px; }
     .how-inner { max-width: var(--max-width); margin: 0 auto; }
-    .how-section .section-label { color: var(--accent); }
-    .how-section .section-label::before { background: var(--accent); }
+    .how-section .section-label { color: var(--purple); }
+    .how-section .section-label::before { background: var(--purple); }
     .how-section .section-heading { color: var(--white); }
     .how-section .section-sub { color: rgba(255,255,255,0.5); }
-    .steps { display: grid; grid-template-columns: repeat(4,1fr); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; overflow: hidden; margin-top: 60px; }
-    .step { padding: 36px 28px; border-right: 1px solid rgba(255,255,255,0.1); }
+    .steps { display: grid; grid-template-columns: repeat(4,1fr); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; overflow: hidden; margin-top: 60px; }
+    .step { padding: 36px 28px; border-right: 1px solid rgba(255,255,255,0.08); position: relative; }
     .step:last-child { border-right: none; }
-    .step-num { font-family: var(--font-display); font-size: 48px; font-weight: 400; color: rgba(255,255,255,0.12); line-height: 1; margin-bottom: 20px; }
+    .step-num { font-family: var(--font-display); font-size: 52px; font-weight: 400; color: var(--purple); opacity: 0.4; line-height: 1; margin-bottom: 20px; }
     .step h3 { font-size: 15px; font-weight: 500; color: var(--white); margin-bottom: 10px; }
     .step p { font-size: 13.5px; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.7; }
 
@@ -121,13 +124,13 @@
     .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
     .pillar { border: 1px solid var(--border); border-radius: 8px; background: var(--white); overflow: hidden; }
     .pillar-head { padding: 32px 32px 24px; border-bottom: 1px solid var(--border); }
-    .pillar-num { font-family: var(--font-display); font-size: 13px; font-weight: 600; color: var(--accent-dark); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px; }
+    .pillar-num { font-family: var(--font-display); font-size: 13px; font-weight: 600; color: var(--purple); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px; }
     .pillar h3 { font-family: var(--font-display); font-size: 26px; font-weight: 400; color: var(--text-dark); line-height: 1.1; margin-bottom: 10px; }
     .pillar-desc { font-size: 13.5px; font-weight: 300; color: var(--text-mid); line-height: 1.65; }
     .pillar-body { padding: 28px 32px; }
     .pillar-items { list-style: none; display: flex; flex-direction: column; gap: 10px; }
     .pillar-items li { font-size: 13.5px; font-weight: 300; color: var(--text-mid); line-height: 1.5; display: flex; align-items: flex-start; gap: 10px; }
-    .pillar-items li::before { content: '—'; color: var(--accent-dark); flex-shrink: 0; font-weight: 400; margin-top: 1px; }
+    .pillar-items li::before { content: '—'; color: var(--purple); flex-shrink: 0; font-weight: 400; margin-top: 1px; }
     .pillar-note { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; font-weight: 400; color: var(--text-light); letter-spacing: 0.04em; }
 
     /* ── CONTENT TIERS ── */
@@ -143,14 +146,14 @@
     .tier h4 { font-size: 16px; font-weight: 500; color: var(--text-dark); margin-bottom: 10px; }
     .tier p { font-size: 13px; font-weight: 300; color: var(--text-mid); line-height: 1.65; }
     .tier-highlight { background: var(--text-dark); }
-    .tier-highlight .tier-label { color: rgba(255,255,255,0.4); }
+    .tier-highlight .tier-label { color: var(--purple); letter-spacing: 0.14em; }
     .tier-highlight h4 { color: var(--white); }
     .tier-highlight p { color: rgba(255,255,255,0.55); }
 
     /* ── CTA BAND ── */
     .cta-band { padding: 88px 36px; text-align: center; border-bottom: 1px solid var(--border); }
     .cta-band h2 { font-family: var(--font-display); font-size: clamp(36px, 4vw, 58px); font-weight: 400; color: var(--text-dark); line-height: 1.1; margin-bottom: 16px; }
-    .cta-band h2 em { font-style: italic; color: var(--accent-dark); }
+    .cta-band h2 em { font-style: italic; color: var(--purple); }
     .cta-band p { font-size: 16px; font-weight: 300; color: var(--text-mid); margin-bottom: 40px; }
 
     /* ── CONTACT ── */
@@ -164,7 +167,7 @@
     .c-icon { width: 34px; height: 34px; background: var(--light-grey); border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
     form { display: flex; flex-direction: column; gap: 12px; }
     form input, form textarea, form select { width: 100%; padding: 13px 16px; border: 1px solid var(--border); border-radius: 5px; font-family: var(--font-body); font-size: 14px; font-weight: 300; color: var(--text-dark); background: var(--white); outline: none; transition: border-color 0.2s; -webkit-appearance: none; }
-    form input:focus, form textarea:focus, form select:focus { border-color: var(--accent-dark); }
+    form input:focus, form textarea:focus, form select:focus { border-color: var(--purple); }
     form textarea { resize: vertical; min-height: 120px; }
     form button { background: var(--text-dark); color: var(--white); padding: 14px 28px; border-radius: 5px; font-family: var(--font-body); font-size: 14px; font-weight: 400; letter-spacing: 0.04em; border: none; cursor: pointer; transition: opacity 0.2s; }
     form button:hover { opacity: 0.82; }
@@ -186,8 +189,8 @@
       .service-card:nth-child(4) { border-bottom: 1px solid var(--border); }
       .steps { grid-template-columns: 1fr 1fr; }
       .step:nth-child(2) { border-right: none; }
-      .step:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.1); }
-      .step:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.1); border-right: none; }
+      .step:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.08); }
+      .step:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.08); border-right: none; }
       .pillars { grid-template-columns: 1fr; }
       .tiers-grid { grid-template-columns: 1fr; }
       .tier { border-right: none; border-bottom: 1px solid var(--border); }
@@ -205,7 +208,7 @@
       .services-grid { grid-template-columns: 1fr; }
       .service-card { border-right: none !important; }
       .steps { grid-template-columns: 1fr; }
-      .step { border-right: none !important; border-top: 1px solid rgba(255,255,255,0.1) !important; }
+      .step { border-right: none !important; border-top: 1px solid rgba(255,255,255,0.08) !important; }
       .step:first-child { border-top: none !important; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
       .tiers-head { padding: 24px 20px; }
@@ -433,7 +436,7 @@
       <p>Tell us what you're working on and we'll come back to you within one business day with a clear plan and a straight price.</p>
       <div class="contact-detail">
         <a href="tel:+442030519579"><span class="c-icon">📞</span>+44 20 3051 9579</a>
-        <a href="mailto:kerim@carpedmstrategies.co.uk"><span class="c-icon">✉️</span>kerim@carpedmstrategies.co.uk</a>
+        <a href="mailto:info@carpedmstrategies.co.uk"><span class="c-icon">✉️</span>info@carpedmstrategies.co.uk</a>
         <a href="#"><span class="c-icon">📍</span>London, UK</a>
       </div>
     </div>
@@ -466,7 +469,7 @@
     <ul class="footer-links">
       <li><a href="/privacy">Privacy</a></li>
       <li><a href="/terms">Terms</a></li>
-      <li><a href="mailto:kerim@carpedmstrategies.co.uk">Contact</a></li>
+      <li><a href="mailto:info@carpedmstrategies.co.uk">Contact</a></li>
     </ul>
   </div>
 </footer>
