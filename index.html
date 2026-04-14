@@ -13,611 +13,572 @@
   <meta property="og:title" content="Carpe DM Strategies | Built for Trades Businesses">
   <meta property="og:description" content="Websites, automation and growth systems for trades businesses. We build it. You run your business.">
   <meta name="twitter:card" content="summary_large_image">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Carpe DM Strategies Ltd",
-    "url": "https://www.carpedmstrategies.co.uk",
-    "description": "Websites, automation and growth systems for trades businesses and small companies.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "246 Dunkery Road",
-      "addressLocality": "London",
-      "postalCode": "SE9 4HW",
-      "addressCountry": "GB"
-    },
-    "email": "kerim@carpedmstrategies.co.uk",
-    "telephone": "+442030518478",
-    "areaServed": "GB",
-    "priceRange": "££"
-  }
-  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Carpe DM Strategies Ltd","url":"https://www.carpedmstrategies.co.uk","description":"Websites, automation and growth systems for trades businesses and small companies.","address":{"@type":"PostalAddress","streetAddress":"246 Dunkery Road","addressLocality":"London","postalCode":"SE9 4HW","addressCountry":"GB"},"email":"kerim@carpedmstrategies.co.uk","telephone":"+442030518478","areaServed":"GB","priceRange":"££"}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
       --white: #FFFFFF;
-      --off-white: #F8F8F6;
-      --light-grey: #F0F0ED;
-      --mid-grey: #E2E2DE;
-      --text-dark: #141412;
-      --text-mid: #4A4A46;
-      --text-light: #8A8A84;
+      --off-white: #F8F7F4;
+      --light-grey: #F0EFEb;
+      --mid-grey: #E0DED8;
+      --text-dark: #16140F;
+      --text-mid: #4A4840;
+      --text-light: #918E86;
       --accent: #00C4F0;
-      --accent-dark: #0099BC;
-      --border: #E2E2DE;
-      --font-display: 'DM Serif Display', Georgia, serif;
+      --accent-dark: #0092B8;
+      --border: #E4E2DC;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
       --font-body: 'DM Sans', system-ui, sans-serif;
       --max-width: 1160px;
-      --section-pad: 96px;
+      --section-pad: 104px;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--white); color: var(--text-dark); line-height: 1.6; -webkit-font-smoothing: antialiased; }
 
-    body {
-      font-family: var(--font-body);
-      background: var(--white);
-      color: var(--text-dark);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
+    /* ── 3D COIN SPIN LOGO ── */
+    .logo-wrap {
+      perspective: 400px;
+      display: inline-block;
+      line-height: 0;
+    }
+    .logo-svg {
+      display: block;
+      width: 200px;
+      height: 48px;
+      animation: coinSpin 8s ease-in-out infinite;
+      transform-style: preserve-3d;
+    }
+    @keyframes coinSpin {
+      0%   { transform: rotateY(0deg); }
+      40%  { transform: rotateY(0deg); }
+      50%  { transform: rotateY(180deg); }
+      90%  { transform: rotateY(180deg); }
+      100% { transform: rotateY(360deg); }
     }
 
-    /* ─── LOGO SVG ─── */
-    .logo-svg { display: block; width: 180px; height: 44px; }
-    .logo-arc-outer { transform-origin: 22px 30px; animation: spin 14s linear infinite; }
-    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
-    /* ─── NAV ─── */
+    /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(255,255,252,0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
-      height: 68px;
+      height: 70px;
       display: flex; align-items: center;
     }
     .nav-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 32px;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      max-width: var(--max-width); margin: 0 auto; padding: 0 36px;
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
     }
-    .nav-links {
-      display: flex; gap: 36px; list-style: none; align-items: center;
-    }
+    .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
     .nav-links a {
-      font-size: 14px; font-weight: 500; color: var(--text-mid);
-      text-decoration: none; letter-spacing: 0.02em;
-      transition: color 0.2s;
+      font-size: 13.5px; font-weight: 400; color: var(--text-mid);
+      text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--text-dark); }
     .nav-cta {
-      background: var(--text-dark); color: var(--white) !important;
-      padding: 9px 20px; border-radius: 6px;
-      font-size: 14px !important; font-weight: 500 !important;
-      transition: background 0.2s !important;
+      background: var(--text-dark) !important; color: var(--white) !important;
+      padding: 9px 22px; border-radius: 5px;
+      font-size: 13.5px !important; letter-spacing: 0.03em !important;
+      transition: opacity 0.2s !important;
     }
-    .nav-cta:hover { background: #2a2a28 !important; color: var(--white) !important; }
+    .nav-cta:hover { opacity: 0.82 !important; }
 
-    /* ─── HERO ─── */
+    /* ── HERO ── */
     .hero {
-      padding: 160px 32px 96px;
-      max-width: var(--max-width);
-      margin: 0 auto;
+      padding: 168px 36px 80px;
+      max-width: var(--max-width); margin: 0 auto;
+      position: relative;
     }
     .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 11px; font-weight: 500; letter-spacing: 0.16em;
       text-transform: uppercase; color: var(--accent-dark);
-      margin-bottom: 28px;
+      margin-bottom: 32px;
     }
     .hero-eyebrow::before {
-      content: ''; display: block; width: 24px; height: 1.5px;
-      background: var(--accent);
+      content: ''; display: block; width: 28px; height: 1px; background: var(--accent);
     }
     .hero h1 {
       font-family: var(--font-display);
-      font-size: clamp(44px, 6vw, 76px);
-      line-height: 1.08;
-      letter-spacing: -0.02em;
+      font-size: clamp(56px, 7vw, 96px);
+      line-height: 1.0;
+      letter-spacing: -0.01em;
+      font-weight: 400;
       color: var(--text-dark);
-      max-width: 820px;
-      margin-bottom: 28px;
+      max-width: 860px;
+      margin-bottom: 32px;
     }
     .hero h1 em {
       font-style: italic;
+      font-weight: 400;
       color: var(--accent-dark);
     }
     .hero-sub {
-      font-size: 18px; font-weight: 300; color: var(--text-mid);
-      max-width: 560px; line-height: 1.7; margin-bottom: 44px;
+      font-size: 17px; font-weight: 300; color: var(--text-mid);
+      max-width: 520px; line-height: 1.75; margin-bottom: 48px;
     }
-    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .hero-actions { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
     .btn-primary {
       background: var(--text-dark); color: var(--white);
-      padding: 14px 28px; border-radius: 8px;
-      font-size: 15px; font-weight: 500;
-      text-decoration: none; letter-spacing: 0.01em;
-      transition: background 0.2s, transform 0.15s;
+      padding: 14px 30px; border-radius: 5px;
+      font-size: 14px; font-weight: 400; letter-spacing: 0.04em;
+      text-decoration: none; transition: opacity 0.2s, transform 0.15s;
       display: inline-block;
     }
-    .btn-primary:hover { background: #2a2a28; transform: translateY(-1px); }
+    .btn-primary:hover { opacity: 0.82; transform: translateY(-1px); }
     .btn-secondary {
-      color: var(--text-mid); font-size: 15px; font-weight: 500;
+      color: var(--text-mid); font-size: 14px; font-weight: 400; letter-spacing: 0.02em;
       text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
       transition: color 0.2s;
     }
     .btn-secondary:hover { color: var(--text-dark); }
     .btn-secondary::after { content: '→'; transition: transform 0.2s; }
-    .btn-secondary:hover::after { transform: translateX(3px); }
+    .btn-secondary:hover::after { transform: translateX(4px); }
 
-    /* ─── TRUST BAR ─── */
-    .trust-bar {
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      background: var(--off-white);
-      padding: 20px 32px;
+    /* ── HERO ACCENT LINE ── */
+    .hero-rule {
+      width: 100%; height: 1px; background: var(--border);
+      margin-top: 80px;
     }
+
+    /* ── TRUST BAR ── */
+    .trust-bar { background: var(--off-white); padding: 18px 36px; border-bottom: 1px solid var(--border); }
     .trust-bar-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      display: flex; gap: 48px; flex-wrap: wrap;
-      align-items: center;
+      max-width: var(--max-width); margin: 0 auto;
+      display: flex; gap: 40px; flex-wrap: wrap; align-items: center;
     }
     .trust-item {
-      font-size: 13px; font-weight: 500; color: var(--text-light);
-      letter-spacing: 0.04em; text-transform: uppercase;
-      display: flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 400; color: var(--text-light);
+      letter-spacing: 0.06em; text-transform: uppercase;
+      display: flex; align-items: center; gap: 7px;
     }
-    .trust-item span { color: var(--accent-dark); font-size: 16px; }
+    .trust-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
 
-    /* ─── SECTION SHARED ─── */
-    .section {
-      padding: var(--section-pad) 32px;
-      max-width: var(--max-width);
-      margin: 0 auto;
-    }
+    /* ── SHARED SECTION ── */
+    .section { padding: var(--section-pad) 36px; max-width: var(--max-width); margin: 0 auto; }
     .section-label {
-      font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+      font-size: 11px; font-weight: 500; letter-spacing: 0.14em;
       text-transform: uppercase; color: var(--accent-dark);
-      margin-bottom: 16px; display: block;
+      margin-bottom: 18px; display: flex; align-items: center; gap: 10px;
     }
+    .section-label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--accent); }
     .section-heading {
       font-family: var(--font-display);
-      font-size: clamp(32px, 4vw, 52px);
-      line-height: 1.1; letter-spacing: -0.02em;
+      font-size: clamp(38px, 4.5vw, 60px);
+      line-height: 1.05; font-weight: 400;
       color: var(--text-dark); margin-bottom: 20px;
     }
     .section-sub {
-      font-size: 17px; font-weight: 300; color: var(--text-mid);
-      max-width: 580px; line-height: 1.7; margin-bottom: 56px;
+      font-size: 16px; font-weight: 300; color: var(--text-mid);
+      max-width: 560px; line-height: 1.75; margin-bottom: 60px;
     }
 
-    /* ─── SERVICES GRID ─── */
+    /* ── SERVICES GRID ── */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2px;
-      background: var(--border);
+      grid-template-columns: repeat(3, 1fr);
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 8px;
       overflow: hidden;
     }
     .service-card {
-      background: var(--white);
-      padding: 36px 32px;
-      text-decoration: none;
-      transition: background 0.2s;
-      display: block;
+      background: var(--white); padding: 40px 32px;
+      text-decoration: none; display: block;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.18s;
+      position: relative;
     }
+    .service-card:nth-child(3n) { border-right: none; }
+    .service-card:nth-child(4), .service-card:nth-child(5), .service-card:nth-child(6) { border-bottom: none; }
     .service-card:hover { background: var(--off-white); }
-    .service-icon {
-      width: 40px; height: 40px;
-      background: var(--light-grey);
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 20px;
-      font-size: 18px;
+    .service-num {
+      font-family: var(--font-display);
+      font-size: 36px; font-weight: 400; color: var(--mid-grey);
+      line-height: 1; margin-bottom: 20px; letter-spacing: -0.02em;
     }
     .service-card h3 {
-      font-size: 17px; font-weight: 600; color: var(--text-dark);
-      margin-bottom: 10px; letter-spacing: -0.01em;
+      font-size: 16px; font-weight: 500; color: var(--text-dark);
+      margin-bottom: 12px; letter-spacing: 0.01em;
     }
     .service-card p {
-      font-size: 14px; font-weight: 300; color: var(--text-mid);
-      line-height: 1.65;
+      font-size: 13.5px; font-weight: 300; color: var(--text-mid); line-height: 1.7;
     }
-    .service-card .card-link {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 13px; font-weight: 500; color: var(--accent-dark);
-      margin-top: 18px; text-decoration: none;
-      transition: gap 0.2s;
+    .card-arrow {
+      display: inline-block; margin-top: 20px;
+      font-size: 18px; color: var(--accent-dark);
+      transition: transform 0.2s;
     }
-    .service-card:hover .card-link { gap: 10px; }
+    .service-card:hover .card-arrow { transform: translateX(4px); }
 
-    /* ─── HOW IT WORKS ─── */
+    /* ── HOW SECTION ── */
     .how-section {
-      background: var(--off-white);
-      padding: var(--section-pad) 32px;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      background: var(--text-dark);
+      padding: var(--section-pad) 36px;
     }
-    .how-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-    }
+    .how-inner { max-width: var(--max-width); margin: 0 auto; }
+    .how-section .section-label { color: var(--accent); }
+    .how-section .section-label::before { background: var(--accent); }
+    .how-section .section-heading { color: var(--white); }
+    .how-section .section-sub { color: rgba(255,255,255,0.5); }
     .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 40px;
-      margin-top: 56px;
+      display: grid; grid-template-columns: repeat(4,1fr);
+      gap: 0;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px; overflow: hidden;
+      margin-top: 60px;
     }
-    .step-number {
+    .step {
+      padding: 36px 28px;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .step:last-child { border-right: none; }
+    .step-num {
       font-family: var(--font-display);
-      font-size: 56px; color: var(--mid-grey);
-      line-height: 1; margin-bottom: 16px;
-      letter-spacing: -0.03em;
+      font-size: 48px; font-weight: 400;
+      color: rgba(255,255,255,0.12);
+      line-height: 1; margin-bottom: 20px;
     }
-    .step h3 {
-      font-size: 16px; font-weight: 600; color: var(--text-dark);
-      margin-bottom: 10px;
-    }
-    .step p {
-      font-size: 14px; font-weight: 300; color: var(--text-mid);
-      line-height: 1.65;
-    }
+    .step h3 { font-size: 15px; font-weight: 500; color: var(--white); margin-bottom: 10px; }
+    .step p { font-size: 13.5px; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.7; }
 
-    /* ─── ADD-ONS ─── */
-    .addons-section { padding: var(--section-pad) 32px; }
+    /* ── ADD-ONS ── */
+    .addons-section { padding: var(--section-pad) 36px; background: var(--off-white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .addons-inner { max-width: var(--max-width); margin: 0 auto; }
     .addons-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px; margin-top: 56px;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 16px; margin-top: 60px;
     }
     .addon-card {
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 28px 24px;
-      background: var(--white);
-      transition: border-color 0.2s, box-shadow 0.2s;
+      border: 1px solid var(--border); border-radius: 8px;
+      padding: 30px 26px; background: var(--white);
+      transition: border-color 0.2s;
     }
-    .addon-card:hover {
-      border-color: var(--accent);
-      box-shadow: 0 4px 20px rgba(0,196,240,0.08);
-    }
-    .addon-card .price {
-      font-family: var(--font-display);
-      font-size: 28px; color: var(--text-dark);
-      margin-bottom: 4px;
-    }
-    .addon-card .price-label {
-      font-size: 12px; color: var(--text-light); margin-bottom: 16px;
-    }
-    .addon-card h4 {
-      font-size: 15px; font-weight: 600; color: var(--text-dark);
-      margin-bottom: 8px;
-    }
-    .addon-card p {
-      font-size: 13px; font-weight: 300; color: var(--text-mid);
-      line-height: 1.6;
-    }
+    .addon-card:hover { border-color: var(--accent-dark); }
     .badge {
-      display: inline-block;
-      background: #FFF3E0; color: #E65100;
-      font-size: 11px; font-weight: 600;
-      letter-spacing: 0.06em; text-transform: uppercase;
-      padding: 3px 8px; border-radius: 4px;
-      margin-bottom: 12px;
+      display: inline-block; background: #FFF3E0; color: #C45000;
+      font-size: 10px; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 3px 9px; border-radius: 3px;
+      margin-bottom: 14px;
     }
+    .addon-price {
+      font-family: var(--font-display);
+      font-size: 40px; font-weight: 400; color: var(--text-dark);
+      line-height: 1; margin-bottom: 4px;
+    }
+    .addon-price sub { font-size: 16px; font-family: var(--font-body); font-weight: 300; color: var(--text-light); vertical-align: baseline; }
+    .price-note { font-size: 12px; color: var(--text-light); margin-bottom: 18px; }
+    .addon-card h4 { font-size: 15px; font-weight: 500; color: var(--text-dark); margin-bottom: 8px; }
+    .addon-card p { font-size: 13px; font-weight: 300; color: var(--text-mid); line-height: 1.65; }
 
-    /* ─── CTA BAND ─── */
-    .cta-band {
-      background: var(--text-dark);
-      padding: 80px 32px;
-      text-align: center;
-    }
+    /* ── CTA BAND ── */
+    .cta-band { padding: 88px 36px; text-align: center; border-bottom: 1px solid var(--border); }
     .cta-band h2 {
       font-family: var(--font-display);
-      font-size: clamp(28px, 4vw, 48px);
-      color: var(--white);
-      line-height: 1.15; margin-bottom: 16px;
-      letter-spacing: -0.02em;
+      font-size: clamp(36px, 4vw, 58px);
+      font-weight: 400; color: var(--text-dark);
+      line-height: 1.1; margin-bottom: 16px;
     }
-    .cta-band p {
-      font-size: 17px; font-weight: 300; color: rgba(255,255,255,0.65);
-      margin-bottom: 36px;
-    }
-    .btn-light {
-      background: var(--white); color: var(--text-dark);
-      padding: 14px 32px; border-radius: 8px;
-      font-size: 15px; font-weight: 600;
-      text-decoration: none; display: inline-block;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .btn-light:hover { background: var(--off-white); transform: translateY(-1px); }
+    .cta-band h2 em { font-style: italic; color: var(--accent-dark); }
+    .cta-band p { font-size: 16px; font-weight: 300; color: var(--text-mid); margin-bottom: 40px; }
 
-    /* ─── CONTACT ─── */
-    .contact-section { padding: var(--section-pad) 32px; }
+    /* ── CONTACT ── */
+    .contact-section { padding: var(--section-pad) 36px; }
     .contact-inner {
       max-width: var(--max-width); margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+      display: grid; grid-template-columns: 1fr 1.1fr; gap: 88px;
     }
     .contact-left h2 {
       font-family: var(--font-display);
-      font-size: clamp(28px, 3.5vw, 44px);
-      line-height: 1.1; letter-spacing: -0.02em;
-      margin-bottom: 20px;
+      font-size: clamp(32px, 3.5vw, 50px);
+      font-weight: 400; line-height: 1.1; margin-bottom: 20px;
     }
-    .contact-left p {
-      font-size: 16px; font-weight: 300; color: var(--text-mid);
-      line-height: 1.7; margin-bottom: 36px;
-    }
-    .contact-detail { display: flex; flex-direction: column; gap: 12px; }
+    .contact-left p { font-size: 15px; font-weight: 300; color: var(--text-mid); line-height: 1.75; margin-bottom: 40px; }
+    .contact-detail { display: flex; flex-direction: column; gap: 14px; }
     .contact-detail a {
       font-size: 14px; color: var(--text-mid); text-decoration: none;
-      display: flex; align-items: center; gap: 10px;
-      transition: color 0.2s;
+      display: flex; align-items: center; gap: 12px; transition: color 0.2s;
     }
     .contact-detail a:hover { color: var(--text-dark); }
-    .contact-detail .icon {
-      width: 32px; height: 32px; background: var(--light-grey);
-      border-radius: 6px; display: flex; align-items: center;
+    .c-icon {
+      width: 34px; height: 34px; background: var(--light-grey);
+      border-radius: 5px; display: flex; align-items: center;
       justify-content: center; font-size: 14px; flex-shrink: 0;
     }
-    form { display: flex; flex-direction: column; gap: 14px; }
+    form { display: flex; flex-direction: column; gap: 12px; }
     form input, form textarea, form select {
       width: 100%; padding: 13px 16px;
-      border: 1px solid var(--border); border-radius: 8px;
+      border: 1px solid var(--border); border-radius: 5px;
       font-family: var(--font-body); font-size: 14px; font-weight: 300;
       color: var(--text-dark); background: var(--white);
       outline: none; transition: border-color 0.2s;
+      -webkit-appearance: none;
     }
-    form input:focus, form textarea:focus, form select:focus { border-color: var(--accent); }
+    form input:focus, form textarea:focus, form select:focus { border-color: var(--accent-dark); }
     form textarea { resize: vertical; min-height: 120px; }
     form button {
       background: var(--text-dark); color: var(--white);
-      padding: 14px 28px; border-radius: 8px;
-      font-family: var(--font-body); font-size: 15px; font-weight: 500;
-      border: none; cursor: pointer; transition: background 0.2s;
+      padding: 14px 28px; border-radius: 5px;
+      font-family: var(--font-body); font-size: 14px; font-weight: 400;
+      letter-spacing: 0.04em; border: none; cursor: pointer;
+      transition: opacity 0.2s;
     }
-    form button:hover { background: #2a2a28; }
+    form button:hover { opacity: 0.82; }
 
-    /* ─── FOOTER ─── */
-    footer {
-      background: var(--off-white);
-      border-top: 1px solid var(--border);
-      padding: 36px 32px;
-    }
+    /* ── FOOTER ── */
+    footer { background: var(--text-dark); padding: 36px 36px; }
     .footer-inner {
       max-width: var(--max-width); margin: 0 auto;
       display: flex; justify-content: space-between; align-items: center;
       flex-wrap: wrap; gap: 16px;
     }
-    .footer-inner p { font-size: 13px; color: var(--text-light); font-weight: 300; }
+    .footer-inner p { font-size: 12.5px; color: rgba(255,255,255,0.35); font-weight: 300; }
     .footer-links { display: flex; gap: 24px; list-style: none; }
-    .footer-links a {
-      font-size: 13px; color: var(--text-light); text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-links a:hover { color: var(--text-dark); }
+    .footer-links a { font-size: 12.5px; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
 
-    /* ─── MOBILE ─── */
-    @media (max-width: 768px) {
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .service-card:nth-child(3n) { border-right: 1px solid var(--border); }
+      .service-card:nth-child(2n) { border-right: none; }
+      .service-card:nth-child(5), .service-card:nth-child(6) { border-bottom: none; }
+      .service-card:nth-child(4) { border-bottom: 1px solid var(--border); }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .step:nth-child(2) { border-right: none; }
+      .step:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.1); }
+      .step:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.1); border-right: none; }
+      .addons-grid { grid-template-columns: 1fr 1fr; }
+      .contact-inner { grid-template-columns: 1fr; gap: 52px; }
+    }
+    @media (max-width: 640px) {
       .nav-links { display: none; }
-      .hero { padding: 120px 20px 72px; }
+      .hero { padding: 128px 20px 64px; }
       .section { padding: 72px 20px; }
       .how-section { padding: 72px 20px; }
-      .contact-inner { grid-template-columns: 1fr; gap: 48px; }
-      .trust-bar-inner { gap: 24px; }
-      .cta-band { padding: 60px 20px; }
+      .addons-section { padding: 72px 20px; }
+      .cta-band { padding: 64px 20px; }
+      .contact-section { padding: 72px 20px; }
       footer { padding: 28px 20px; }
+      .trust-bar { padding: 16px 20px; }
+      .trust-bar-inner { gap: 20px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card { border-right: none !important; }
+      .steps { grid-template-columns: 1fr; }
+      .step { border-right: none !important; border-top: 1px solid rgba(255,255,255,0.1) !important; }
+      .step:first-child { border-top: none !important; }
+      .addons-grid { grid-template-columns: 1fr; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
     }
 
-    /* ─── FADE IN ─── */
-    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeUp 0.6s ease forwards; }
-    .fade-in:nth-child(1) { animation-delay: 0.1s; }
-    .fade-in:nth-child(2) { animation-delay: 0.2s; }
-    .fade-in:nth-child(3) { animation-delay: 0.3s; }
+    /* ── FADE IN ── */
+    .fade-in { opacity: 0; transform: translateY(18px); animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) forwards; }
+    .fade-in:nth-child(1) { animation-delay: 0.08s; }
+    .fade-in:nth-child(2) { animation-delay: 0.18s; }
+    .fade-in:nth-child(3) { animation-delay: 0.28s; }
     @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="/" aria-label="Carpe DM Strategies Home">
-      <svg class="logo-svg" viewBox="0 0 280 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <g class="logo-arc-outer">
-          <path d="M 22,8 A 22,22 0 1,1 22,52" fill="none" stroke="#00C4F0" stroke-width="2" stroke-linecap="round"/>
-        </g>
-        <path d="M 22,17 A 13,13 0 1,1 22,43" fill="none" stroke="#6C47FF" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M 23,25 A 6,6 0 1,1 23,35" fill="none" stroke="#141412" stroke-width="1.2" stroke-linecap="round"/>
-        <circle cx="44" cy="30" r="2.5" fill="#00C4F0"/>
-        <line x1="46.5" y1="30" x2="56" y2="24" stroke="#00C4F0" stroke-width="1" opacity="0.6" stroke-linecap="round"/>
-        <line x1="46.5" y1="30" x2="58" y2="30" stroke="#00C4F0" stroke-width="1.2" opacity="0.85" stroke-linecap="round"/>
-        <line x1="46.5" y1="30" x2="56" y2="36" stroke="#00C4F0" stroke-width="1" opacity="0.6" stroke-linecap="round"/>
-        <line x1="70" y1="10" x2="70" y2="50" stroke="#E2E2DE" stroke-width="1"/>
-        <text x="82" y="25" font-family="DM Serif Display, Georgia, serif" font-size="16" font-weight="400" fill="#141412" letter-spacing="3">CDM</text>
-        <text x="82" y="40" font-family="DM Sans, system-ui, sans-serif" font-size="9" font-weight="300" fill="#8A8A84" letter-spacing="4">STRATEGIES</text>
-      </svg>
+    <a href="/" aria-label="Carpe DM Strategies" style="text-decoration:none;">
+      <div class="logo-wrap">
+        <svg class="logo-svg" viewBox="0 0 260 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M 26,5 A 23,23 0 1,1 26,51" fill="none" stroke="#00C4F0" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M 26,14 A 14,14 0 1,1 26,42" fill="none" stroke="#6C47FF" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M 26,23 A 6,6 0 1,1 26,33" fill="none" stroke="#16140F" stroke-width="1.3" stroke-linecap="round"/>
+          <circle cx="49" cy="28" r="2.8" fill="#00C4F0"/>
+          <line x1="52" y1="28" x2="62" y2="21" stroke="#00C4F0" stroke-width="1.1" opacity="0.55" stroke-linecap="round"/>
+          <line x1="52" y1="28" x2="64" y2="28" stroke="#00C4F0" stroke-width="1.3" opacity="0.8" stroke-linecap="round"/>
+          <line x1="52" y1="28" x2="62" y2="35" stroke="#00C4F0" stroke-width="1.1" opacity="0.55" stroke-linecap="round"/>
+          <line x1="78" y1="8" x2="78" y2="48" stroke="#E4E2DC" stroke-width="1"/>
+          <text x="90" y="24" font-family="Cormorant Garamond, Georgia, serif" font-size="18" font-weight="600" fill="#16140F" letter-spacing="4">CDM</text>
+          <text x="90" y="40" font-family="DM Sans, system-ui, sans-serif" font-size="8.5" font-weight="300" fill="#918E86" letter-spacing="4.5">STRATEGIES</text>
+        </svg>
+      </div>
     </a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
-      <li><a href="#how">How It Works</a></li>
-      <li><a href="#addons">Add-ons</a></li>
+      <li><a href="#how">Process</a></li>
+      <li><a href="#addons">Pricing</a></li>
       <li><a href="#contact" class="nav-cta">Book a Call</a></li>
     </ul>
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-eyebrow">Trades businesses &amp; small companies</div>
   <h1 class="fade-in">Your business,<br><em>running itself.</em></h1>
-  <p class="hero-sub fade-in">We build the website, wire up the automations, and set up the systems that keep your business moving — without you having to touch it.</p>
+  <p class="hero-sub fade-in">We build the website, wire up the automations, and install the systems that keep your business moving — without you having to touch it.</p>
   <div class="hero-actions fade-in">
     <a href="#contact" class="btn-primary">Book a Free Call</a>
     <a href="#services" class="btn-secondary">See what we do</a>
   </div>
+  <div class="hero-rule"></div>
 </section>
 
+<!-- TRUST BAR -->
 <div class="trust-bar">
   <div class="trust-bar-inner">
-    <div class="trust-item"><span>✓</span> London-based</div>
-    <div class="trust-item"><span>✓</span> No long contracts</div>
-    <div class="trust-item"><span>✓</span> Fixed prices</div>
-    <div class="trust-item"><span>✓</span> Company No. 14900297</div>
-    <div class="trust-item"><span>✓</span> Real results</div>
+    <div class="trust-item"><div class="trust-dot"></div>London-based</div>
+    <div class="trust-item"><div class="trust-dot"></div>No long contracts</div>
+    <div class="trust-item"><div class="trust-dot"></div>Fixed prices</div>
+    <div class="trust-item"><div class="trust-dot"></div>Company No. 14900297</div>
+    <div class="trust-item"><div class="trust-dot"></div>Real results</div>
   </div>
 </div>
 
+<!-- SERVICES -->
 <section class="section" id="services">
-  <span class="section-label">What we do</span>
+  <div class="section-label">What we do</div>
   <h2 class="section-heading">Everything your business<br>needs to grow online</h2>
   <p class="section-sub">From a sharp website to a fully automated back-end — we build it all, then hand you the keys.</p>
   <div class="services-grid">
     <a href="services/websites.html" class="service-card">
-      <div class="service-icon">🌐</div>
+      <div class="service-num">01</div>
       <h3>Websites &amp; SEO</h3>
       <p>Fast, professional sites built to rank on Google. Every site includes on-page SEO, schema markup, GA4 and Search Console from day one.</p>
-      <span class="card-link">Learn more</span>
+      <span class="card-arrow">→</span>
     </a>
     <a href="services/automation.html" class="service-card">
-      <div class="service-icon">⚡</div>
+      <div class="service-num">02</div>
       <h3>Business Automation</h3>
       <p>Enquiries logged, quotes sent, invoices raised, follow-ups fired — without you lifting a finger. Built on your existing tools.</p>
-      <span class="card-link">Learn more</span>
+      <span class="card-arrow">→</span>
     </a>
     <a href="services/crm.html" class="service-card">
-      <div class="service-icon">📋</div>
+      <div class="service-num">03</div>
       <h3>CRM &amp; Job Management</h3>
       <p>A full operational system — jobs, quotes, invoices, engineers, customers — all in one place. Built specifically for trades.</p>
-      <span class="card-link">Learn more</span>
+      <span class="card-arrow">→</span>
     </a>
     <a href="services/lead-generation.html" class="service-card">
-      <div class="service-icon">📞</div>
+      <div class="service-num">04</div>
       <h3>Lead Generation</h3>
       <p>Never miss an enquiry again. AI-powered call response, website chatbot and WhatsApp qualification — every lead captured instantly.</p>
-      <span class="card-link">Learn more</span>
+      <span class="card-arrow">→</span>
     </a>
     <a href="services/content.html" class="service-card">
-      <div class="service-icon">✍️</div>
+      <div class="service-num">05</div>
       <h3>Content &amp; Social</h3>
       <p>Weekly SEO articles and social posts across Facebook, Instagram, LinkedIn and Google Business Profile. Consistent presence, zero effort.</p>
-      <span class="card-link">Learn more</span>
+      <span class="card-arrow">→</span>
     </a>
     <a href="services/integrations.html" class="service-card">
-      <div class="service-icon">🔗</div>
+      <div class="service-num">06</div>
       <h3>Integrations &amp; AI</h3>
-      <p>WhatsApp Business API, email campaigns, PDF generation, custom dashboards — we connect everything so your tools work as one system.</p>
-      <span class="card-link">Learn more</span>
+      <p>WhatsApp Business API, email campaigns, PDF generation, custom dashboards — everything connected so your tools work as one system.</p>
+      <span class="card-arrow">→</span>
     </a>
   </div>
 </section>
 
+<!-- HOW IT WORKS — dark band -->
 <div class="how-section" id="how">
   <div class="how-inner">
-    <span class="section-label">The process</span>
+    <div class="section-label">The process</div>
     <h2 class="section-heading">Simple from start to finish</h2>
     <p class="section-sub">Most clients are live within 2 weeks. No jargon, no lengthy briefs, no surprises on the invoice.</p>
     <div class="steps">
       <div class="step">
-        <div class="step-number">01</div>
+        <div class="step-num">01</div>
         <h3>Free strategy call</h3>
-        <p>We talk through your business, what you need, and what would make the biggest difference. No obligation, no hard sell.</p>
+        <p>We talk through your business and what would make the biggest difference. No obligation, no hard sell.</p>
       </div>
       <div class="step">
-        <div class="step-number">02</div>
+        <div class="step-num">02</div>
         <h3>We build it</h3>
         <p>Fixed price, agreed scope. You see it before it goes live. We handle everything — design, copy, tech, hosting.</p>
       </div>
       <div class="step">
-        <div class="step-number">03</div>
+        <div class="step-num">03</div>
         <h3>You go live</h3>
-        <p>Your site is live, your automations are running, your leads are being captured. We hand you the keys and stay on hand.</p>
+        <p>Your site is live, automations running, leads being captured. We hand you the keys and stay on hand.</p>
       </div>
       <div class="step">
-        <div class="step-number">04</div>
+        <div class="step-num">04</div>
         <h3>We keep it growing</h3>
-        <p>Monthly add-ons keep your content fresh, your rankings climbing and your systems running smoothly. Cancel any time.</p>
+        <p>Monthly add-ons keep content fresh, rankings climbing and systems running. Cancel any time.</p>
       </div>
     </div>
   </div>
 </div>
 
+<!-- ADD-ONS -->
 <section class="addons-section" id="addons">
   <div class="addons-inner">
-    <span class="section-label">Monthly add-ons</span>
+    <div class="section-label">Monthly add-ons</div>
     <h2 class="section-heading">Stack what you need.<br>Drop what you don't.</h2>
-    <p class="section-sub">No bundles you didn't ask for. Every add-on is monthly, cancel any time, and starts at intro pricing for the first 3 months.</p>
+    <p class="section-sub">No bundles you didn't ask for. Monthly, cancel any time, starts at intro pricing for the first 3 months.</p>
     <div class="addons-grid">
       <div class="addon-card">
         <div class="badge">Intro offer</div>
-        <div class="price">£99<span style="font-size:16px;color:var(--text-light)">/mo</span></div>
-        <div class="price-label">Usually £199/mo · First 3 months</div>
+        <div class="addon-price">£99<sub>/mo</sub></div>
+        <div class="price-note">Usually £199/mo · First 3 months</div>
         <h4>Weekly Blog + SEO Article</h4>
-        <p>One fresh article per week, published to your site automatically. Builds your Google rankings over time.</p>
+        <p>One fresh article per week, published to your site automatically. Builds rankings over time.</p>
       </div>
       <div class="addon-card">
         <div class="badge">Intro offer</div>
-        <div class="price">£99<span style="font-size:16px;color:var(--text-light)">/mo</span></div>
-        <div class="price-label">Usually £199/mo · First 3 months</div>
+        <div class="addon-price">£99<sub>/mo</sub></div>
+        <div class="price-note">Usually £199/mo · First 3 months</div>
         <h4>Social Media Publishing</h4>
-        <p>Every post spun into platform-specific content across Facebook, Instagram, LinkedIn and Google Business.</p>
+        <p>Every post published across Facebook, Instagram, LinkedIn and Google Business automatically.</p>
       </div>
       <div class="addon-card">
         <div class="badge">Most popular</div>
-        <div class="price">£175<span style="font-size:16px;color:var(--text-light)">/mo</span></div>
-        <div class="price-label">Usually £349/mo · First 3 months</div>
+        <div class="addon-price">£175<sub>/mo</sub></div>
+        <div class="price-note">Usually £349/mo · First 3 months</div>
         <h4>Blog + Social Bundle</h4>
         <p>Weekly article plus automatic publishing across all platforms. Full content presence, nothing to manage.</p>
       </div>
       <div class="addon-card">
-        <div class="price">£29<span style="font-size:16px;color:var(--text-light)">/mo</span></div>
-        <div class="price-label">Ongoing</div>
+        <div class="addon-price">£29<sub>/mo</sub></div>
+        <div class="price-note">Ongoing</div>
         <h4>Hosting &amp; Maintenance</h4>
         <p>Fast hosting, uptime monitoring, security updates and backups. Your site stays live and healthy.</p>
       </div>
       <div class="addon-card">
-        <div class="price">£99<span style="font-size:16px;color:var(--text-light)">/mo</span></div>
-        <div class="price-label">Ongoing</div>
+        <div class="addon-price">£99<sub>/mo</sub></div>
+        <div class="price-note">Ongoing</div>
         <h4>SEO Health Check</h4>
-        <p>Monthly rankings review, technical fixes and recommendations. Know exactly where you stand on Google.</p>
+        <p>Monthly rankings review, technical fixes and recommendations. Know where you stand on Google.</p>
       </div>
       <div class="addon-card">
-        <div class="price">£79<span style="font-size:16px;color:var(--text-light)">/mo</span></div>
-        <div class="price-label">Ongoing</div>
+        <div class="addon-price">£79<sub>/mo</sub></div>
+        <div class="price-note">Ongoing</div>
         <h4>Monthly Report</h4>
-        <p>Branded PDF report covering traffic, rankings, leads and performance. Straight to your inbox every month.</p>
+        <p>Branded PDF report — traffic, rankings, leads, performance. Straight to your inbox every month.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- CTA BAND -->
 <div class="cta-band">
-  <h2>Ready to get your<br>business working harder?</h2>
-  <p>Book a free 30-minute call. We'll tell you exactly what we'd do and what it would cost.</p>
-  <a href="#contact" class="btn-light">Book a Free Call</a>
+  <h2>Ready to get your business<br><em>working harder?</em></h2>
+  <p>Book a free 30-minute call. We'll tell you exactly what we'd do and what it costs.</p>
+  <a href="#contact" class="btn-primary">Book a Free Call</a>
 </div>
 
+<!-- CONTACT -->
 <section class="contact-section" id="contact">
   <div class="contact-inner">
     <div class="contact-left">
       <h2>Let's talk about your business</h2>
       <p>Tell us what you're working on and we'll come back to you within one business day with a clear plan and a straight price.</p>
       <div class="contact-detail">
-        <a href="tel:+442030518478"><span class="icon">📞</span> +44 20 3051 8478</a>
-        <a href="mailto:kerim@carpedmstrategies.co.uk"><span class="icon">✉️</span> kerim@carpedmstrategies.co.uk</a>
-        <a href="#"><span class="icon">📍</span> London, UK</a>
+        <a href="tel:+442030518478"><span class="c-icon">📞</span>+44 20 3051 8478</a>
+        <a href="mailto:kerim@carpedmstrategies.co.uk"><span class="c-icon">✉️</span>kerim@carpedmstrategies.co.uk</a>
+        <a href="#"><span class="c-icon">📍</span>London, UK</a>
       </div>
     </div>
     <div class="contact-right">
@@ -643,6 +604,7 @@
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <p>© 2026 Carpe DM Strategies Ltd · Company No. 14900297 · London, UK</p>
@@ -663,17 +625,12 @@
       btn.textContent = 'Sending...';
       btn.disabled = true;
       try {
-        const data = new FormData(form);
-        const obj = Object.fromEntries(data.entries());
-        await fetch(form.action, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(obj)
-        });
+        const obj = Object.fromEntries(new FormData(form).entries());
+        await fetch(form.action, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(obj) });
         btn.textContent = '✓ Sent — we\'ll be in touch shortly';
         form.reset();
       } catch {
-        btn.textContent = 'Something went wrong — email us directly';
+        btn.textContent = 'Something went wrong — please email us directly';
         btn.disabled = false;
       }
     });
