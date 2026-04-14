@@ -1,0 +1,12 @@
+    .logo-icon-wrap {
+      perspective: 280px;
+      flex-shrink: 0;
+    }
+    .logo-icon {
+      display: block; width: 48px; height: 48px;
+      animation: coinSpin 6s linear infinite;
+    }
+    @keyframes coinSpin {
+      from { transform: rotateY(0deg); }
+      to   { transform: rotateY(360deg); }
+    }
