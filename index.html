@@ -94,7 +94,7 @@
 
     /* ── SERVICES GRID ── */
     .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
-    .service-card { background: var(--white); padding: 40px 32px; text-decoration: none; display: block; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); transition: background 0.18s; }
+    .service-card { background: var(--white); padding: 40px 32px; text-decoration: none; display: block; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); transition: background 0.18s; cursor: pointer; }
     .service-card:nth-child(3n) { border-right: none; }
     .service-card:nth-child(4), .service-card:nth-child(5), .service-card:nth-child(6) { border-bottom: none; }
     .service-card:hover { background: var(--off-white); }
@@ -203,51 +203,38 @@
       .nav-inner { padding: 0 20px; }
       .nav-links { display: none; }
       .nav-cta-mobile { display: flex !important; }
-
       .hero { padding: 110px 20px 56px; }
       .hero h1 { font-size: clamp(42px, 11vw, 56px); }
       .hero-sub { font-size: 15px; }
-
       .trust-bar { padding: 12px 0; }
       .trust-bar-inner { padding: 0 20px; gap: 24px; }
-
       .section { padding: 64px 20px; }
       .how-section { padding: 64px 20px; }
       .addons-section { padding: 64px 20px; }
       .contact-section { padding: 64px 20px; }
       .cta-band { padding: 56px 20px; }
       footer { padding: 28px 20px; }
-
       .section-heading { font-size: clamp(32px, 9vw, 42px); }
-
       .services-grid { grid-template-columns: 1fr; border-radius: 8px; }
       .service-card { border-right: none !important; border-bottom: 1px solid var(--border) !important; padding: 28px 24px; }
       .service-card:last-child { border-bottom: none !important; }
-
       .steps { grid-template-columns: 1fr; margin-top: 40px; }
       .step { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.08) !important; padding: 28px 24px; }
       .step:last-child { border-bottom: none !important; }
       .step-num { font-size: 40px; }
-
       .pillars { margin-top: 40px; }
       .pillar-head { padding: 24px 20px 20px; }
       .pillar-body { padding: 20px; }
-
       .tiers-head { padding: 24px 20px; }
       .tier { padding: 24px 20px; }
-
       .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
-
-      /* Trust bar — hide company number on mobile, too long */
-      .trust-item-reg { display: none; }
     }
 
-    /* ── VERY SMALL 375px ── */
+    /* ── VERY SMALL 390px ── */
     @media (max-width: 390px) {
       .hero h1 { font-size: 40px; }
-      .btn-primary { width: 100%; text-align: center; }
-      .btn-secondary { width: 100%; }
       .hero-actions { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .btn-primary { width: 100%; text-align: center; }
     }
 
     .fade-in { opacity: 0; transform: translateY(18px); animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) forwards; }
@@ -291,7 +278,7 @@
 </nav>
 
 <section class="hero">
-  <div class="hero-eyebrow">Trades businesses &amp; small companies</div>
+  <div class="hero-eyebrow">Trades &amp; service businesses</div>
   <h1 class="fade-in">Your business,<br><em>running itself.</em></h1>
   <p class="hero-sub fade-in">We build the website, wire up the automations, and install the systems that keep your business running at its best — without you having to touch it.</p>
   <div class="hero-actions fade-in">
@@ -306,7 +293,6 @@
     <div class="trust-item"><div class="trust-dot"></div>London-based</div>
     <div class="trust-item"><div class="trust-dot"></div>Bespoke builds</div>
     <div class="trust-item"><div class="trust-dot"></div>Dedicated support</div>
-    <div class="trust-item trust-item-reg"><div class="trust-dot"></div>Co. No. 14900297</div>
     <div class="trust-item"><div class="trust-dot"></div>Real results</div>
   </div>
 </div>
@@ -316,37 +302,37 @@
   <h2 class="section-heading">Everything your business<br>needs to grow online</h2>
   <p class="section-sub">From a sharp website to a fully automated back-end — we build it all, tailored to how your business actually works.</p>
   <div class="services-grid">
-    <a href="services/websites.html" class="service-card">
+    <a href="#contact" class="service-card">
       <div class="service-num">01</div>
       <h3>Websites &amp; Local SEO</h3>
       <p>Fast, professional sites built to rank on Google — with dedicated pages for every service and every area you cover. More visibility, more enquiries.</p>
       <span class="card-arrow">→</span>
     </a>
-    <a href="services/automation.html" class="service-card">
+    <a href="#contact" class="service-card">
       <div class="service-num">02</div>
       <h3>Business Automation</h3>
       <p>Enquiries logged, quotes sent, invoices raised, follow-ups fired — without you lifting a finger. Built around your existing workflow.</p>
       <span class="card-arrow">→</span>
     </a>
-    <a href="services/crm.html" class="service-card">
+    <a href="#contact" class="service-card">
       <div class="service-num">03</div>
       <h3>CRM &amp; Job Management</h3>
       <p>A full operational system — jobs, quotes, invoices, engineers, customers — all in one place. Built specifically for trades businesses.</p>
       <span class="card-arrow">→</span>
     </a>
-    <a href="services/lead-generation.html" class="service-card">
+    <a href="#contact" class="service-card">
       <div class="service-num">04</div>
       <h3>Lead Generation</h3>
       <p>Never miss an enquiry again. Automated call response, website enquiry capture and WhatsApp qualification — every lead handled instantly.</p>
       <span class="card-arrow">→</span>
     </a>
-    <a href="services/content.html" class="service-card">
+    <a href="#contact" class="service-card">
       <div class="service-num">05</div>
       <h3>Content &amp; Social</h3>
       <p>Regular SEO articles and social posts across Facebook, Instagram and Google Business Profile. Consistent presence, zero effort on your part.</p>
       <span class="card-arrow">→</span>
     </a>
-    <a href="services/integrations.html" class="service-card">
+    <a href="#contact" class="service-card">
       <div class="service-num">06</div>
       <h3>Integrations &amp; AI</h3>
       <p>WhatsApp Business API, email campaigns, PDF generation, custom dashboards — everything connected so your tools work as one system.</p>
@@ -446,7 +432,7 @@
         <div class="tier tier-highlight">
           <div class="tier-label">Recommended</div>
           <h4>1 article per week</h4>
-          <p>The sweet spot for most trades businesses. Consistent output that compounds into real search visibility over time.</p>
+          <p>The sweet spot for most businesses. Consistent output that compounds into real search visibility over time.</p>
         </div>
         <div class="tier">
           <div class="tier-label">Maximum</div>
@@ -489,8 +475,8 @@
           <option value="crm">CRM &amp; Job Management</option>
           <option value="leads">Lead Generation</option>
           <option value="content">Content &amp; Social</option>
-          <option value="full">Full system — all of it</option>
-          <option value="unsure">Not sure yet</option>
+          <option value="full">Complete system build</option>
+          <option value="unsure">Not sure — let's talk</option>
         </select>
         <textarea name="message" placeholder="Tell us about your business and what you need..."></textarea>
         <button type="submit">Book a Free Call →</button>
@@ -501,7 +487,7 @@
 
 <footer>
   <div class="footer-inner">
-    <p>© 2026 Carpe DM Strategies Ltd · Co. No. 14900297 · London</p>
+    <p>© 2026 Carpe DM Strategies Ltd · Company No. 14900297 · London, UK</p>
     <ul class="footer-links">
       <li><a href="/privacy">Privacy</a></li>
       <li><a href="/terms">Terms</a></li>
