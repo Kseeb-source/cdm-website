@@ -77,12 +77,18 @@
     .btn-secondary:hover::after { transform: translateX(4px); }
     .hero-rule { width: 100%; height: 1px; background: var(--border); margin-top: 80px; }
 
-    /* ── TRUST BAR ── */
-    .trust-bar { background: var(--off-white); padding: 14px 36px; border-bottom: 1px solid var(--border); overflow: hidden; }
-    .trust-bar-inner { max-width: var(--max-width); margin: 0 auto; display: flex; gap: 32px; align-items: center; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-    .trust-bar-inner::-webkit-scrollbar { display: none; }
-    .trust-item { font-size: 11.5px; font-weight: 400; color: var(--text-light); letter-spacing: 0.06em; text-transform: uppercase; display: flex; align-items: center; gap: 7px; white-space: nowrap; flex-shrink: 0; }
-    .trust-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--purple); flex-shrink: 0; }
+    /* ── TRUST BAR — infinite marquee ── */
+    .trust-bar { background: var(--off-white); padding: 14px 0; border-bottom: 1px solid var(--border); overflow: hidden; }
+    .trust-track { display: flex; width: max-content; animation: marquee 32s linear infinite; }
+    .trust-track:hover { animation-play-state: paused; }
+    .trust-set { display: flex; align-items: center; gap: 0; }
+    .trust-item { font-size: 11.5px; font-weight: 400; color: var(--text-light); letter-spacing: 0.07em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; white-space: nowrap; padding: 0 28px; }
+    .trust-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--purple); flex-shrink: 0; }
+    .trust-sep { width: 1px; height: 14px; background: var(--border); flex-shrink: 0; }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
 
     /* ── SHARED SECTION ── */
     .section { padding: var(--section-pad) 36px; max-width: var(--max-width); margin: 0 auto; }
@@ -123,7 +129,7 @@
     .addons-inner { max-width: var(--max-width); margin: 0 auto; }
     .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
     .pillar { border: 1px solid var(--border); border-radius: 8px; background: var(--white); overflow: hidden; }
-    .pillar-head { padding: 32px 32px 28px; border-bottom: 1px solid var(--border); background: var(--white); }
+    .pillar-head { padding: 32px 32px 28px; border-bottom: 1px solid var(--border); }
     .pillar-num { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-dark); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
     .pillar-num::before { content: ''; display: block; width: 16px; height: 1px; background: var(--blue); flex-shrink: 0; }
     .pillar h3 { font-family: var(--font-display); font-size: 28px; font-weight: 600; color: var(--text-dark); line-height: 1.1; margin-bottom: 12px; }
@@ -134,18 +140,18 @@
     .pillar-items li::before { content: '—'; color: var(--blue-dark); flex-shrink: 0; font-weight: 400; margin-top: 1px; }
     .pillar-note { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; font-weight: 400; color: var(--text-light); letter-spacing: 0.04em; }
 
-    /* ── CONTENT TIERS — 2 options ── */
+    /* ── CONTENT TIERS — 3 options ── */
     .content-tiers { margin-top: 60px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--white); }
     .tiers-head { padding: 32px 36px 28px; border-bottom: 1px solid var(--border); }
     .tiers-head .section-label { margin-bottom: 10px; }
     .tiers-head h3 { font-family: var(--font-display); font-size: 28px; font-weight: 400; color: var(--text-dark); margin-bottom: 8px; }
     .tiers-head p { font-size: 14px; font-weight: 300; color: var(--text-mid); line-height: 1.65; max-width: 560px; }
-    .tiers-grid { display: grid; grid-template-columns: 1fr 1fr; }
-    .tier { padding: 36px 32px; border-right: 1px solid var(--border); }
+    .tiers-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .tier { padding: 32px 28px; border-right: 1px solid var(--border); }
     .tier:last-child { border-right: none; }
     .tier-label { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); margin-bottom: 14px; }
-    .tier h4 { font-family: var(--font-display); font-size: 26px; font-weight: 400; color: var(--text-dark); margin-bottom: 12px; }
-    .tier p { font-size: 14px; font-weight: 300; color: var(--text-mid); line-height: 1.65; }
+    .tier h4 { font-family: var(--font-display); font-size: 24px; font-weight: 400; color: var(--text-dark); margin-bottom: 10px; }
+    .tier p { font-size: 13px; font-weight: 300; color: var(--text-mid); line-height: 1.65; }
     .tier-highlight { background: var(--text-dark); }
     .tier-highlight .tier-label { color: var(--purple); }
     .tier-highlight h4 { color: var(--white); }
@@ -192,6 +198,9 @@
       .step:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.08); }
       .step:nth-last-child(1), .step:nth-last-child(2) { border-bottom: none; }
       .pillars { grid-template-columns: 1fr; }
+      .tiers-grid { grid-template-columns: 1fr; }
+      .tier { border-right: none; border-bottom: 1px solid var(--border); }
+      .tier:last-child { border-bottom: none; }
       .contact-inner { grid-template-columns: 1fr; gap: 52px; }
     }
 
@@ -203,8 +212,6 @@
       .hero { padding: 110px 20px 56px; }
       .hero h1 { font-size: clamp(42px, 11vw, 56px); }
       .hero-sub { font-size: 15px; }
-      .trust-bar { padding: 12px 0; }
-      .trust-bar-inner { padding: 0 20px; gap: 24px; }
       .section { padding: 64px 20px; }
       .how-section { padding: 64px 20px; }
       .addons-section { padding: 64px 20px; }
@@ -222,10 +229,8 @@
       .pillars { margin-top: 40px; }
       .pillar-head { padding: 24px 20px 20px; }
       .pillar-body { padding: 20px; }
-      .tiers-grid { grid-template-columns: 1fr; }
-      .tier { border-right: none; border-bottom: 1px solid var(--border); padding: 28px 20px; }
-      .tier-highlight { border-bottom: none; }
       .tiers-head { padding: 24px 20px; }
+      .tier { padding: 24px 20px; }
       .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
     }
 
@@ -288,11 +293,53 @@
 </section>
 
 <div class="trust-bar">
-  <div class="trust-bar-inner">
-    <div class="trust-item"><div class="trust-dot"></div>London-based</div>
-    <div class="trust-item"><div class="trust-dot"></div>Bespoke builds</div>
-    <div class="trust-item"><div class="trust-dot"></div>Dedicated support</div>
-    <div class="trust-item"><div class="trust-dot"></div>Real results</div>
+  <div class="trust-track">
+    <!-- Set 1 -->
+    <div class="trust-set">
+      <div class="trust-item"><div class="trust-dot"></div>London-based</div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><div class="trust-dot"></div>Bespoke builds</div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><div class="trust-dot"></div>Fully automated</div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><div class="trust-dot"></div>AI-powered</div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><div class="trust-dot"></div>Local SEO specialists</div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><div class="trust-dot"></div>Google Ads ready</div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><div class="trust-dot"></div>WhatsApp automation</div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><div class="trust-dot"></div>Built to scale</div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><div class="trust-dot"></div>Dedicated support</div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><div class="trust-dot"></div>Real results</div>
+      <div class="trust-sep"></div>
+    </div>
+    <!-- Set 2 — exact duplicate for seamless loop -->
+    <div class="trust-set">
+      <div class="trust-item"><div class="trust-dot"></div>London-based</div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><div class="trust-dot"></div>Bespoke builds</div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><div class="trust-dot"></div>Fully automated</div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><div class="trust-dot"></div>AI-powered</div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><div class="trust-dot"></div>Local SEO specialists</div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><div class="trust-dot"></div>Google Ads ready</div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><div class="trust-dot"></div>WhatsApp automation</div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><div class="trust-dot"></div>Built to scale</div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><div class="trust-dot"></div>Dedicated support</div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><div class="trust-dot"></div>Real results</div>
+      <div class="trust-sep"></div>
+    </div>
   </div>
 </div>
 
@@ -419,19 +466,24 @@
     <div class="content-tiers">
       <div class="tiers-head">
         <div class="section-label">Content tiers</div>
-        <h3>Weekly or twice-weekly — you choose</h3>
-        <p>Fully written, trade-relevant articles published directly to your site. Add social publishing across Facebook, Instagram and Google Business Profile at any time.</p>
+        <h3>Choose your publishing frequency</h3>
+        <p>Fully written, trade-relevant articles published directly to your site. Add social media publishing across Facebook, Instagram and Google Business Profile at any time.</p>
       </div>
       <div class="tiers-grid">
         <div class="tier">
-          <div class="tier-label">Standard</div>
-          <h4>1 article per week</h4>
-          <p>Consistent output that builds authority and compounds into real search visibility. The right pace for most businesses.</p>
+          <div class="tier-label">Essential</div>
+          <h4>1 article per month</h4>
+          <p>A consistent content presence that steadily builds your authority on Google. The right starting point for most businesses.</p>
         </div>
         <div class="tier tier-highlight">
+          <div class="tier-label">Recommended</div>
+          <h4>1 article per week</h4>
+          <p>The sweet spot. Weekly output that compounds fast into real search visibility and keeps you ahead of local competitors.</p>
+        </div>
+        <div class="tier">
           <div class="tier-label">Accelerated</div>
           <h4>2 articles per week</h4>
-          <p>For businesses in competitive areas who want to move fast and dominate local search results as quickly as possible.</p>
+          <p>For businesses in competitive areas who want to move fast and dominate local search as quickly as possible.</p>
         </div>
       </div>
     </div>
