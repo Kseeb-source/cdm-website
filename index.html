@@ -26,10 +26,9 @@
       --text-dark: #16140F;
       --text-mid: #4A4840;
       --text-light: #918E86;
-      --accent: #00C4F0;
-      --accent-dark: #0092B8;
+      --blue: #00C4F0;
+      --blue-dark: #0092B8;
       --purple: #6C47FF;
-      --purple-muted: rgba(108,71,255,0.22);
       --border: #E4E2DC;
       --font-display: 'Cormorant Garamond', Georgia, serif;
       --font-body: 'DM Sans', system-ui, sans-serif;
@@ -64,10 +63,10 @@
 
     /* ── HERO ── */
     .hero { padding: 168px 36px 80px; max-width: var(--max-width); margin: 0 auto; }
-    .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-dark); margin-bottom: 32px; }
-    .hero-eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--accent); }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue-dark); margin-bottom: 32px; }
+    .hero-eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--blue); }
     .hero h1 { font-family: var(--font-display); font-size: clamp(48px, 7vw, 96px); line-height: 1.0; letter-spacing: -0.01em; font-weight: 400; color: var(--text-dark); max-width: 860px; margin-bottom: 32px; }
-    .hero h1 em { font-style: italic; font-weight: 400; color: var(--purple); }
+    .hero h1 em { font-style: italic; font-weight: 400; color: var(--blue-dark); }
     .hero-sub { font-size: 17px; font-weight: 300; color: var(--text-mid); max-width: 520px; line-height: 1.75; margin-bottom: 48px; }
     .hero-actions { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
     .btn-primary { background: var(--text-dark); color: var(--white); padding: 14px 30px; border-radius: 5px; font-size: 14px; font-weight: 400; letter-spacing: 0.04em; text-decoration: none; transition: opacity 0.2s, transform 0.15s; display: inline-block; }
@@ -87,35 +86,35 @@
 
     /* ── SHARED SECTION ── */
     .section { padding: var(--section-pad) 36px; max-width: var(--max-width); margin: 0 auto; }
-    .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-dark); margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
-    .section-label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--accent); }
+    .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-dark); margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+    .section-label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--blue); }
     .section-heading { font-family: var(--font-display); font-size: clamp(36px, 4.5vw, 60px); line-height: 1.05; font-weight: 400; color: var(--text-dark); margin-bottom: 20px; }
     .section-sub { font-size: 16px; font-weight: 300; color: var(--text-mid); max-width: 560px; line-height: 1.75; margin-bottom: 60px; }
 
     /* ── SERVICES GRID ── */
     .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
-    .service-card { background: var(--white); padding: 40px 32px; text-decoration: none; display: block; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); transition: background 0.18s; cursor: pointer; }
+    .service-card { background: var(--white); padding: 40px 32px; text-decoration: none; display: block; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); transition: background 0.18s; }
     .service-card:nth-child(3n) { border-right: none; }
     .service-card:nth-child(4), .service-card:nth-child(5), .service-card:nth-child(6) { border-bottom: none; }
     .service-card:hover { background: var(--off-white); }
-    .service-num { font-family: var(--font-display); font-size: 36px; font-weight: 400; color: var(--purple); opacity: 0.35; line-height: 1; margin-bottom: 20px; letter-spacing: -0.02em; transition: opacity 0.2s; }
-    .service-card:hover .service-num { opacity: 0.7; }
+    .service-num { font-family: var(--font-display); font-size: 36px; font-weight: 400; color: var(--blue); opacity: 0.5; line-height: 1; margin-bottom: 20px; letter-spacing: -0.02em; transition: opacity 0.2s; }
+    .service-card:hover .service-num { opacity: 1; }
     .service-card h3 { font-size: 16px; font-weight: 500; color: var(--text-dark); margin-bottom: 12px; letter-spacing: 0.01em; }
     .service-card p { font-size: 13.5px; font-weight: 300; color: var(--text-mid); line-height: 1.7; }
-    .card-arrow { display: inline-block; margin-top: 20px; font-size: 18px; color: var(--purple); transition: transform 0.2s; }
+    .card-arrow { display: inline-block; margin-top: 20px; font-size: 18px; color: var(--blue-dark); transition: transform 0.2s; }
     .service-card:hover .card-arrow { transform: translateX(4px); }
 
     /* ── HOW SECTION (dark) ── */
     .how-section { background: var(--text-dark); padding: var(--section-pad) 36px; }
     .how-inner { max-width: var(--max-width); margin: 0 auto; }
-    .how-section .section-label { color: var(--purple); }
-    .how-section .section-label::before { background: var(--purple); }
+    .how-section .section-label { color: var(--blue); }
+    .how-section .section-label::before { background: var(--blue); }
     .how-section .section-heading { color: var(--white); }
     .how-section .section-sub { color: rgba(255,255,255,0.5); }
     .steps { display: grid; grid-template-columns: repeat(4,1fr); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; overflow: hidden; margin-top: 60px; }
-    .step { padding: 36px 28px; border-right: 1px solid rgba(255,255,255,0.08); position: relative; }
+    .step { padding: 36px 28px; border-right: 1px solid rgba(255,255,255,0.08); }
     .step:last-child { border-right: none; }
-    .step-num { font-family: var(--font-display); font-size: 52px; font-weight: 400; color: var(--purple); opacity: 0.4; line-height: 1; margin-bottom: 20px; }
+    .step-num { font-family: var(--font-display); font-size: 52px; font-weight: 400; color: var(--blue); opacity: 0.5; line-height: 1; margin-bottom: 20px; }
     .step h3 { font-size: 15px; font-weight: 500; color: var(--white); margin-bottom: 10px; }
     .step p { font-size: 13.5px; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.7; }
 
@@ -124,37 +123,38 @@
     .addons-inner { max-width: var(--max-width); margin: 0 auto; }
     .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
     .pillar { border: 1px solid var(--border); border-radius: 8px; background: var(--white); overflow: hidden; }
-    .pillar-head { padding: 32px 32px 24px; border-bottom: 1px solid var(--border); }
-    .pillar-num { font-family: var(--font-display); font-size: 13px; font-weight: 600; color: var(--purple); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px; }
-    .pillar h3 { font-family: var(--font-display); font-size: 26px; font-weight: 400; color: var(--text-dark); line-height: 1.1; margin-bottom: 10px; }
-    .pillar-desc { font-size: 13.5px; font-weight: 300; color: var(--text-mid); line-height: 1.65; }
+    .pillar-head { padding: 32px 32px 28px; border-bottom: 1px solid var(--border); background: var(--white); }
+    .pillar-num { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-dark); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+    .pillar-num::before { content: ''; display: block; width: 16px; height: 1px; background: var(--blue); flex-shrink: 0; }
+    .pillar h3 { font-family: var(--font-display); font-size: 28px; font-weight: 600; color: var(--text-dark); line-height: 1.1; margin-bottom: 12px; }
+    .pillar-desc { font-size: 14px; font-weight: 300; color: var(--text-light); line-height: 1.7; }
     .pillar-body { padding: 28px 32px; }
-    .pillar-items { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .pillar-items li { font-size: 13.5px; font-weight: 300; color: var(--text-mid); line-height: 1.5; display: flex; align-items: flex-start; gap: 10px; }
-    .pillar-items li::before { content: '—'; color: var(--purple); flex-shrink: 0; font-weight: 400; margin-top: 1px; }
-    .pillar-note { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; font-weight: 400; color: var(--text-light); letter-spacing: 0.04em; }
+    .pillar-items { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .pillar-items li { font-size: 14px; font-weight: 300; color: var(--text-mid); line-height: 1.5; display: flex; align-items: flex-start; gap: 10px; }
+    .pillar-items li::before { content: '—'; color: var(--blue-dark); flex-shrink: 0; font-weight: 400; margin-top: 1px; }
+    .pillar-note { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; font-weight: 400; color: var(--text-light); letter-spacing: 0.04em; }
 
-    /* ── CONTENT TIERS ── */
+    /* ── CONTENT TIERS — 2 options ── */
     .content-tiers { margin-top: 60px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--white); }
     .tiers-head { padding: 32px 36px 28px; border-bottom: 1px solid var(--border); }
     .tiers-head .section-label { margin-bottom: 10px; }
     .tiers-head h3 { font-family: var(--font-display); font-size: 28px; font-weight: 400; color: var(--text-dark); margin-bottom: 8px; }
     .tiers-head p { font-size: 14px; font-weight: 300; color: var(--text-mid); line-height: 1.65; max-width: 560px; }
-    .tiers-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
-    .tier { padding: 32px 28px; border-right: 1px solid var(--border); }
+    .tiers-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    .tier { padding: 36px 32px; border-right: 1px solid var(--border); }
     .tier:last-child { border-right: none; }
     .tier-label { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); margin-bottom: 14px; }
-    .tier h4 { font-size: 16px; font-weight: 500; color: var(--text-dark); margin-bottom: 10px; }
-    .tier p { font-size: 13px; font-weight: 300; color: var(--text-mid); line-height: 1.65; }
+    .tier h4 { font-family: var(--font-display); font-size: 26px; font-weight: 400; color: var(--text-dark); margin-bottom: 12px; }
+    .tier p { font-size: 14px; font-weight: 300; color: var(--text-mid); line-height: 1.65; }
     .tier-highlight { background: var(--text-dark); }
-    .tier-highlight .tier-label { color: var(--purple); letter-spacing: 0.14em; }
+    .tier-highlight .tier-label { color: var(--purple); }
     .tier-highlight h4 { color: var(--white); }
     .tier-highlight p { color: rgba(255,255,255,0.55); }
 
     /* ── CTA BAND ── */
     .cta-band { padding: 88px 36px; text-align: center; border-bottom: 1px solid var(--border); }
     .cta-band h2 { font-family: var(--font-display); font-size: clamp(34px, 4vw, 58px); font-weight: 400; color: var(--text-dark); line-height: 1.1; margin-bottom: 16px; }
-    .cta-band h2 em { font-style: italic; color: var(--purple); }
+    .cta-band h2 em { font-style: italic; color: var(--blue-dark); }
     .cta-band p { font-size: 16px; font-weight: 300; color: var(--text-mid); margin-bottom: 40px; }
 
     /* ── CONTACT ── */
@@ -168,7 +168,7 @@
     .c-icon { width: 34px; height: 34px; background: var(--light-grey); border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
     form { display: flex; flex-direction: column; gap: 12px; }
     form input, form textarea, form select { width: 100%; padding: 13px 16px; border: 1px solid var(--border); border-radius: 5px; font-family: var(--font-body); font-size: 14px; font-weight: 300; color: var(--text-dark); background: var(--white); outline: none; transition: border-color 0.2s; -webkit-appearance: none; }
-    form input:focus, form textarea:focus, form select:focus { border-color: var(--purple); }
+    form input:focus, form textarea:focus, form select:focus { border-color: var(--blue-dark); }
     form textarea { resize: vertical; min-height: 120px; }
     form button { background: var(--text-dark); color: var(--white); padding: 14px 28px; border-radius: 5px; font-family: var(--font-body); font-size: 14px; font-weight: 400; letter-spacing: 0.04em; border: none; cursor: pointer; transition: opacity 0.2s; width: 100%; }
     form button:hover { opacity: 0.82; }
@@ -192,9 +192,6 @@
       .step:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.08); }
       .step:nth-last-child(1), .step:nth-last-child(2) { border-bottom: none; }
       .pillars { grid-template-columns: 1fr; }
-      .tiers-grid { grid-template-columns: 1fr; }
-      .tier { border-right: none; border-bottom: 1px solid var(--border); }
-      .tier:last-child { border-bottom: none; }
       .contact-inner { grid-template-columns: 1fr; gap: 52px; }
     }
 
@@ -215,7 +212,7 @@
       .cta-band { padding: 56px 20px; }
       footer { padding: 28px 20px; }
       .section-heading { font-size: clamp(32px, 9vw, 42px); }
-      .services-grid { grid-template-columns: 1fr; border-radius: 8px; }
+      .services-grid { grid-template-columns: 1fr; }
       .service-card { border-right: none !important; border-bottom: 1px solid var(--border) !important; padding: 28px 24px; }
       .service-card:last-child { border-bottom: none !important; }
       .steps { grid-template-columns: 1fr; margin-top: 40px; }
@@ -225,8 +222,10 @@
       .pillars { margin-top: 40px; }
       .pillar-head { padding: 24px 20px 20px; }
       .pillar-body { padding: 20px; }
+      .tiers-grid { grid-template-columns: 1fr; }
+      .tier { border-right: none; border-bottom: 1px solid var(--border); padding: 28px 20px; }
+      .tier-highlight { border-bottom: none; }
       .tiers-head { padding: 24px 20px; }
-      .tier { padding: 24px 20px; }
       .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
     }
 
@@ -420,24 +419,19 @@
     <div class="content-tiers">
       <div class="tiers-head">
         <div class="section-label">Content tiers</div>
-        <h3>Pick your publishing frequency</h3>
-        <p>All tiers include fully written, trade-relevant articles published directly to your site. Upgrade at any time to add social media publishing across Facebook, Instagram and Google Business Profile.</p>
+        <h3>Weekly or twice-weekly — you choose</h3>
+        <p>Fully written, trade-relevant articles published directly to your site. Add social publishing across Facebook, Instagram and Google Business Profile at any time.</p>
       </div>
       <div class="tiers-grid">
         <div class="tier">
-          <div class="tier-label">Starter</div>
-          <h4>1 article per month</h4>
-          <p>A steady content presence that builds rankings gradually. Good for businesses just getting started with SEO.</p>
+          <div class="tier-label">Standard</div>
+          <h4>1 article per week</h4>
+          <p>Consistent output that builds authority and compounds into real search visibility. The right pace for most businesses.</p>
         </div>
         <div class="tier tier-highlight">
-          <div class="tier-label">Recommended</div>
-          <h4>1 article per week</h4>
-          <p>The sweet spot for most businesses. Consistent output that compounds into real search visibility over time.</p>
-        </div>
-        <div class="tier">
-          <div class="tier-label">Maximum</div>
+          <div class="tier-label">Accelerated</div>
           <h4>2 articles per week</h4>
-          <p>For businesses in competitive areas who want to dominate their local search results as fast as possible.</p>
+          <p>For businesses in competitive areas who want to move fast and dominate local search results as quickly as possible.</p>
         </div>
       </div>
     </div>
