@@ -1,159 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<title>About Carpe DM Strategies | London Digital Marketing Agency</title>
-<meta name="description" content="Carpe DM Strategies was founded to give small businesses access to the same digital systems big companies use. Based in London. Real people, real results.">
-<link rel="canonical" href="https://www.carpedmstrategies.co.uk/about.html">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"About Carpe DM Strategies","url":"https://www.carpedmstrategies.co.uk/about.html","publisher":{"@type":"Organization","name":"Carpe DM Strategies Ltd","url":"https://www.carpedmstrategies.co.uk"}}</script>
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/fontawesome.css">
-<link rel="stylesheet" href="assets/css/templatemo-tale-seo-agency.css">
-<link rel="stylesheet" href="assets/css/owl.css">
-<link rel="stylesheet" href="assets/css/animate.css">
-<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Carpe DM Strategies | London Digital Systems for Trades Businesses</title>
+  <meta name="description" content="Carpe DM Strategies Ltd builds bespoke websites, automation and growth systems for trades and service businesses in the United Kingdom. Registered in England &amp; Wales · Company No. 14900297.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://www.carpedmstrategies.co.uk/about.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"About Carpe DM Strategies","url":"https://www.carpedmstrategies.co.uk/about.html","mainEntity":{"@type":"Organization","legalName":"Carpe DM Strategies Ltd","name":"Carpe DM Strategies","url":"https://www.carpedmstrategies.co.uk","email":"info@carpedmstrategies.co.uk","telephone":"+442030519579","taxID":"14900297","identifier":{"@type":"PropertyValue","propertyID":"UK Companies House","value":"14900297"},"address":{"@type":"PostalAddress","streetAddress":"19 Ravenscroft Crescent","addressLocality":"London","postalCode":"SE9 4LL","addressCountry":"GB"},"areaServed":"GB","foundingDate":"2023-05-29"}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --white: #FFFFFF; --off-white: #F8F7F4; --light-grey: #F0EFEb; --mid-grey: #E0DED8;
+      --text-dark: #16140F; --text-mid: #4A4840; --text-light: #918E86;
+      --blue: #00C4F0; --blue-dark: #0092B8; --purple: #6C47FF; --border: #E4E2DC;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --max-width: 1160px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--white); color: var(--text-dark); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+    .logo-mark { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-icon { display: block; width: 48px; height: 48px; animation: coinSpin 5s linear infinite; }
+    @keyframes coinSpin { from { transform: perspective(500px) rotateY(0deg); } to { transform: perspective(500px) rotateY(360deg); } }
+    .logo-divider { width: 1px; height: 32px; background: var(--border); flex-shrink: 0; }
+    .logo-words { display: flex; flex-direction: column; gap: 3px; }
+    .logo-cdm { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--text-dark); letter-spacing: 4px; line-height: 1; }
+    .logo-sub { font-size: 7.5px; font-weight: 300; color: var(--text-light); letter-spacing: 4px; line-height: 1; text-transform: uppercase; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,252,0.94); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); height: 70px; display: flex; align-items: center; }
+    .nav-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 36px; width: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+    .nav-links a { font-size: 13.5px; font-weight: 400; color: var(--text-mid); text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text-dark); }
+    .nav-links a.active { color: var(--text-dark); font-weight: 500; }
+    .nav-cta { background: var(--text-dark) !important; color: var(--white) !important; padding: 9px 22px; border-radius: 5px; font-size: 13.5px !important; letter-spacing: 0.03em !important; transition: opacity 0.2s !important; }
+    .nav-cta:hover { opacity: 0.82 !important; }
+
+    .page-hero { padding: 150px 36px 60px; max-width: var(--max-width); margin: 0 auto; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue-dark); margin-bottom: 24px; }
+    .hero-eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--blue); }
+    .page-hero h1 { font-family: var(--font-display); font-size: clamp(48px, 7vw, 88px); line-height: 1.0; letter-spacing: -0.01em; font-weight: 400; color: var(--text-dark); max-width: 860px; margin-bottom: 28px; }
+    .page-hero h1 em { font-style: italic; color: var(--blue-dark); }
+    .page-hero .lead { font-size: 17px; font-weight: 300; color: var(--text-mid); max-width: 640px; line-height: 1.75; }
+
+    .rule { width: 100%; max-width: var(--max-width); margin: 0 auto; height: 1px; background: var(--border); }
+
+    .section { padding: 88px 36px; max-width: var(--max-width); margin: 0 auto; }
+    .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-dark); margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+    .section-label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--blue); }
+    .section-heading { font-family: var(--font-display); font-size: clamp(34px, 4vw, 52px); line-height: 1.1; font-weight: 400; color: var(--text-dark); margin-bottom: 20px; }
+    .section-heading em { font-style: italic; color: var(--blue-dark); }
+    .section-sub { font-size: 16px; font-weight: 300; color: var(--text-mid); max-width: 640px; line-height: 1.75; margin-bottom: 48px; }
+
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+    .story-grid p { font-size: 16px; font-weight: 300; color: var(--text-mid); line-height: 1.8; margin-bottom: 16px; }
+    .story-grid p strong { color: var(--text-dark); font-weight: 500; }
+
+    .identity-section { background: var(--off-white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 88px 36px; }
+    .identity-inner { max-width: var(--max-width); margin: 0 auto; }
+    .identity-grid-wrap { display: grid; grid-template-columns: 1fr 1.4fr; gap: 72px; align-items: start; }
+    .identity-head h2 { font-family: var(--font-display); font-size: clamp(32px, 4vw, 46px); font-weight: 400; color: var(--text-dark); line-height: 1.1; margin-bottom: 18px; }
+    .identity-head h2 em { font-style: italic; color: var(--blue-dark); }
+    .identity-head p { font-size: 15px; font-weight: 300; color: var(--text-mid); line-height: 1.75; }
+    .identity-card { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 36px 40px; }
+    .identity-list { display: grid; grid-template-columns: 190px 1fr; gap: 16px 28px; }
+    .identity-list dt { font-size: 12px; font-weight: 500; color: var(--text-light); letter-spacing: 0.08em; text-transform: uppercase; padding-top: 2px; }
+    .identity-list dd { font-size: 15px; color: var(--text-dark); margin: 0; line-height: 1.55; font-weight: 400; }
+    .identity-list dd a { color: var(--blue-dark); text-decoration: none; }
+    .identity-list dd a:hover { text-decoration: underline; }
+
+    .purpose-section { padding: 88px 36px; max-width: var(--max-width); margin: 0 auto; }
+    .purpose-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-top: 48px; }
+    .purpose-card { border: 1px solid var(--border); border-radius: 8px; padding: 32px 28px; background: var(--white); }
+    .purpose-card h3 { font-family: var(--font-display); font-size: 22px; font-weight: 400; color: var(--text-dark); margin-bottom: 12px; line-height: 1.2; }
+    .purpose-card p { font-size: 14px; font-weight: 300; color: var(--text-mid); line-height: 1.75; }
+    .purpose-num { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-dark); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+    .purpose-num::before { content: ''; display: block; width: 16px; height: 1px; background: var(--blue); }
+
+    .values-section { background: var(--text-dark); padding: 88px 36px; }
+    .values-inner { max-width: var(--max-width); margin: 0 auto; }
+    .values-section .section-label { color: var(--blue); }
+    .values-section .section-label::before { background: var(--blue); }
+    .values-section .section-heading { color: var(--white); }
+    .values-section .section-sub { color: rgba(255,255,255,0.55); }
+    .values-grid { display: grid; grid-template-columns: repeat(4,1fr); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; overflow: hidden; margin-top: 48px; }
+    .value-item { padding: 32px 28px; border-right: 1px solid rgba(255,255,255,0.08); }
+    .value-item:last-child { border-right: none; }
+    .value-item h3 { font-size: 14.5px; font-weight: 500; color: var(--white); margin-bottom: 10px; letter-spacing: 0.01em; }
+    .value-item p { font-size: 13.5px; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.7; }
+    .value-item .num { font-family: var(--font-display); font-size: 44px; font-weight: 400; color: var(--blue); opacity: 0.55; line-height: 1; margin-bottom: 18px; }
+
+    .cta-band { padding: 88px 36px; text-align: center; border-bottom: 1px solid var(--border); border-top: 1px solid var(--border); }
+    .cta-band h2 { font-family: var(--font-display); font-size: clamp(32px, 4vw, 54px); font-weight: 400; color: var(--text-dark); line-height: 1.1; margin-bottom: 16px; }
+    .cta-band h2 em { font-style: italic; color: var(--blue-dark); }
+    .cta-band p { font-size: 16px; font-weight: 300; color: var(--text-mid); margin-bottom: 36px; }
+    .btn-primary { background: var(--text-dark); color: var(--white); padding: 14px 30px; border-radius: 5px; font-size: 14px; font-weight: 400; letter-spacing: 0.04em; text-decoration: none; display: inline-block; transition: opacity 0.2s, transform 0.15s; }
+    .btn-primary:hover { opacity: 0.82; transform: translateY(-1px); }
+
+    footer { background: var(--text-dark); padding: 36px; }
+    .footer-inner { max-width: var(--max-width); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-inner p { font-size: 12.5px; color: rgba(255,255,255,0.35); font-weight: 300; line-height: 1.65; }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { font-size: 12.5px; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+
+    @media (max-width: 900px) {
+      .story-grid { grid-template-columns: 1fr; gap: 32px; }
+      .identity-grid-wrap { grid-template-columns: 1fr; gap: 40px; }
+      .purpose-grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .value-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .value-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.08); }
+      .value-item:nth-last-child(1), .value-item:nth-last-child(2) { border-bottom: none; }
+    }
+    @media (max-width: 640px) {
+      .nav-inner { padding: 0 20px; }
+      .nav-links { display: none; }
+      .page-hero { padding: 110px 20px 48px; }
+      .section, .identity-section, .purpose-section, .values-section, .cta-band { padding: 64px 20px; }
+      .identity-card { padding: 28px 24px; }
+      .identity-list { grid-template-columns: 1fr; gap: 6px 0; }
+      .identity-list dt { padding-top: 12px; }
+      .values-grid { grid-template-columns: 1fr; }
+      .value-item { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.08) !important; }
+      .value-item:last-child { border-bottom: none !important; }
+      footer { padding: 28px 20px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
+  </style>
 </head>
 <body>
-<div id="js-preloader" class="js-preloader"><div class="preloader-inner"><span class="dot"></span><div class="dots"><span></span><span></span><span></span></div></div></div>
-<div class="pre-header" id="top">
-  <div class="container"><div class="row">
-    <div class="col-lg-8 col-sm-9"><div class="left-info"><ul>
-      <li><a href="tel:+442030518478"><i class="fa fa-phone"></i>+44 20 3051 8478</a></li>
-      <li><a href="mailto:kerim@carpedmstrategies.co.uk"><i class="fa fa-envelope"></i>kerim@carpedmstrategies.co.uk</a></li>
-      <li><a href="#"><i class="fa fa-map-marker"></i>London, UK</a></li>
-    </ul></div></div>
-    <div class="col-lg-4 col-sm-3"><div class="social-icons"><ul>
-      <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-      <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-    </ul></div></div>
-  </div></div>
-</div>
-<header class="header-area header-sticky">
-  <div class="container"><div class="row"><div class="col-12"><nav class="main-nav">
-    <a href="index.html" class="logo"><img src="assets/images/logo.svg" alt="Carpe DM Strategies" style="max-width:160px;height:40px;"></a>
-    <ul class="nav">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#services">Services</a></li>
-      <li><a href="index.html#projects">Case Studies</a></li>
-      <li class="has-sub"><a href="javascript:void(0)">Pages</a><ul class="sub-menu"><li><a href="about.html">About Us</a></li><li><a href="faqs.html">FAQs</a></li></ul></li>
-      <li><a href="index.html#infos">Why Us</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-    <a class="menu-trigger"><span>Menu</span></a>
-  </nav></div></div></div>
-</header>
-<div class="page-heading">
-  <div class="container"><div class="row">
-    <div class="col-lg-7 align-self-center"><div class="caption header-text">
-      <h6>LONDON DIGITAL MARKETING AGENCY</h6>
-      <div class="line-dec"></div>
-      <h4>Discover More <em>About Us</em></h4>
-      <p>We started with our own business. We proved the systems work. Now we offer them to you.</p>
-      <div class="main-button"><a href="index.html#contact">Work With Us</a></div>
-      <span>or</span>
-      <div class="second-button"><a href="faqs.html">Check our FAQs</a></div>
-    </div></div>
-    <div class="col-lg-5 align-self-center"><img src="assets/images/about-us-image.jpg" alt="About Carpe DM Strategies London"></div>
-  </div></div>
-</div>
-<div class="video-info section">
-  <div class="container"><div class="row">
-    <div class="col-lg-6"><div class="video-thumb">
-      <img src="assets/images/video-thumb.jpg" alt="Carpe DM Strategies overview">
-      <a href="https://youtube.com" target="_blank"><i class="fa fa-play"></i></a>
-    </div></div>
-    <div class="col-lg-6 align-self-center">
-      <div class="section-heading">
-        <h2>Built From Experience, Not Just Theory</h2>
-        <div class="line-dec"></div>
-        <p>Carpe DM Strategies was founded because we watched too many good businesses fail online. Not because their work was not good enough, but because they could not afford the tools big companies use. We built those tools ourselves first, tested them on our own company, and now we offer them to you.</p>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo-mark" aria-label="Carpe DM Strategies home">
+      <svg class="logo-icon" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="28" cy="28" r="26" fill="#F0EFEb" stroke="#E4E2DC" stroke-width="0.8"/>
+        <path d="M 28,4 A 24,24 0 1,1 28,52" fill="none" stroke="#00C4F0" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M 28,13 A 15,15 0 1,1 28,43" fill="none" stroke="#6C47FF" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M 28,22 A 6,6 0 1,1 28,34" fill="none" stroke="#16140F" stroke-width="1.4" stroke-linecap="round"/>
+        <circle cx="52" cy="28" r="2.5" fill="#00C4F0"/>
+        <line x1="49.5" y1="28" x2="44" y2="22" stroke="#00C4F0" stroke-width="1.1" opacity="0.55" stroke-linecap="round"/>
+        <line x1="49.5" y1="28" x2="44" y2="28" stroke="#00C4F0" stroke-width="1.3" opacity="0.8" stroke-linecap="round"/>
+        <line x1="49.5" y1="28" x2="44" y2="34" stroke="#00C4F0" stroke-width="1.1" opacity="0.55" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-divider"></div>
+      <div class="logo-words">
+        <span class="logo-cdm">CDM</span>
+        <span class="logo-sub">Strategies</span>
       </div>
-      <div class="skills">
-        <div class="skill-slide marketing"><div class="fill"></div><h6>SEO &amp; Content Marketing</h6><span>90%</span></div>
-        <div class="skill-slide digital"><div class="fill"></div><h6>Business Automation</h6><span>95%</span></div>
-        <div class="skill-slide media"><div class="fill"></div><h6>Google Ads Performance</h6><span>85%</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/about.html" class="active">About</a></li>
+      <li><a href="/#contact" class="nav-cta">Book a Call</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="hero-eyebrow">About the company</div>
+  <h1>Systems built for<br>the businesses<br><em>who run them.</em></h1>
+  <p class="lead">Carpe DM Strategies Ltd is a London-based digital services company. We build the websites, automation and growth systems that trades and service businesses actually need to run — and we run our own business on the exact same stack.</p>
+</section>
+
+<div class="rule"></div>
+
+<section class="section">
+  <div class="section-label">Our story</div>
+  <h2 class="section-heading">Built from experience,<br><em>not just theory.</em></h2>
+  <div class="story-grid">
+    <div>
+      <p>Carpe DM Strategies started because we watched too many good businesses lose work online. Not because the work was not good enough — but because they could not afford the tools the big firms use to capture, manage and grow their enquiries.</p>
+      <p>So we built those tools ourselves. We used them on our own sister company <strong>Damp &amp; Mould Solutions UK</strong>, a specialist property-care business operating across London. We proved the stack worked end-to-end, from the first Google click to the final invoice.</p>
+    </div>
+    <div>
+      <p>Now we offer that same stack to other trades and service businesses. A fast, professional website. A CRM that handles quotes, jobs and invoices. Enquiry capture, lead qualification and follow-up on autopilot. Google Ads, SEO and content that compounds every month.</p>
+      <p>One company, one stack, one point of accountability. Built here in London, for businesses here in the UK.</p>
+    </div>
+  </div>
+</section>
+
+<section class="identity-section">
+  <div class="identity-inner">
+    <div class="section-label">Company details</div>
+    <div class="identity-grid-wrap">
+      <div class="identity-head">
+        <h2>Who we <em>are.</em></h2>
+        <p>Carpe DM Strategies Ltd is a limited company registered in England &amp; Wales. All correspondence, notices and formal enquiries may be sent to the registered office address shown here or to our business email.</p>
+      </div>
+      <div class="identity-card">
+        <dl class="identity-list">
+          <dt>Legal Name</dt>
+          <dd>Carpe DM Strategies Ltd</dd>
+
+          <dt>Trading Name</dt>
+          <dd>Carpe DM Strategies</dd>
+
+          <dt>Company Number</dt>
+          <dd><a href="https://find-and-update.company-information.service.gov.uk/company/14900297" rel="noopener" target="_blank">14900297</a> (Companies House)</dd>
+
+          <dt>Registered In</dt>
+          <dd>England &amp; Wales</dd>
+
+          <dt>Registered Office</dt>
+          <dd itemscope itemtype="https://schema.org/PostalAddress">
+            <span itemprop="streetAddress">19 Ravenscroft Crescent</span>,
+            <span itemprop="addressLocality">London</span>,
+            <span itemprop="postalCode">SE9 4LL</span>,
+            <span itemprop="addressCountry">United Kingdom</span>
+          </dd>
+
+          <dt>Incorporated</dt>
+          <dd>29 May 2023</dd>
+
+          <dt>Email</dt>
+          <dd><a href="mailto:info@carpedmstrategies.co.uk">info@carpedmstrategies.co.uk</a></dd>
+
+          <dt>Phone</dt>
+          <dd><a href="tel:+442030519579">+44 20 3051 9579</a></dd>
+
+          <dt>Website</dt>
+          <dd><a href="https://www.carpedmstrategies.co.uk">www.carpedmstrategies.co.uk</a></dd>
+        </dl>
       </div>
     </div>
-  </div></div>
+  </div>
+</section>
+
+<section class="purpose-section">
+  <div class="section-label">Platform purpose</div>
+  <h2 class="section-heading">What this <em>platform</em> does.</h2>
+  <p class="section-sub">The Carpe DM Strategies platform at www.carpedmstrategies.co.uk is an owned-and-operated business website. Here is exactly what it is used for, and how it fits together with the services we deliver.</p>
+  <div class="purpose-grid">
+    <div class="purpose-card">
+      <div class="purpose-num">01 — Public site</div>
+      <h3>Market our own services</h3>
+      <p>This website describes the services we offer, showcases the systems we build, and explains how we work. Visitors can read about our approach, browse FAQs, and get in touch.</p>
+    </div>
+    <div class="purpose-card">
+      <div class="purpose-num">02 — Lead capture</div>
+      <h3>Receive and qualify enquiries</h3>
+      <p>Prospective clients submit enquiries through the contact form. Each enquiry is routed into our internal CRM where we qualify it, prepare a proposal and book a strategy call.</p>
+    </div>
+    <div class="purpose-card">
+      <div class="purpose-num">03 — Advertising</div>
+      <h3>Google Ads &amp; Google Ads API</h3>
+      <p>We run Google Ads campaigns to reach UK businesses that may benefit from our services. We use the <strong>Google Ads API</strong> only to manage, report on and optimise our own advertising accounts and the advertising accounts of our direct clients — never resold, never exposed to third parties. See the <a href="/privacy.html">Privacy Policy</a> for full detail.</p>
+    </div>
+  </div>
+</section>
+
+<div class="values-section">
+  <div class="values-inner">
+    <div class="section-label">How we work</div>
+    <h2 class="section-heading">Four principles<br>we never break.</h2>
+    <p class="section-sub">These are the same rules we apply to our own company. They are what keep the work honest and the relationships long.</p>
+    <div class="values-grid">
+      <div class="value-item"><div class="num">01</div><h3>Fixed scope, fixed price</h3><p>Every project is scoped and priced before we start. No hourly billing, no surprise invoices, no scope drift.</p></div>
+      <div class="value-item"><div class="num">02</div><h3>One stack, one owner</h3><p>Website, CRM, automation, ads — all built and run by us. One team accountable for the whole system.</p></div>
+      <div class="value-item"><div class="num">03</div><h3>Own your stack</h3><p>You own your domain, your data and your integrations. Nothing is locked away from you.</p></div>
+      <div class="value-item"><div class="num">04</div><h3>Honest advice</h3><p>If a service would not give you a return, we say so. We would rather lose a sale than ship work you do not need.</p></div>
+    </div>
+  </div>
 </div>
-<div class="happy-clients section">
-  <div class="container"><div class="row">
-    <div class="col-lg-12"><div class="section-heading">
-      <h2>Our 4 Steps <em>To Success</em> &amp; <span>Happy Clients</span></h2>
-      <div class="line-dec"></div>
-      <p>Every client goes through the same proven process. No shortcuts, no surprises.</p>
-    </div></div>
-    <div class="col-lg-12"><div class="naccs"><div class="tabs"><div class="row">
-      <div class="col-lg-12"><div class="menu">
-        <div class="active"><span>Strategy Call</span></div>
-        <div><span>Build &amp; Launch</span></div>
-        <div><span>Automation Setup</span></div>
-        <div class="last-item"><span>Grow &amp; Scale</span></div>
-      </div></div>
-      <div class="col-lg-12"><ul class="nacc">
-        <li class="active"><div><div class="row">
-          <div class="col-lg-7">
-            <h4>Free 30-Minute Strategy Call</h4>
-            <div class="line-dec"></div>
-            <p>We start with a free call where we look at your business, your current online presence, and your goals. We tell you honestly what would make the biggest difference and what would be a waste of money. No hard sell, no obligation.</p>
-            <div class="info"><span>Honest Advice</span><span>No Obligation</span><span>Business Audit</span><span class="last-span">Clear Plan</span></div>
-            <p>By the end of the call you will have a clear picture of exactly what we would do for you and what it would cost.</p>
-          </div>
-          <div class="col-lg-5 align-self-center"><img src="assets/images/happyclient-01.jpg" alt="strategy call digital marketing"></div>
-        </div></div></li>
-        <li><div><div class="row">
-          <div class="col-lg-7">
-            <h4>Website Built &amp; Live in 48 Hours</h4>
-            <div class="line-dec"></div>
-            <p>Once we agree a plan, we move fast. Most standard websites are live within 48 hours. We handle everything including design, copy, SEO setup, Google Analytics, and Search Console. You just approve and go.</p>
-            <div class="info"><span>Fast Delivery</span><span>SEO Ready</span><span>Mobile First</span><span class="last-span">Analytics Live</span></div>
-            <p>You will have a professional, fast-loading site that ranks on Google and converts visitors into enquiries from day one.</p>
-          </div>
-          <div class="col-lg-5 align-self-center"><img src="assets/images/happyclient-01.jpg" alt="website build and launch"></div>
-        </div></div></li>
-        <li><div><div class="row">
-          <div class="col-lg-7">
-            <h4>Automation Wired In</h4>
-            <div class="line-dec"></div>
-            <p>We connect your enquiry forms, email, WhatsApp and calendar into automated workflows. Every new enquiry gets an instant reply, a quote is generated, and a follow-up is scheduled without you touching it.</p>
-            <div class="info"><span>Auto-Reply</span><span>Quote Generation</span><span>Booking System</span><span class="last-span">Follow-Ups</span></div>
-            <p>Most clients save 10 or more hours a week within the first month. That time goes back into doing the actual work.</p>
-          </div>
-          <div class="col-lg-5 align-self-center"><img src="assets/images/happyclient-01.jpg" alt="business automation setup"></div>
-        </div></div></li>
-        <li><div><div class="row">
-          <div class="col-lg-7">
-            <h4>Grow With SEO, Ads &amp; AI</h4>
-            <div class="line-dec"></div>
-            <p>Once the foundations are in place, we focus on growth. SEO builds organic traffic month by month. Google Ads brings in leads immediately. AI chatbots capture and qualify enquiries 24/7. Monthly reports track every result.</p>
-            <div class="info"><span>SEO Growth</span><span>Google Ads</span><span>AI Chatbot</span><span class="last-span">Monthly Reports</span></div>
-            <p>The longer the system runs, the more it compounds. That is the passive income engine working for you.</p>
-          </div>
-          <div class="col-lg-5 align-self-center"><img src="assets/images/happyclient-01.jpg" alt="grow with SEO and Google Ads"></div>
-        </div></div></li>
-      </ul></div>
-    </div></div></div></div>
-  </div></div>
+
+<div class="cta-band">
+  <h2>Ready to see what this<br>could look like for <em>your</em> business?</h2>
+  <p>Book a free 30-minute strategy call. We'll tell you exactly what we'd build and what it costs.</p>
+  <a href="/#contact" class="btn-primary">Book a Free Call</a>
 </div>
-<div class="cta section">
-  <div class="container"><div class="row">
-    <div class="col-lg-8"><h4>Ready to Build a Business That Grows Without You?<br>No Obligation. Let's Talk.</h4></div>
-    <div class="col-lg-4"><div class="main-button"><a href="index.html#contact">Book a Free Call</a></div></div>
-  </div></div>
-</div>
-<footer><div class="container"><div class="col-lg-12">
-  <p>Copyright &copy; 2026 <a href="index.html">Carpe DM Strategies Ltd</a>. Company No. 14900297. All rights reserved.</p>
-</div></div></footer>
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/js/isotope.min.js"></script>
-<script src="assets/js/owl-carousel.js"></script>
-<script src="assets/js/tabs.js"></script>
-<script src="assets/js/popup.js"></script>
-<script src="assets/js/custom.js"></script>
+
+<footer>
+  <div class="footer-inner">
+    <p>© 2026 Carpe DM Strategies Ltd · Company No. 14900297 · Registered office: 19 Ravenscroft Crescent, London, SE9 4LL, UK</p>
+    <ul class="footer-links">
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/privacy.html">Privacy</a></li>
+      <li><a href="/terms.html">Terms</a></li>
+      <li><a href="mailto:info@carpedmstrategies.co.uk">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
 </body>
 </html>
