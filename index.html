@@ -8,12 +8,13 @@
   <meta name="keywords" content="trades business website London, business automation small business, CRM for trades, web design trades, SEO trades business, job management system">
   <meta name="author" content="Carpe DM Strategies Ltd">
   <link rel="canonical" href="https://www.carpedmstrategies.co.uk/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.carpedmstrategies.co.uk/">
   <meta property="og:title" content="Carpe DM Strategies | Built for Trades Businesses">
   <meta property="og:description" content="Bespoke websites, automation and growth systems for trades businesses. We build it. You run your business.">
   <meta name="twitter:card" content="summary_large_image">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Carpe DM Strategies Ltd","url":"https://www.carpedmstrategies.co.uk","description":"Bespoke websites, automation and growth systems for trades businesses and small companies.","address":{"@type":"PostalAddress","streetAddress":"246 Dunkery Road","addressLocality":"London","postalCode":"SE9 4HW","addressCountry":"GB"},"email":"info@carpedmstrategies.co.uk","telephone":"+442030519579","areaServed":"GB","priceRange":"£££"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Carpe DM Strategies Ltd","legalName":"Carpe DM Strategies Ltd","url":"https://www.carpedmstrategies.co.uk","description":"Bespoke websites, automation and growth systems for trades businesses and small companies.","taxID":"14900297","identifier":{"@type":"PropertyValue","propertyID":"UK Companies House","value":"14900297"},"address":{"@type":"PostalAddress","streetAddress":"19 Ravenscroft Crescent","addressLocality":"London","postalCode":"SE9 4LL","addressCountry":"GB"},"email":"info@carpedmstrategies.co.uk","telephone":"+442030519579","areaServed":"GB","priceRange":"£££","foundingDate":"2023-05-29"}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -61,13 +62,13 @@
     .nav-cta { background: var(--text-dark) !important; color: var(--white) !important; padding: 9px 22px; border-radius: 5px; font-size: 13.5px !important; letter-spacing: 0.03em !important; transition: opacity 0.2s !important; }
     .nav-cta:hover { opacity: 0.82 !important; }
 
-    /* ── HERO ── */
-    .hero { padding: 168px 36px 80px; max-width: var(--max-width); margin: 0 auto; }
-    .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue-dark); margin-bottom: 32px; }
+    /* ── HERO — trust bar now sits flush to bottom so it's always above the fold ── */
+    .hero { padding: 140px 36px 48px; max-width: var(--max-width); margin: 0 auto; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue-dark); margin-bottom: 28px; }
     .hero-eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--blue); }
-    .hero h1 { font-family: var(--font-display); font-size: clamp(48px, 7vw, 96px); line-height: 1.0; letter-spacing: -0.01em; font-weight: 400; color: var(--text-dark); max-width: 860px; margin-bottom: 32px; }
+    .hero h1 { font-family: var(--font-display); font-size: clamp(44px, 6.4vw, 88px); line-height: 1.0; letter-spacing: -0.01em; font-weight: 400; color: var(--text-dark); max-width: 860px; margin-bottom: 28px; }
     .hero h1 em { font-style: italic; font-weight: 400; color: var(--blue-dark); }
-    .hero-sub { font-size: 17px; font-weight: 300; color: var(--text-mid); max-width: 520px; line-height: 1.75; margin-bottom: 48px; }
+    .hero-sub { font-size: 17px; font-weight: 300; color: var(--text-mid); max-width: 520px; line-height: 1.75; margin-bottom: 40px; }
     .hero-actions { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
     .btn-primary { background: var(--text-dark); color: var(--white); padding: 14px 30px; border-radius: 5px; font-size: 14px; font-weight: 400; letter-spacing: 0.04em; text-decoration: none; transition: opacity 0.2s, transform 0.15s; display: inline-block; }
     .btn-primary:hover { opacity: 0.82; transform: translateY(-1px); }
@@ -75,10 +76,9 @@
     .btn-secondary:hover { color: var(--text-dark); }
     .btn-secondary::after { content: '→'; transition: transform 0.2s; }
     .btn-secondary:hover::after { transform: translateX(4px); }
-    .hero-rule { width: 100%; height: 1px; background: var(--border); margin-top: 80px; }
 
-    /* ── TRUST BAR — infinite marquee ── */
-    .trust-bar { background: var(--off-white); padding: 14px 0; border-bottom: 1px solid var(--border); overflow: hidden; }
+    /* ── TRUST BAR — sits flush below hero, acts as the hero/section divider ── */
+    .trust-bar { background: var(--off-white); padding: 14px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); overflow: hidden; }
     .trust-track { display: flex; width: max-content; animation: marquee 32s linear infinite; }
     .trust-track:hover { animation-play-state: paused; }
     .trust-set { display: flex; align-items: center; gap: 0; }
@@ -169,8 +169,9 @@
     .contact-left h2 { font-family: var(--font-display); font-size: clamp(32px, 3.5vw, 50px); font-weight: 400; line-height: 1.1; margin-bottom: 20px; }
     .contact-left p { font-size: 15px; font-weight: 300; color: var(--text-mid); line-height: 1.75; margin-bottom: 40px; }
     .contact-detail { display: flex; flex-direction: column; gap: 14px; }
-    .contact-detail a { font-size: 14px; color: var(--text-mid); text-decoration: none; display: flex; align-items: center; gap: 12px; transition: color 0.2s; }
+    .contact-detail a, .contact-detail .addr { font-size: 14px; color: var(--text-mid); text-decoration: none; display: flex; align-items: flex-start; gap: 12px; transition: color 0.2s; line-height: 1.55; }
     .contact-detail a:hover { color: var(--text-dark); }
+    .contact-detail .addr { color: var(--text-mid); }
     .c-icon { width: 34px; height: 34px; background: var(--light-grey); border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
     form { display: flex; flex-direction: column; gap: 12px; }
     form input, form textarea, form select { width: 100%; padding: 13px 16px; border: 1px solid var(--border); border-radius: 5px; font-family: var(--font-body); font-size: 14px; font-weight: 300; color: var(--text-dark); background: var(--white); outline: none; transition: border-color 0.2s; -webkit-appearance: none; }
@@ -182,13 +183,14 @@
     /* ── FOOTER ── */
     footer { background: var(--text-dark); padding: 36px; }
     .footer-inner { max-width: var(--max-width); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-    .footer-inner p { font-size: 12.5px; color: rgba(255,255,255,0.35); font-weight: 300; }
+    .footer-inner p { font-size: 12.5px; color: rgba(255,255,255,0.35); font-weight: 300; line-height: 1.65; }
     .footer-links { display: flex; gap: 24px; list-style: none; }
     .footer-links a { font-size: 12.5px; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: rgba(255,255,255,0.7); }
 
     /* ── TABLET 900px ── */
     @media (max-width: 900px) {
+      .hero { padding: 120px 36px 40px; }
       .services-grid { grid-template-columns: 1fr 1fr; }
       .service-card { border-bottom: 1px solid var(--border); border-right: none; }
       .service-card:nth-child(odd) { border-right: 1px solid var(--border); }
@@ -209,8 +211,8 @@
       .nav-inner { padding: 0 20px; }
       .nav-links { display: none; }
       .nav-cta-mobile { display: flex !important; }
-      .hero { padding: 110px 20px 56px; }
-      .hero h1 { font-size: clamp(42px, 11vw, 56px); }
+      .hero { padding: 100px 20px 32px; }
+      .hero h1 { font-size: clamp(40px, 11vw, 54px); }
       .hero-sub { font-size: 15px; }
       .section { padding: 64px 20px; }
       .how-section { padding: 64px 20px; }
@@ -275,6 +277,7 @@
       <li><a href="#services">Services</a></li>
       <li><a href="#how">Process</a></li>
       <li><a href="#addons">What's Included</a></li>
+      <li><a href="/about.html">About</a></li>
       <li><a href="#contact" class="nav-cta">Book a Call</a></li>
     </ul>
     <a href="#contact" class="nav-cta nav-cta-mobile" style="display:none;background:var(--text-dark);color:var(--white);padding:9px 18px;border-radius:5px;font-size:13px;font-weight:400;text-decoration:none;letter-spacing:0.03em;">Book a Call</a>
@@ -289,7 +292,6 @@
     <a href="#contact" class="btn-primary">Book a Free Call</a>
     <a href="#services" class="btn-secondary">See what we do</a>
   </div>
-  <div class="hero-rule"></div>
 </section>
 
 <div class="trust-bar">
@@ -505,7 +507,7 @@
       <div class="contact-detail">
         <a href="tel:+442030519579"><span class="c-icon">📞</span>+44 20 3051 9579</a>
         <a href="mailto:info@carpedmstrategies.co.uk"><span class="c-icon">✉️</span>info@carpedmstrategies.co.uk</a>
-        <a href="#"><span class="c-icon">📍</span>London, UK</a>
+        <div class="addr"><span class="c-icon">📍</span><span>Carpe DM Strategies Ltd<br>19 Ravenscroft Crescent, London, SE9 4LL<br>United Kingdom · Company No. 14900297</span></div>
       </div>
     </div>
     <div class="contact-right">
@@ -533,10 +535,11 @@
 
 <footer>
   <div class="footer-inner">
-    <p>© 2026 Carpe DM Strategies Ltd · Company No. 14900297 · London, UK</p>
+    <p>© 2026 Carpe DM Strategies Ltd · Company No. 14900297 · Registered office: 19 Ravenscroft Crescent, London, SE9 4LL, UK</p>
     <ul class="footer-links">
-      <li><a href="/privacy">Privacy</a></li>
-      <li><a href="/terms">Terms</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/privacy.html">Privacy</a></li>
+      <li><a href="/terms.html">Terms</a></li>
       <li><a href="mailto:info@carpedmstrategies.co.uk">Contact</a></li>
     </ul>
   </div>
