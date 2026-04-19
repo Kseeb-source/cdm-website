@@ -1,94 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<title>FAQs | Carpe DM Strategies - Digital Marketing Agency London</title>
-<meta name="description" content="Frequently asked questions about Carpe DM Strategies services including websites, automation, SEO, Google Ads and AI chatbots for small businesses in London.">
-<link rel="canonical" href="https://www.carpedmstrategies.co.uk/faqs.html">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long does it take to build a website?","acceptedAnswer":{"@type":"Answer","text":"Most standard websites are live within 48 hours of sign-off. More complex sites take 5-7 days."}},{"@type":"Question","name":"Do I need to sign a long contract?","acceptedAnswer":{"@type":"Answer","text":"No. All services are month-to-month. Cancel anytime with 30 days notice. No lock-ins, no penalties."}},{"@type":"Question","name":"How much does business automation cost?","acceptedAnswer":{"@type":"Answer","text":"Automation packages start from 299 pounds per month. Most clients save more than that in time within the first month."}},{"@type":"Question","name":"How long does SEO take to work?","acceptedAnswer":{"@type":"Answer","text":"Most clients see measurable ranking improvements within 60-90 days. Significant traffic growth typically comes at the 3-6 month mark."}}]}</script>
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/fontawesome.css">
-<link rel="stylesheet" href="assets/css/templatemo-tale-seo-agency.css">
-<link rel="stylesheet" href="assets/css/owl.css">
-<link rel="stylesheet" href="assets/css/animate.css">
-<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQs | Carpe DM Strategies — Straight Answers for UK Service Businesses</title>
+  <meta name="description" content="Frequently asked questions about Carpe DM Strategies — websites, automation, SEO, Google Ads and AI chatbots for trades and service businesses in the UK.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://www.carpedmstrategies.co.uk/faqs.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long does it take to build a website?","acceptedAnswer":{"@type":"Answer","text":"Most standard websites are live within 48 hours of sign-off. More complex sites take 5-7 days."}},{"@type":"Question","name":"Do I need to sign a long contract?","acceptedAnswer":{"@type":"Answer","text":"No. All services are month-to-month. Cancel anytime with 30 days notice. No lock-ins, no penalties."}},{"@type":"Question","name":"How much does business automation cost?","acceptedAnswer":{"@type":"Answer","text":"Automation packages start from 299 pounds per month. Most clients save more than that in time within the first month."}},{"@type":"Question","name":"How long does SEO take to work?","acceptedAnswer":{"@type":"Answer","text":"Most clients see measurable ranking improvements within 60-90 days. Significant traffic growth typically comes at the 3-6 month mark."}},{"@type":"Question","name":"Can you work with my existing website?","acceptedAnswer":{"@type":"Answer","text":"Yes. We can add SEO, automation and chatbots to most existing sites. If your current site is holding you back technically we will tell you honestly."}},{"@type":"Question","name":"Do you work with businesses outside London?","acceptedAnswer":{"@type":"Answer","text":"Yes. We work remotely with clients across the UK via email, WhatsApp and video call."}}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --white: #FFFFFF; --off-white: #F8F7F4; --light-grey: #F0EFEb; --mid-grey: #E0DED8;
+      --text-dark: #16140F; --text-mid: #4A4840; --text-light: #918E86;
+      --blue: #00C4F0; --blue-dark: #0092B8; --purple: #6C47FF; --border: #E4E2DC;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --max-width: 1160px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--white); color: var(--text-dark); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+    .logo-mark { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-icon { display: block; width: 48px; height: 48px; animation: coinSpin 5s linear infinite; }
+    @keyframes coinSpin { from { transform: perspective(500px) rotateY(0deg); } to { transform: perspective(500px) rotateY(360deg); } }
+    .logo-divider { width: 1px; height: 32px; background: var(--border); flex-shrink: 0; }
+    .logo-words { display: flex; flex-direction: column; gap: 3px; }
+    .logo-cdm { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--text-dark); letter-spacing: 4px; line-height: 1; }
+    .logo-sub { font-size: 7.5px; font-weight: 300; color: var(--text-light); letter-spacing: 4px; line-height: 1; text-transform: uppercase; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,252,0.94); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); height: 70px; display: flex; align-items: center; }
+    .nav-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 36px; width: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+    .nav-links a { font-size: 13.5px; font-weight: 400; color: var(--text-mid); text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text-dark); }
+    .nav-links a.active { color: var(--text-dark); font-weight: 500; }
+    .nav-cta { background: var(--text-dark) !important; color: var(--white) !important; padding: 9px 22px; border-radius: 5px; font-size: 13.5px !important; letter-spacing: 0.03em !important; transition: opacity 0.2s !important; }
+    .nav-cta:hover { opacity: 0.82 !important; }
+
+    .page-hero { padding: 150px 36px 60px; max-width: var(--max-width); margin: 0 auto; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue-dark); margin-bottom: 24px; }
+    .hero-eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--blue); }
+    .page-hero h1 { font-family: var(--font-display); font-size: clamp(48px, 7vw, 88px); line-height: 1.0; letter-spacing: -0.01em; font-weight: 400; color: var(--text-dark); max-width: 860px; margin-bottom: 28px; }
+    .page-hero h1 em { font-style: italic; color: var(--blue-dark); }
+    .page-hero .lead { font-size: 17px; font-weight: 300; color: var(--text-mid); max-width: 640px; line-height: 1.75; }
+
+    .rule { width: 100%; max-width: var(--max-width); margin: 0 auto; height: 1px; background: var(--border); }
+
+    .faq-section { padding: 88px 36px; max-width: var(--max-width); margin: 0 auto; }
+    .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-dark); margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+    .section-label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--blue); }
+    .section-heading { font-family: var(--font-display); font-size: clamp(34px, 4vw, 52px); line-height: 1.1; font-weight: 400; color: var(--text-dark); margin-bottom: 20px; }
+    .section-heading em { font-style: italic; color: var(--blue-dark); }
+    .section-sub { font-size: 16px; font-weight: 300; color: var(--text-mid); max-width: 640px; line-height: 1.75; margin-bottom: 56px; }
+
+    .faq-list { border-top: 1px solid var(--border); }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item details { padding: 0; }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 28px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      font-family: var(--font-display);
+      font-size: clamp(20px, 2.2vw, 26px);
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.3;
+      transition: color 0.2s;
+    }
+    .faq-item summary:hover { color: var(--blue-dark); }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-icon {
+      flex-shrink: 0;
+      width: 22px; height: 22px;
+      position: relative;
+    }
+    .faq-icon::before, .faq-icon::after {
+      content: '';
+      position: absolute;
+      background: var(--text-mid);
+      transition: transform 0.25s ease;
+    }
+    .faq-icon::before { top: 50%; left: 0; width: 100%; height: 1px; transform: translateY(-50%); }
+    .faq-icon::after  { left: 50%; top: 0; height: 100%; width: 1px; transform: translateX(-50%); }
+    .faq-item details[open] .faq-icon::after { transform: translateX(-50%) rotate(90deg); opacity: 0; }
+    .faq-item details[open] summary { color: var(--blue-dark); }
+    .faq-answer {
+      padding: 0 0 32px;
+      max-width: 760px;
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.8;
+    }
+    .faq-answer p + p { margin-top: 12px; }
+
+    .cta-band { padding: 88px 36px; text-align: center; border-bottom: 1px solid var(--border); border-top: 1px solid var(--border); background: var(--off-white); }
+    .cta-band h2 { font-family: var(--font-display); font-size: clamp(32px, 4vw, 54px); font-weight: 400; color: var(--text-dark); line-height: 1.1; margin-bottom: 16px; }
+    .cta-band h2 em { font-style: italic; color: var(--blue-dark); }
+    .cta-band p { font-size: 16px; font-weight: 300; color: var(--text-mid); margin-bottom: 36px; }
+    .btn-primary { background: var(--text-dark); color: var(--white); padding: 14px 30px; border-radius: 5px; font-size: 14px; font-weight: 400; letter-spacing: 0.04em; text-decoration: none; display: inline-block; transition: opacity 0.2s, transform 0.15s; }
+    .btn-primary:hover { opacity: 0.82; transform: translateY(-1px); }
+
+    footer { background: var(--text-dark); padding: 36px; }
+    .footer-inner { max-width: var(--max-width); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-inner p { font-size: 12.5px; color: rgba(255,255,255,0.35); font-weight: 300; line-height: 1.65; }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { font-size: 12.5px; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+
+    @media (max-width: 640px) {
+      .nav-inner { padding: 0 20px; }
+      .nav-links { display: none; }
+      .page-hero { padding: 110px 20px 48px; }
+      .faq-section, .cta-band { padding: 64px 20px; }
+      .faq-item summary { padding: 22px 0; gap: 16px; }
+      .faq-answer { padding-bottom: 24px; }
+      footer { padding: 28px 20px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
+  </style>
 </head>
 <body>
-<div id="js-preloader" class="js-preloader"><div class="preloader-inner"><span class="dot"></span><div class="dots"><span></span><span></span><span></span></div></div></div>
-<div class="pre-header" id="top">
-  <div class="container"><div class="row">
-    <div class="col-lg-8 col-sm-9"><div class="left-info"><ul>
-      <li><a href="tel:+442030518478"><i class="fa fa-phone"></i>+44 20 3051 8478</a></li>
-      <li><a href="mailto:kerim@carpedmstrategies.co.uk"><i class="fa fa-envelope"></i>kerim@carpedmstrategies.co.uk</a></li>
-      <li><a href="#"><i class="fa fa-map-marker"></i>London, UK</a></li>
-    </ul></div></div>
-    <div class="col-lg-4 col-sm-3"><div class="social-icons"><ul>
-      <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-      <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-    </ul></div></div>
-  </div></div>
-</div>
-<header class="header-area header-sticky">
-  <div class="container"><div class="row"><div class="col-12"><nav class="main-nav">
-    <a href="index.html" class="logo"><img src="assets/images/logo.svg" alt="Carpe DM Strategies" style="max-width:160px;height:40px;"></a>
-    <ul class="nav">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#services">Services</a></li>
-      <li><a href="index.html#projects">Case Studies</a></li>
-      <li class="has-sub"><a href="javascript:void(0)">Pages</a><ul class="sub-menu"><li><a href="about.html">About Us</a></li><li><a href="faqs.html">FAQs</a></li></ul></li>
-      <li><a href="index.html#infos">Why Us</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo-mark" aria-label="Carpe DM Strategies home">
+      <svg class="logo-icon" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="28" cy="28" r="26" fill="#F0EFEb" stroke="#E4E2DC" stroke-width="0.8"/>
+        <path d="M 28,4 A 24,24 0 1,1 28,52" fill="none" stroke="#00C4F0" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M 28,13 A 15,15 0 1,1 28,43" fill="none" stroke="#6C47FF" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M 28,22 A 6,6 0 1,1 28,34" fill="none" stroke="#16140F" stroke-width="1.4" stroke-linecap="round"/>
+        <circle cx="52" cy="28" r="2.5" fill="#00C4F0"/>
+        <line x1="49.5" y1="28" x2="44" y2="22" stroke="#00C4F0" stroke-width="1.1" opacity="0.55" stroke-linecap="round"/>
+        <line x1="49.5" y1="28" x2="44" y2="28" stroke="#00C4F0" stroke-width="1.3" opacity="0.8" stroke-linecap="round"/>
+        <line x1="49.5" y1="28" x2="44" y2="34" stroke="#00C4F0" stroke-width="1.1" opacity="0.55" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-divider"></div>
+      <div class="logo-words">
+        <span class="logo-cdm">CDM</span>
+        <span class="logo-sub">Strategies</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/#contact" class="nav-cta">Book a Call</a></li>
     </ul>
-    <a class="menu-trigger"><span>Menu</span></a>
-  </nav></div></div></div>
-</header>
-<div class="page-heading">
-  <div class="container"><div class="row">
-    <div class="col-lg-7 align-self-center"><div class="caption header-text">
-      <h6>FREQUENTLY ASKED QUESTIONS</h6>
-      <div class="line-dec"></div>
-      <h4>Got a Question? <em>We Have</em> the Answer</h4>
-      <p>Straight answers about working with Carpe DM Strategies. No waffle.</p>
-      <div class="main-button"><a href="index.html#contact">Still Have Questions?</a></div>
-      <span>or</span>
-      <div class="second-button"><a href="about.html">About Us</a></div>
-    </div></div>
-    <div class="col-lg-5 align-self-center"><img src="assets/images/faqs-image.jpg" alt="FAQs Carpe DM Strategies"></div>
-  </div></div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="hero-eyebrow">Frequently asked</div>
+  <h1>Straight answers,<br><em>no waffle.</em></h1>
+  <p class="lead">The questions we hear most often from trades and service businesses considering working with us. If something here is not answered, book a call and we'll cover it directly.</p>
+</section>
+
+<div class="rule"></div>
+
+<section class="faq-section">
+  <div class="section-label">Common questions</div>
+  <h2 class="section-heading">Everything you need<br>to know <em>before we start.</em></h2>
+  <p class="section-sub">We do not lock anyone into long contracts or surprise invoices. The answers below are the same ones we give on strategy calls.</p>
+
+  <div class="faq-list">
+    <div class="faq-item"><details>
+      <summary>How long does it take to build a website?<span class="faq-icon" aria-hidden="true"></span></summary>
+      <div class="faq-answer">
+        <p>Most standard websites are live within 48 hours of sign-off. More complex sites with custom features, integrations or multiple page types typically take 5 to 7 days. You get a clear timeline in writing before we start — no drift.</p>
+      </div>
+    </details></div>
+
+    <div class="faq-item"><details>
+      <summary>Do I need to sign a long contract?<span class="faq-icon" aria-hidden="true"></span></summary>
+      <div class="faq-answer">
+        <p>No. All services are month-to-month. You can cancel anytime with 30 days notice. No lock-ins, no cancellation fees, no penalties. You own your domain, your data and your integrations from day one.</p>
+      </div>
+    </details></div>
+
+    <div class="faq-item"><details>
+      <summary>How much does business automation cost?<span class="faq-icon" aria-hidden="true"></span></summary>
+      <div class="faq-answer">
+        <p>Automation packages start from &pound;299 per month, depending on the complexity of your workflows — enquiry capture, lead qualification, CRM updates, quote follow-up, review requests and so on.</p>
+        <p>Most clients save more than the cost in administrative time within the first month.</p>
+      </div>
+    </details></div>
+
+    <div class="faq-item"><details>
+      <summary>How long does SEO take to work?<span class="faq-icon" aria-hidden="true"></span></summary>
+      <div class="faq-answer">
+        <p>Most clients see measurable ranking improvements within 60 to 90 days. Significant traffic growth typically comes at the 3 to 6 month mark as content compounds and authority builds. Anyone promising overnight rankings is either paying for ads or not telling the truth.</p>
+      </div>
+    </details></div>
+
+    <div class="faq-item"><details>
+      <summary>Can you work with my existing website?<span class="faq-icon" aria-hidden="true"></span></summary>
+      <div class="faq-answer">
+        <p>Yes. We can add SEO, automation, lead capture and chatbots to most existing sites. If your current site is holding you back technically — slow, not mobile-friendly, poor architecture — we will tell you honestly and give you the options. No pressure to rebuild if it's not needed.</p>
+      </div>
+    </details></div>
+
+    <div class="faq-item"><details>
+      <summary>Do you work with businesses outside London?<span class="faq-icon" aria-hidden="true"></span></summary>
+      <div class="faq-answer">
+        <p>Yes — we work remotely with clients across the United Kingdom. Communication runs on email, WhatsApp and video call. Location does not matter. The stack is the same whether you're in London, Manchester or Aberdeen.</p>
+      </div>
+    </details></div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2>Still have a question<br>we have not <em>answered?</em></h2>
+  <p>Book a free 30-minute strategy call. We'll answer anything and tell you exactly what we'd build and what it costs.</p>
+  <a href="/#contact" class="btn-primary">Book a Free Call</a>
 </div>
-<div class="more-info-content section">
-  <div class="container"><div class="row"><div class="col-lg-12"><div class="more-info"><div class="row">
-    <div class="col-lg-6 align-self-center"><div class="left-image"><img src="assets/images/left-infos.jpg" alt="digital marketing FAQs London"></div></div>
-    <div class="col-lg-6 align-self-center">
-      <div class="section-heading"><h2>Common <em>Questions</em> &amp; <span>Honest Answers</span></h2><div class="line-dec"></div></div>
-      <div class="faq-item" style="margin-bottom:20px;"><h4 style="font-size:16px;margin-bottom:8px;">How long does it take to build a website?</h4><p>Most standard websites are live within 48 hours of sign-off. More complex sites with custom features take 5-7 days. We will always give you a clear timeline before we start.</p></div>
-      <div class="faq-item" style="margin-bottom:20px;"><h4 style="font-size:16px;margin-bottom:8px;">Do I need to sign a long contract?</h4><p>No. All services are month-to-month. You can cancel anytime with 30 days notice. No lock-ins, no cancellation fees, no penalties.</p></div>
-      <div class="faq-item" style="margin-bottom:20px;"><h4 style="font-size:16px;margin-bottom:8px;">How much does business automation cost?</h4><p>Automation packages start from &pound;299/month depending on the complexity of your workflows. Most clients save more than that in time within the first month alone.</p></div>
-      <div class="faq-item" style="margin-bottom:20px;"><h4 style="font-size:16px;margin-bottom:8px;">How long does SEO take to work?</h4><p>Most clients see measurable ranking improvements within 60-90 days. Significant traffic growth typically comes at the 3-6 month mark as content compounds.</p></div>
-      <div class="faq-item" style="margin-bottom:20px;"><h4 style="font-size:16px;margin-bottom:8px;">Can you work with my existing website?</h4><p>Yes. We can add SEO, automation and chatbots to most existing sites. If your current site is holding you back technically, we will tell you honestly and give you options.</p></div>
-      <div class="faq-item"><h4 style="font-size:16px;margin-bottom:8px;">Do you work with businesses outside London?</h4><p>Absolutely. We work remotely with clients across the UK. Most communication is via email, WhatsApp and video call. Location does not matter.</p></div>
-    </div>
-  </div></div></div></div></div>
-</div>
-<div class="cta section">
-  <div class="container"><div class="row">
-    <div class="col-lg-8"><h4>Still Have Questions? 30-Minute Call. Free. No Obligation.</h4></div>
-    <div class="col-lg-4"><div class="main-button"><a href="index.html#contact">Book a Free Call</a></div></div>
-  </div></div>
-</div>
-<footer><div class="container"><div class="col-lg-12">
-  <p>Copyright &copy; 2026 <a href="index.html">Carpe DM Strategies Ltd</a>. Company No. 14900297. All rights reserved.</p>
-</div></div></footer>
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/js/isotope.min.js"></script>
-<script src="assets/js/owl-carousel.js"></script>
-<script src="assets/js/tabs.js"></script>
-<script src="assets/js/popup.js"></script>
-<script src="assets/js/custom.js"></script>
+
+<footer>
+  <div class="footer-inner">
+    <p>© 2026 Carpe DM Strategies Ltd · Company No. 14900297 · Registered office: 19 Ravenscroft Crescent, London, SE9 4LL, UK</p>
+    <ul class="footer-links">
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/faqs.html">FAQs</a></li>
+      <li><a href="/privacy.html">Privacy</a></li>
+      <li><a href="/terms.html">Terms</a></li>
+      <li><a href="mailto:info@carpedmstrategies.co.uk">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
 </body>
 </html>
