@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dough One — Artisan Street Pizza</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --fire: #E8470A;
+    --ember: #F7A325;
+    --dough: #F5EDD6;
+    --char: #1A1209;
+    --smoke: #3D3228;
+    --cream: #FAF6EE;
+    --ash: #8C7B6A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--char);
+    color: var(--dough);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* Custom cursor */
+  .cursor {
+    width: 12px; height: 12px;
+    background: var(--fire);
+    border-radius: 50%;
+    position: fixed;
+    top: 0; left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.15s ease;
+    mix-blend-mode: difference;
+  }
+  .cursor-trail {
+    width: 40px; height: 40px;
+    border: 1px solid var(--ember);
+    border-radius: 50%;
+    position: fixed;
+    top: 0; left: 0;
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.4s ease, opacity 0.4s;
+    opacity: 0.4;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    padding: 20px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: linear-gradient(to bottom, rgba(26,18,9,0.95), transparent);
+    backdrop-filter: blur(0px);
+    transition: backdrop-filter 0.3s, background 0.3s;
+  }
+  nav.scrolled {
+    background: rgba(26,18,9,0.96);
+    backdrop-filter: blur(12px);
+  }
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 3px;
+    color: var(--dough);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--fire); }
+  .nav-links {
+    display: flex; gap: 36px; list-style: none;
+  }
+  .nav-links a {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ash);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--dough); }
+  .nav-cta {
+    background: var(--fire);
+    color: var(--dough) !important;
+    padding: 10px 22px !important;
+    border-radius: 2px;
+    font-weight: 500 !important;
+    letter-spacing: 1.5px !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--ember) !important; color: var(--char) !important; }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-left {
+    display: flex; flex-direction: column;
+    justify-content: center;
+    padding: 140px 64px 80px;
+    position: relative; z-index: 2;
+  }
+  .hero-tag {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--fire);
+    margin-bottom: 20px;
+    font-weight: 500;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .hero-tag::before {
+    content: '';
+    display: block; width: 32px; height: 1px;
+    background: var(--fire);
+  }
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(80px, 9vw, 140px);
+    line-height: 0.9;
+    letter-spacing: 2px;
+    color: var(--dough);
+    margin-bottom: 28px;
+  }
+  h1 em {
+    font-style: normal;
+    color: var(--fire);
+    display: block;
+  }
+  .hero-sub {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--ash);
+    max-width: 340px;
+    line-height: 1.7;
+    margin-bottom: 48px;
+  }
+  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--fire);
+    color: var(--dough);
+    padding: 16px 36px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    border: none; cursor: none;
+    transition: all 0.25s;
+    position: relative; overflow: hidden;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  }
+  .btn-primary:hover { background: var(--ember); color: var(--char); transform: translateY(-2px); }
+  .btn-outline {
+    border: 1px solid var(--smoke);
+    color: var(--ash);
+    padding: 16px 36px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.25s;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  }
+  .btn-outline:hover { border-color: var(--ash); color: var(--dough); }
+  .hero-right {
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .pizza-visual {
+    width: 520px; height: 520px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 35%, #6B3A1F 0%, #3D1F0A 40%, #1A0D05 100%);
+    position: relative;
+    animation: slowSpin 30s linear infinite;
+    box-shadow:
+      0 0 80px rgba(232,71,10,0.3),
+      0 0 160px rgba(232,71,10,0.1),
+      inset 0 0 60px rgba(0,0,0,0.5);
+  }
+  .pizza-visual::before {
+    content: '';
+    position: absolute; inset: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #8B4513 0%, #5C2E0A 30%, #2D1505 70%, #150A02 100%);
+  }
+  .pizza-visual::after {
+    content: '\1F355';
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 200px;
+    filter: drop-shadow(0 0 30px rgba(232,71,10,0.5));
+    animation: counter 30s linear infinite;
+  }
+  @keyframes slowSpin { to { transform: rotate(360deg); } }
+  @keyframes counter { to { transform: rotate(-360deg); } }
+  .hero-glow {
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(232,71,10,0.15) 0%, transparent 70%);
+    top: 50%; left: 50%; transform: translate(-50%,-50%);
+    animation: pulse 4s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100% { opacity: 0.5; transform: translate(-50%,-50%) scale(1); } 50% { opacity: 1; transform: translate(-50%,-50%) scale(1.1); } }
+
+  .hero-scroll {
+    position: absolute; bottom: 40px; left: 64px;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--ash);
+  }
+  .scroll-line {
+    width: 1px; height: 48px;
+    background: linear-gradient(to bottom, var(--fire), transparent);
+    animation: scrollAnim 2s ease-in-out infinite;
+  }
+  @keyframes scrollAnim { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+  /* SECTION COMMONS */
+  section { padding: 120px 64px; }
+  .section-tag {
+    font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--fire); margin-bottom: 16px; display: flex; align-items: center; gap: 12px;
+  }
+  .section-tag::before { content: ''; width: 28px; height: 1px; background: var(--fire); }
+  h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 6vw, 88px);
+    line-height: 0.95; letter-spacing: 1px;
+    color: var(--dough);
+    margin-bottom: 56px;
+  }
+  h2 span { color: var(--fire); }
+
+  /* STRIP */
+  .strip {
+    background: var(--fire);
+    padding: 20px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .strip-inner {
+    display: inline-flex; gap: 0;
+    animation: ticker 20s linear infinite;
+  }
+  .strip-item {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 3px;
+    color: var(--char);
+    padding: 0 40px;
+    display: flex; align-items: center; gap: 40px;
+  }
+  .strip-item::after { content: '\25CF'; font-size: 8px; }
+  @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+  /* MENU */
+  #menu { background: var(--cream); }
+  #menu h2 { color: var(--char); }
+  #menu .section-tag { color: var(--fire); }
+  #menu .section-tag::before { background: var(--fire); }
+
+  .menu-tabs {
+    display: flex; gap: 4px; margin-bottom: 48px; flex-wrap: wrap;
+  }
+  .tab-btn {
+    padding: 10px 24px;
+    background: transparent;
+    border: 1px solid #D4C9B8;
+    color: var(--ash);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px; letter-spacing: 2px;
+    text-transform: uppercase; cursor: none;
+    transition: all 0.2s;
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  }
+  .tab-btn.active, .tab-btn:hover {
+    background: var(--fire); border-color: var(--fire); color: white;
+  }
+
+  .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .menu-panel { display: none; grid-template-columns: repeat(3,1fr); gap: 2px; width: 100%; }
+  .menu-panel.active { display: contents; }
+
+  .menu-card {
+    background: white;
+    padding: 32px 28px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid transparent;
+  }
+  .menu-card:hover {
+    transform: translateY(-4px);
+    border-bottom-color: var(--fire);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  }
+  .menu-card::before {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 0; height: 0;
+    border-style: solid;
+    border-width: 0 32px 32px 0;
+    border-color: transparent var(--dough) transparent transparent;
+  }
+  .card-emoji { font-size: 36px; margin-bottom: 16px; display: block; }
+  .card-name {
+    font-family: 'Fraunces', serif;
+    font-size: 20px; font-weight: 700;
+    color: var(--char);
+    margin-bottom: 8px;
+  }
+  .card-desc {
+    font-size: 13px; color: #8C7B6A;
+    line-height: 1.6; margin-bottom: 20px;
+  }
+  .card-footer { display: flex; align-items: center; justify-content: space-between; }
+  .card-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px; color: var(--fire); letter-spacing: 1px;
+  }
+  .card-badge {
+    font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+    background: var(--dough); color: var(--ash);
+    padding: 4px 10px;
+  }
+  .card-badge.hot { background: var(--fire); color: white; }
+  .card-badge.new { background: var(--ember); color: var(--char); }
+
+  /* STORY */
+  #story {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
+    background: var(--char);
+  }
+  .story-visual {
+    position: relative; aspect-ratio: 4/5;
+    background: var(--smoke);
+    overflow: hidden;
+  }
+  .story-visual-inner {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, #3D2010 0%, #1A0D05 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 180px;
+  }
+  .story-visual::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(26,18,9,0.8) 0%, transparent 50%);
+  }
+  .story-badge {
+    position: absolute; bottom: 32px; left: 32px; z-index: 2;
+    background: var(--fire);
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+    padding: 20px 28px;
+  }
+  .story-badge-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px; line-height: 1; color: var(--dough); letter-spacing: 2px;
+  }
+  .story-badge-text { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(245,237,214,0.7); }
+  .story-content p {
+    font-family: 'Fraunces', serif;
+    font-size: 18px; font-style: italic;
+    color: var(--ash); line-height: 1.8; margin-bottom: 24px;
+  }
+  .story-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+  .stat { border-left: 2px solid var(--fire); padding-left: 20px; }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 44px; color: var(--dough); letter-spacing: 2px; line-height: 1;
+  }
+  .stat-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--ash); }
+
+  /* LOCATIONS */
+  #locations { background: var(--smoke); }
+  .locations-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .location-card {
+    background: rgba(26,18,9,0.6);
+    border: 1px solid rgba(140,123,106,0.2);
+    padding: 40px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .location-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(to right, var(--fire), var(--ember));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .location-card:hover { border-color: rgba(232,71,10,0.3); transform: translateY(-4px); }
+  .location-card:hover::before { transform: scaleX(1); }
+  .loc-day {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px; letter-spacing: 3px; color: var(--fire); margin-bottom: 8px;
+  }
+  .loc-name {
+    font-family: 'Fraunces', serif;
+    font-size: 26px; font-weight: 700; color: var(--dough); margin-bottom: 8px;
+  }
+  .loc-address { font-size: 14px; color: var(--ash); margin-bottom: 16px; line-height: 1.6; }
+  .loc-time {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; letter-spacing: 1px; color: var(--ember);
+    background: rgba(247,163,37,0.1); padding: 6px 14px;
+  }
+
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+  .contact-item {
+    padding: 32px;
+    background: rgba(26,18,9,0.4);
+    border-left: 3px solid var(--fire);
+  }
+  .contact-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--fire); margin-bottom: 8px; }
+  .contact-value { font-family: 'Fraunces', serif; font-size: 20px; color: var(--dough); }
+
+  /* EVENTS */
+  #events { background: var(--char); }
+  .events-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .events-info p {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 18px; color: var(--ash); line-height: 1.8; margin-bottom: 24px;
+  }
+  .event-types { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+  .event-type {
+    padding: 20px;
+    border: 1px solid rgba(140,123,106,0.2);
+    transition: all 0.25s;
+  }
+  .event-type:hover { border-color: var(--fire); background: rgba(232,71,10,0.05); }
+  .event-type-icon { font-size: 24px; margin-bottom: 8px; display: block; }
+  .event-type-name { font-size: 14px; font-weight: 500; color: var(--dough); }
+  .event-type-desc { font-size: 12px; color: var(--ash); margin-top: 4px; }
+
+  /* FORM */
+  .quote-form { background: var(--smoke); padding: 48px; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 8px; }
+  .form-group.full { grid-column: 1 / -1; }
+  label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--ash); }
+  input, select, textarea {
+    background: rgba(26,18,9,0.6);
+    border: 1px solid rgba(140,123,106,0.25);
+    color: var(--dough);
+    padding: 14px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    transition: border-color 0.2s;
+    outline: none;
+    width: 100%;
+  }
+  input:focus, select:focus, textarea:focus { border-color: var(--fire); }
+  textarea { resize: vertical; min-height: 100px; }
+  select option { background: var(--char); }
+  .form-submit {
+    margin-top: 8px;
+    width: 100%;
+    background: var(--fire);
+    color: var(--dough);
+    border: none;
+    padding: 18px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: none;
+    transition: background 0.25s;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  }
+  .form-submit:hover { background: var(--ember); color: var(--char); }
+
+  /* FOOTER */
+  footer {
+    background: #0D0905;
+    padding: 60px 64px 40px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+  }
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px; letter-spacing: 3px; color: var(--dough);
+    margin-bottom: 12px;
+  }
+  .footer-logo span { color: var(--fire); }
+  .footer-tagline {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 15px; color: var(--ash); margin-bottom: 24px;
+  }
+  .footer-social { display: flex; gap: 12px; }
+  .social-btn {
+    width: 36px; height: 36px;
+    border: 1px solid rgba(140,123,106,0.3);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--ash); text-decoration: none; font-size: 14px;
+    transition: all 0.2s;
+  }
+  .social-btn:hover { border-color: var(--fire); color: var(--fire); }
+  .footer-col h4 {
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--fire); margin-bottom: 20px;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col a { color: var(--ash); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--dough); }
+  .footer-bottom {
+    background: #0D0905;
+    padding: 20px 64px;
+    border-top: 1px solid rgba(140,123,106,0.1);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-bottom p { font-size: 12px; color: var(--ash); }
+
+  /* ANIMATIONS */
+  .reveal {
+    opacity: 0; transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* HAMBURGER */
+  .hamburger {
+    display: none; flex-direction: column; gap: 5px;
+    cursor: none; padding: 4px; background: none; border: none; z-index: 200;
+  }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--dough); transition: all 0.3s ease; transform-origin: center; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none; position: fixed; inset: 0; z-index: 150;
+    background: rgba(26,18,9,0.98); flex-direction: column;
+    align-items: center; justify-content: center; gap: 4px;
+    backdrop-filter: blur(12px); opacity: 0; transition: opacity 0.3s;
+  }
+  .mobile-menu.open { opacity: 1; }
+  .mobile-menu a {
+    font-family: 'Bebas Neue', sans-serif; font-size: 48px; letter-spacing: 3px;
+    color: var(--dough); text-decoration: none; transition: color 0.2s; line-height: 1.2;
+  }
+  .mobile-menu a:hover { color: var(--fire); }
+  .mobile-menu .m-cta {
+    margin-top: 20px; background: var(--fire); padding: 14px 40px; font-size: 22px;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  }
+  .mobile-menu .m-cta:hover { background: var(--ember); color: var(--char) !important; }
+
+  /* TABLET */
+  @media (max-width: 1100px) {
+    .menu-grid, .menu-panel { grid-template-columns: repeat(2, 1fr); }
+    footer { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    body { cursor: auto; }
+    .cursor, .cursor-trail { display: none; }
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    #hero { grid-template-columns: 1fr; min-height: 100svh; }
+    .hero-right { display: none; }
+    .hero-left { padding: 110px 20px 80px; }
+    h1 { font-size: clamp(64px, 18vw, 100px); }
+    .hero-sub { font-size: 16px; max-width: 100%; }
+    .hero-btns { flex-direction: column; gap: 12px; }
+    .btn-primary, .btn-outline { text-align: center; padding: 16px 24px; }
+    .hero-scroll { left: 20px; bottom: 28px; }
+    section { padding: 72px 20px; }
+    h2 { font-size: clamp(44px, 13vw, 72px); margin-bottom: 36px; }
+    .strip-item { font-size: 18px; padding: 0 28px; }
+    .menu-tabs { gap: 6px; }
+    .tab-btn { padding: 9px 16px; font-size: 11px; }
+    .menu-grid, .menu-panel { grid-template-columns: 1fr; gap: 2px; }
+    .menu-card { padding: 24px 20px; }
+    #story { grid-template-columns: 1fr; gap: 0; padding: 0; }
+    #story .story-content { padding: 60px 20px; }
+    .story-visual { height: 260px; aspect-ratio: auto; width: 100%; }
+    .story-stats { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .stat-num { font-size: 32px; }
+    .locations-grid { grid-template-columns: 1fr; gap: 12px; }
+    .location-card { padding: 28px 20px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 28px; }
+    .contact-item { padding: 20px; }
+    .events-layout { grid-template-columns: 1fr; gap: 48px; }
+    .event-types { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .quote-form { padding: 28px 20px; }
+    .form-grid { grid-template-columns: 1fr; gap: 14px; }
+    footer { grid-template-columns: 1fr; gap: 36px; padding: 48px 20px 32px; }
+    .footer-logo { font-size: 36px; }
+    .footer-bottom { padding: 16px 20px; flex-direction: column; gap: 6px; text-align: center; }
+    .btn-primary, .btn-outline, .form-submit, .tab-btn { cursor: pointer; }
+  }
+  @media (max-width: 400px) {
+    h1 { font-size: 58px; }
+    .story-stats { grid-template-columns: 1fr; gap: 16px; }
+    .event-types { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-trail" id="cursorTrail"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">DOUGH<span>ONE</span></a>
+  <ul class="nav-links">
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#story">Our Story</a></li>
+    <li><a href="#locations">Find Us</a></li>
+    <li><a href="#events" class="nav-cta">Book an Event</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#menu" onclick="closeMobileMenu()">Menu</a>
+  <a href="#story" onclick="closeMobileMenu()">Our Story</a>
+  <a href="#locations" onclick="closeMobileMenu()">Find Us</a>
+  <a href="#events" class="m-cta" onclick="closeMobileMenu()">Book an Event</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Stone-baked street pizza</div>
+    <h1>FIRE.<br><em>DOUGH.</em><br>GLORY.</h1>
+    <p class="hero-sub">Artisan Neapolitan pizza cooked in a wood-fired oven, brought straight to your street corner.</p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn-primary">View the Menu</a>
+      <a href="#events" class="btn-outline">Book Your Event</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-glow"></div>
+    <div class="pizza-visual"></div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- TICKER STRIP -->
+<div class="strip">
+  <div class="strip-inner">
+    <span class="strip-item">Wood-Fired</span>
+    <span class="strip-item">Neapolitan Style</span>
+    <span class="strip-item">Street Food</span>
+    <span class="strip-item">Private Events</span>
+    <span class="strip-item">Fresh Daily Dough</span>
+    <span class="strip-item">Locally Sourced</span>
+    <span class="strip-item">Wood-Fired</span>
+    <span class="strip-item">Neapolitan Style</span>
+    <span class="strip-item">Street Food</span>
+    <span class="strip-item">Private Events</span>
+    <span class="strip-item">Fresh Daily Dough</span>
+    <span class="strip-item">Locally Sourced</span>
+  </div>
+</div>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="section-tag">What we make</div>
+  <h2>THE <span>MENU</span></h2>
+
+  <div class="menu-tabs">
+    <button class="tab-btn active" onclick="switchTab('classics')">Classics</button>
+    <button class="tab-btn" onclick="switchTab('specials')">House Specials</button>
+    <button class="tab-btn" onclick="switchTab('sides')">Sides &amp; Drinks</button>
+  </div>
+
+  <div class="menu-grid">
+    <div class="menu-panel active" id="tab-classics">
+      <div class="menu-card reveal">
+        <span class="card-emoji">&#127813;</span>
+        <div class="card-name">Margherita</div>
+        <div class="card-desc">San Marzano tomato, buffalo mozzarella, fresh basil, extra virgin olive oil</div>
+        <div class="card-footer">
+          <div class="card-price">&pound;10</div>
+          <div class="card-badge">Classic</div>
+        </div>
+      </div>
+      <div class="menu-card reveal">
+        <span class="card-emoji">&#129476;</span>
+        <div class="card-name">Marinara</div>
+        <div class="card-desc">San Marzano tomato, garlic, oregano, olive oil. The original pizza &mdash; no cheese, no fuss</div>
+        <div class="card-footer">
+          <div class="card-price">&pound;9</div>
+          <div class="card-badge">Vegan</div>
+        </div>
+      </div>
+      <div class="menu-card reveal">
+        <span class="card-emoji">&#129385;</span>
+        <div class="card-name">Pepperoni</div>
+        <div class="card-desc">Fiery nduja-spiked tomato, fior di latte, double pepperoni, fresh chilli</div>
+        <div class="card-footer">
+          <div class="card-price">&pound;13</div>
+          <div class="card-badge hot">Hot</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-panel" id="tab-specials">
+      <div class="menu-card reveal">
+        <span class="card-emoji">&#127819;</span>
+        <div class="card-name">The Dough One</div>
+        <div class="card-desc">White base, burrata, prosciutto crudo, fig jam, walnuts, aged balsamic</div>
+        <div class="card-footer">
+          <div class="card-price">&pound;16</div>
+          <div class="card-badge new">Signature</div>
+        </div>
+      </div>
+      <div class="menu-card reveal">
+        <span class="card-emoji">&#127812;</span>
+        <div class="card-name">Funghi Nero</div>
+        <div class="card-desc">Black truffle cream, mixed wild mushrooms, taleggio, fresh thyme, crispy shallots</div>
+        <div class="card-footer">
+          <div class="card-price">&pound;15</div>
+          <div class="card-badge">Veggie</div>
+        </div>
+      </div>
+      <div class="menu-card reveal">
+        <span class="card-emoji">&#129424;</span>
+        <div class="card-name">Mare e Fuoco</div>
+        <div class="card-desc">Tomato, king prawns, garlic butter, Calabrian chilli, capers, lemon zest</div>
+        <div class="card-footer">
+          <div class="card-price">&pound;17</div>
+          <div class="card-badge hot">New</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-panel" id="tab-sides">
+      <div class="menu-card reveal">
+        <span class="card-emoji">&#129472;</span>
+        <div class="card-name">Garlic Dough Balls</div>
+        <div class="card-desc">Six pillowy dough balls, garlic butter, fresh herbs, marinara dip</div>
+        <div class="card-footer">
+          <div class="card-price">&pound;6</div>
+          <div class="card-badge">Snack</div>
+        </div>
+      </div>
+      <div class="menu-card reveal">
+        <span class="card-emoji">&#129361;</span>
+        <div class="card-name">Panzanella</div>
+        <div class="card-desc">Heritage tomatoes, charred bread, cucumber, red onion, basil, white wine vinaigrette</div>
+        <div class="card-footer">
+          <div class="card-price">&pound;7</div>
+          <div class="card-badge">Vegan</div>
+        </div>
+      </div>
+      <div class="menu-card reveal">
+        <span class="card-emoji">&#129380;</span>
+        <div class="card-name">Italian Sodas</div>
+        <div class="card-desc">San Pellegrino Limonata, Aranciata, Aranciata Rossa, Acqua Panna still water</div>
+        <div class="card-footer">
+          <div class="card-price">&pound;3</div>
+          <div class="card-badge">Drinks</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section id="story">
+  <div class="story-visual reveal">
+    <div class="story-visual-inner">&#128293;</div>
+    <div class="story-badge">
+      <div class="story-badge-num">900&deg;</div>
+      <div class="story-badge-text">Stone-Baked Heat</div>
+    </div>
+  </div>
+  <div class="story-content">
+    <div class="section-tag">Who we are</div>
+    <h2>BORN ON THE <span>STREET</span></h2>
+    <p>Dough One started with a wood-fired oven, a beat-up trailer, and an obsession with getting the perfect leopard-charred crust. Every base is slow-fermented for 48 hours from our own sourdough starter, and every topping is sourced from the best local and Italian suppliers we could find.</p>
+    <p>We pitch up at markets, festivals, and private events across the region &mdash; bringing proper Neapolitan pizza to wherever the people are.</p>
+    <div class="story-stats">
+      <div class="stat">
+        <div class="stat-num">48H</div>
+        <div class="stat-label">Dough Ferment</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">90s</div>
+        <div class="stat-label">Cook Time</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">5&#9733;</div>
+        <div class="stat-label">Rating</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP 2 -->
+<div class="strip" style="background: var(--char); border-top: 1px solid rgba(232,71,10,0.2);">
+  <div class="strip-inner" style="animation-direction: reverse;">
+    <span class="strip-item" style="color: var(--fire);">Weddings</span>
+    <span class="strip-item" style="color: var(--ash);">Corporate Events</span>
+    <span class="strip-item" style="color: var(--fire);">Birthdays</span>
+    <span class="strip-item" style="color: var(--ash);">Festivals</span>
+    <span class="strip-item" style="color: var(--fire);">Markets</span>
+    <span class="strip-item" style="color: var(--ash);">Pop-Ups</span>
+    <span class="strip-item" style="color: var(--fire);">Weddings</span>
+    <span class="strip-item" style="color: var(--ash);">Corporate Events</span>
+    <span class="strip-item" style="color: var(--fire);">Birthdays</span>
+    <span class="strip-item" style="color: var(--ash);">Festivals</span>
+    <span class="strip-item" style="color: var(--fire);">Markets</span>
+    <span class="strip-item" style="color: var(--ash);">Pop-Ups</span>
+  </div>
+</div>
+
+<!-- LOCATIONS -->
+<section id="locations">
+  <div class="section-tag">Where to find us</div>
+  <h2>FIND <span>THE TRAILER</span></h2>
+
+  <div class="locations-grid">
+    <div class="location-card reveal">
+      <div class="loc-day">Every Friday</div>
+      <div class="loc-name">City Market</div>
+      <div class="loc-address">Market Square, Town Centre<br>Off the High Street near the car park</div>
+      <div class="loc-time">11:30am &ndash; 8:00pm</div>
+    </div>
+    <div class="location-card reveal">
+      <div class="loc-day">Every Saturday</div>
+      <div class="loc-name">Farmers' Market</div>
+      <div class="loc-address">Victoria Park, East Entrance<br>Next to the cheese stall</div>
+      <div class="loc-time">10:00am &ndash; 4:00pm</div>
+    </div>
+    <div class="location-card reveal">
+      <div class="loc-day">Every Sunday</div>
+      <div class="loc-name">Riverside Food Market</div>
+      <div class="loc-address">The Waterfront, Lower Dock Street<br>Beneath the railway arches</div>
+      <div class="loc-time">11:00am &ndash; 5:00pm</div>
+    </div>
+    <div class="location-card reveal" style="border: 1px dashed rgba(232,71,10,0.4); background: rgba(232,71,10,0.04);">
+      <div class="loc-day" style="color: var(--ember);">Pop-Ups &amp; More</div>
+      <div class="loc-name">Check Our Socials</div>
+      <div class="loc-address">We announce one-off locations and special events every week on Instagram and Facebook. Follow us so you never miss a slice.</div>
+      <div class="loc-time" style="color: var(--fire); background: rgba(232,71,10,0.1);">@doughonepizza</div>
+    </div>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-item reveal">
+      <div class="contact-label">Email Us</div>
+      <div class="contact-value">hello@doughone.co.uk</div>
+    </div>
+    <div class="contact-item reveal">
+      <div class="contact-label">Call or Text</div>
+      <div class="contact-value">07700 000 000</div>
+    </div>
+    <div class="contact-item reveal">
+      <div class="contact-label">Instagram</div>
+      <div class="contact-value">@doughonepizza</div>
+    </div>
+    <div class="contact-item reveal">
+      <div class="contact-label">Facebook</div>
+      <div class="contact-value">/doughonepizza</div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section id="events">
+  <div class="events-layout">
+    <div class="events-info">
+      <div class="section-tag">Private hire</div>
+      <h2>YOUR EVENT,<br><span>OUR FIRE</span></h2>
+      <p>Bring the heat to your celebration. We park the trailer, fire up the oven, and feed your guests fresh wood-fired pizza all night long.</p>
+      <p>Whether it's an intimate garden party or a 500-head festival, we've got a package for you. Get a free quote with no obligation.</p>
+      <div class="event-types">
+        <div class="event-type">
+          <span class="event-type-icon">&#128141;</span>
+          <div class="event-type-name">Weddings</div>
+          <div class="event-type-desc">Evening receptions &amp; feasts</div>
+        </div>
+        <div class="event-type">
+          <span class="event-type-icon">&#127970;</span>
+          <div class="event-type-name">Corporate</div>
+          <div class="event-type-desc">Team days &amp; client events</div>
+        </div>
+        <div class="event-type">
+          <span class="event-type-icon">&#127881;</span>
+          <div class="event-type-name">Birthdays</div>
+          <div class="event-type-desc">Garden parties &amp; milestones</div>
+        </div>
+        <div class="event-type">
+          <span class="event-type-icon">&#127914;</span>
+          <div class="event-type-name">Festivals</div>
+          <div class="event-type-desc">Multi-day site catering</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-form reveal">
+      <div class="section-tag" style="margin-bottom: 24px;">Get a free quote</div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" placeholder="Jane">
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" placeholder="Smith">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="jane@example.com">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" placeholder="07700 000 000">
+        </div>
+        <div class="form-group">
+          <label for="event-type">Event Type</label>
+          <select id="event-type">
+            <option value="">Select type...</option>
+            <option>Wedding</option>
+            <option>Birthday Party</option>
+            <option>Corporate Event</option>
+            <option>Festival / Market</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="guests">Number of Guests</label>
+          <select id="guests">
+            <option value="">Approx. guests...</option>
+            <option>Under 50</option>
+            <option>50-100</option>
+            <option>100-200</option>
+            <option>200-500</option>
+            <option>500+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="date">Event Date</label>
+          <input type="date" id="date">
+        </div>
+        <div class="form-group">
+          <label for="location">Event Location</label>
+          <input type="text" id="location" placeholder="Town or postcode">
+        </div>
+        <div class="form-group full">
+          <label for="message">Tell us more</label>
+          <textarea id="message" placeholder="Any details about your event, dietary requirements, or questions..."></textarea>
+        </div>
+        <div class="form-group full">
+          <button class="form-submit" onclick="submitForm()">Request a Quote &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">DOUGH<span>ONE</span></div>
+    <div class="footer-tagline">Fire, dough &amp; glory &mdash; wherever the street takes us.</div>
+    <div class="footer-social">
+      <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="social-btn"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </div>
+  <div class="footer-col">
+    <h4>Eat</h4>
+    <ul>
+      <li><a href="#menu">Classics</a></li>
+      <li><a href="#menu">House Specials</a></li>
+      <li><a href="#menu">Sides &amp; Drinks</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Visit</h4>
+    <ul>
+      <li><a href="#locations">Weekly Locations</a></li>
+      <li><a href="#locations">Contact Us</a></li>
+      <li><a href="#story">Our Story</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Events</h4>
+    <ul>
+      <li><a href="#events">Weddings</a></li>
+      <li><a href="#events">Corporate</a></li>
+      <li><a href="#events">Get a Quote</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <p>&copy; 2025 Dough One. All rights reserved.</p>
+  <p>Allergen info available on request &mdash; please ask before ordering.</p>
+</div>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  function closeMobileMenu() {
+    hamburger.classList.remove('open');
+    mobileMenu.style.display = 'none';
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  hamburger.addEventListener('click', () => {
+    const isOpen = hamburger.classList.toggle('open');
+    if (isOpen) {
+      mobileMenu.style.display = 'flex';
+      requestAnimationFrame(() => mobileMenu.classList.add('open'));
+      document.body.style.overflow = 'hidden';
+    } else {
+      closeMobileMenu();
+    }
+  });
+  const cursor = document.getElementById('cursor');
+  const trail = document.getElementById('cursorTrail');
+  let mx = 0, my = 0, tx = 0, ty = 0;
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.transform = 'translate(' + (mx - 6) + 'px, ' + (my - 6) + 'px)';
+  });
+  function animTrail() {
+    tx += (mx - tx) * 0.12;
+    ty += (my - ty) * 0.12;
+    trail.style.transform = 'translate(' + (tx - 20) + 'px, ' + (ty - 20) + 'px)';
+    requestAnimationFrame(animTrail);
+  }
+  animTrail();
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+  });
+  function switchTab(tab) {
+    document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
+    event.target.classList.add('active');
+    document.querySelectorAll('#tab-' + tab + ' .reveal').forEach(function(el, i) {
+      el.style.opacity = 0; el.style.transform = 'translateY(30px)';
+      setTimeout(function() { el.style.opacity = 1; el.style.transform = 'translateY(0)'; }, i * 80);
+    });
+  }
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) setTimeout(function() { e.target.classList.add('visible'); }, 100);
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+  function submitForm() {
+    const btn = document.querySelector('.form-submit');
+    btn.textContent = 'Quote Request Sent!';
+    btn.style.background = '#2a7d2e';
+    setTimeout(function() { btn.textContent = 'Request a Quote'; btn.style.background = ''; }, 3000);
+  }
+</script>
+</body>
+</html>
