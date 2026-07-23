@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accounts Connected | Carpe DM Strategies</title>
+  <meta name="description" content="Your social accounts are connected to Content Autopilot.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://www.carpedmstrategies.co.uk/connected">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --white: #FFFFFF; --off-white: #F8F7F4; --light-grey: #F0EFEb;
+      --mid-grey: #E0DED8; --text-dark: #16140F; --text-mid: #4A4840;
+      --text-light: #918E86; --blue: #00C4F0; --blue-dark: #0092B8;
+      --purple: #6C47FF; --border: #E4E2DC; --green: #12996B;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --max-width: 1160px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); background: var(--white); color: var(--text-dark); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .logo-mark { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-icon-wrap { flex-shrink: 0; }
+    .logo-icon { display: block; width: 48px; height: 48px; animation: coinSpin 5s linear infinite; }
+    @keyframes coinSpin { from { transform: perspective(500px) rotateY(0deg); } to { transform: perspective(500px) rotateY(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .logo-icon { animation: none; } }
+    .logo-divider { width: 1px; height: 32px; background: var(--border); flex-shrink: 0; }
+    .logo-words { display: flex; flex-direction: column; gap: 3px; }
+    .logo-cdm { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--text-dark); letter-spacing: 4px; line-height: 1; }
+    .logo-sub { font-family: var(--font-body); font-size: 7.5px; font-weight: 300; color: var(--text-light); letter-spacing: 4px; line-height: 1; text-transform: uppercase; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,252,0.94); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); height: 70px; display: flex; align-items: center; }
+    .nav-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 36px; width: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+    .nav-links a { font-size: 13.5px; font-weight: 400; color: var(--text-mid); text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text-dark); }
+    .nav-cta { background: var(--text-dark) !important; color: var(--white) !important; padding: 9px 22px; border-radius: 5px; font-size: 13.5px !important; }
+
+    main { max-width: 680px; margin: 0 auto; padding: 150px 36px 96px; text-align: center; }
+    .tick-wrap { width: 76px; height: 76px; margin: 0 auto 28px; border-radius: 50%; background: rgba(18,153,107,0.09); display: flex; align-items: center; justify-content: center; }
+    .tick { width: 34px; height: 34px; stroke: var(--green); stroke-width: 2.6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .tick path { stroke-dasharray: 44; stroke-dashoffset: 44; animation: draw 0.5s 0.15s ease-out forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @media (prefers-reduced-motion: reduce) { .tick path { animation: none; stroke-dashoffset: 0; } }
+    h1 { font-family: var(--font-display); font-size: clamp(34px, 5vw, 56px); font-weight: 400; line-height: 1.12; margin-bottom: 14px; }
+    .lede { font-size: 16px; font-weight: 300; color: var(--text-mid); line-height: 1.75; margin-bottom: 36px; }
+    .count-pill { display: inline-flex; align-items: center; gap: 9px; background: var(--light-grey); border: 1px solid var(--border); border-radius: 999px; padding: 8px 18px; font-size: 13px; color: var(--text-mid); margin-bottom: 36px; }
+    .count-pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+    .next { text-align: left; background: var(--off-white); border: 1px solid var(--border); border-radius: 10px; padding: 28px 30px; margin-bottom: 36px; }
+    .next h2 { font-family: var(--font-display); font-size: 22px; font-weight: 600; margin-bottom: 16px; }
+    .next ol { margin: 0 0 0 18px; }
+    .next li { font-size: 14.5px; font-weight: 300; color: var(--text-mid); line-height: 1.75; margin-bottom: 9px; }
+    .next li:last-child { margin-bottom: 0; }
+    .next strong { font-weight: 500; color: var(--text-dark); }
+    .btn { display: inline-block; background: var(--text-dark); color: var(--white); text-decoration: none; padding: 13px 30px; border-radius: 5px; font-size: 14px; transition: opacity 0.2s; }
+    .btn:hover { opacity: 0.86; }
+    .fineprint { font-size: 12.5px; color: var(--text-light); font-weight: 300; margin-top: 26px; line-height: 1.7; }
+    .fineprint a { color: var(--blue-dark); text-decoration: none; }
+    .fineprint a:hover { text-decoration: underline; }
+
+    footer { background: var(--text-dark); padding: 36px; }
+    .footer-inner { max-width: var(--max-width); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-inner p { font-size: 12.5px; color: rgba(255,255,255,0.35); font-weight: 300; }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { font-size: 12.5px; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      main { padding: 120px 20px 72px; }
+      .next { padding: 22px 20px; }
+      footer { padding: 28px 20px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo-mark" aria-label="Carpe DM Strategies">
+      <div class="logo-icon-wrap">
+        <svg class="logo-icon" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="28" cy="28" r="26" fill="#F0EFEb" stroke="#E4E2DC" stroke-width="0.8"/>
+          <path d="M 28,4 A 24,24 0 1,1 28,52" fill="none" stroke="#00C4F0" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M 28,13 A 15,15 0 1,1 28,43" fill="none" stroke="#6C47FF" stroke-width="1.7" stroke-linecap="round"/>
+          <path d="M 28,22 A 6,6 0 1,1 28,34" fill="none" stroke="#16140F" stroke-width="1.4" stroke-linecap="round"/>
+          <circle cx="52" cy="28" r="2.5" fill="#00C4F0"/>
+          <line x1="49.5" y1="28" x2="44" y2="22" stroke="#00C4F0" stroke-width="1.1" opacity="0.55" stroke-linecap="round"/>
+          <line x1="49.5" y1="28" x2="44" y2="28" stroke="#00C4F0" stroke-width="1.3" opacity="0.8" stroke-linecap="round"/>
+          <line x1="49.5" y1="28" x2="44" y2="34" stroke="#00C4F0" stroke-width="1.1" opacity="0.55" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="logo-divider"></div>
+      <div class="logo-words">
+        <span class="logo-cdm">CDM</span>
+        <span class="logo-sub">Strategies</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#how">Process</a></li>
+      <li><a href="/#contact" class="nav-cta">Book a Call</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="tick-wrap">
+    <svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5 L9.5 18 L20 6.5"/></svg>
+  </div>
+
+  <h1>You&rsquo;re connected</h1>
+  <p class="lede">Content Autopilot can now publish to your accounts. That&rsquo;s the only setup step &mdash; you won&rsquo;t need to do this again.</p>
+
+  <div class="count-pill" id="countPill" hidden><span class="dot"></span><span id="countText"></span></div>
+
+  <div class="next">
+    <h2>What happens next</h2>
+    <ol>
+      <li>We look at your website and your market, then plan your first month of content.</li>
+      <li>You get everything to <strong>review before anything goes out</strong>. Nothing publishes without your say-so.</li>
+      <li>Once approved, it posts on schedule. You carry on with the actual job.</li>
+    </ol>
+  </div>
+
+  <a class="btn" href="/">Back to Carpe DM</a>
+
+  <p class="fineprint">Changed your mind? You can disconnect any account at any time &mdash; see <a href="/data-deletion">data deletion</a>. Questions: <a href="mailto:info@carpedmstrategies.co.uk">info@carpedmstrategies.co.uk</a></p>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p>&copy; 2026 Carpe DM Strategies Ltd &middot; Company No. 14900297 &middot; 19 Ravenscroft Crescent, London, SE9 4LL</p>
+    <ul class="footer-links">
+      <li><a href="/privacy">Privacy</a></li>
+      <li><a href="/terms">Terms</a></li>
+      <li><a href="/data-deletion">Data Deletion</a></li>
+      <li><a href="mailto:info@carpedmstrategies.co.uk">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  // Facebook appends "#_=_" to the redirect. Strip it so the URL reads cleanly.
+  if (window.location.hash === '#_=_') {
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+  }
+  var n = parseInt(new URLSearchParams(window.location.search).get('connected'), 10);
+  if (n > 0) {
+    document.getElementById('countText').textContent =
+      n + (n === 1 ? ' account connected' : ' accounts connected');
+    document.getElementById('countPill').hidden = false;
+  }
+</script>
+</body>
+</html>
