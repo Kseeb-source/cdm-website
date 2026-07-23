@@ -4,17 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Accounts Connected | Carpe DM Strategies</title>
-  <meta name="description" content="Your social accounts are connected to Content Autopilot.">
+  <meta name="description" content="Your social accounts are now connected to CDM Content Autopilot. Publishing runs automatically from here, with nothing else for you to set up.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="canonical" href="https://www.carpedmstrategies.co.uk/connected">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="preload" href="/assets/fonts/dmsans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/cormorant.woff2" as="font" type="font/woff2" crossorigin>
   <style>
+    .skip-link { position: absolute; left: -9999px; top: 0; z-index: 200; background: var(--text-dark); color: #fff; padding: 12px 20px; border-radius: 0 0 6px 0; font-size: 14px; text-decoration: none; }
+    .skip-link:focus { left: 0; }
+    main p a:not([class]), main li a:not([class]) { text-decoration: underline; text-underline-offset: 2px; }
+
+    /* Self-hosted variable fonts: no render-blocking third-party request */
+    @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 400 600; font-display: swap; src: url(/assets/fonts/cormorant.woff2) format('woff2'); }
+    @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 400 600; font-display: swap; src: url(/assets/fonts/cormorant-italic.woff2) format('woff2'); }
+    @font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 300 500; font-display: swap; src: url(/assets/fonts/dmsans.woff2) format('woff2'); }
+
     :root {
       --white: #FFFFFF; --off-white: #F8F7F4; --light-grey: #F0EFEb;
       --mid-grey: #E0DED8; --text-dark: #16140F; --text-mid: #4A4840;
-      --text-light: #918E86; --blue: #00C4F0; --blue-dark: #0092B8;
+      --text-light: #73706A; --blue: #00C4F0; --blue-dark: #007B9B;
       --purple: #6C47FF; --border: #E4E2DC; --green: #12996B;
       --font-display: 'Cormorant Garamond', Georgia, serif;
       --font-body: 'DM Sans', system-ui, sans-serif;
@@ -62,9 +70,9 @@
 
     footer { background: var(--text-dark); padding: 36px; }
     .footer-inner { max-width: var(--max-width); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-    .footer-inner p { font-size: 12.5px; color: rgba(255,255,255,0.35); font-weight: 300; }
+    .footer-inner p { font-size: 12.5px; color: rgba(255,255,255,0.6); font-weight: 300; }
     .footer-links { display: flex; gap: 24px; list-style: none; }
-    .footer-links a { font-size: 12.5px; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+    .footer-links a { font-size: 12.5px; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: rgba(255,255,255,0.7); }
     @media (max-width: 600px) {
       .nav-links { display: none; }
@@ -76,9 +84,10 @@
   </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <nav>
   <div class="nav-inner">
-    <a href="/" class="logo-mark" aria-label="Carpe DM Strategies">
+    <a href="/" class="logo-mark" aria-label="CDM Strategies home">
       <div class="logo-icon-wrap">
         <svg class="logo-icon" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <circle cx="28" cy="28" r="26" fill="#F0EFEb" stroke="#E4E2DC" stroke-width="0.8"/>
@@ -98,14 +107,14 @@
       </div>
     </a>
     <ul class="nav-links">
-      <li><a href="/#services">Services</a></li>
+      <li><a href="/#features">Services</a></li>
       <li><a href="/#how">Process</a></li>
-      <li><a href="/#contact" class="nav-cta">Book a Call</a></li>
+      <li><a href="/#start" class="nav-cta">Book a Call</a></li>
     </ul>
   </div>
 </nav>
 
-<main>
+<main id="main">
   <div class="tick-wrap">
     <svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5 L9.5 18 L20 6.5"/></svg>
   </div>
