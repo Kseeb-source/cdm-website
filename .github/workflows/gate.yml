@@ -1,0 +1,58 @@
+name: Gate
+
+# The gate as the unbypassable lock. Runs on GitHub for every push and PR and
+# checks the HTML artifacts a change actually touches, so pre-existing debt
+# never turns CI red — only a new below-max page does.
+#
+# To make it truly blocking: repo Settings → Branches → protect `main` →
+# require the "gate" status check to pass before merging.
+
+on:
+  push:
+  pull_request:
+
+concurrency:
+  group: gate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Resolve base to diff against
+        id: base
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            git fetch --quiet origin "${{ github.base_ref }}"
+            echo "ref=origin/${{ github.base_ref }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.ref_name }}" = "main" ]; then
+            echo "ref=${{ github.event.before }}" >> "$GITHUB_OUTPUT"
+          else
+            git fetch --quiet origin main || true
+            echo "ref=origin/main" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Gate changed HTML
+        run: |
+          base="${{ steps.base.outputs.ref }}"
+          if ! git rev-parse --verify --quiet "$base" >/dev/null; then
+            echo "Base '$base' not resolvable — gating all pages."
+            files=$(ls *.html 2>/dev/null | grep -v '\.bak$' || true)
+          else
+            files=$(git diff --name-only --diff-filter=ACM "$base"...HEAD -- '*.html')
+          fi
+          if [ -z "$files" ]; then
+            echo "No HTML artifacts changed — nothing to gate."
+            exit 0
+          fi
+          echo "Gating changed pages:"
+          echo "$files" | sed 's/^/  - /'
+          python3 tools/gate.py $files --quiet

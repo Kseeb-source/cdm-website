@@ -1,0 +1,24 @@
+#!/bin/sh
+# The gate, as a pre-commit lock.
+# Blocks a commit if any staged HTML artifact is below the max bar.
+# Only checks the files you're actually committing — existing debt never
+# blocks an unrelated commit.
+#
+# Activate once (per clone):   git config core.hooksPath .githooks
+# Emergency bypass:            git commit --no-verify   (CI still enforces it)
+
+files=$(git diff --cached --name-only --diff-filter=ACM -- '*.html')
+[ -z "$files" ] && exit 0
+
+echo "→ Gate: checking staged pages..."
+python3 tools/gate.py $files --quiet
+status=$?
+
+if [ "$status" -ne 0 ]; then
+  echo ""
+  echo "✗ Gate blocked this commit — a staged page is below the max bar."
+  echo "  Fix the page, or if the miss is intentional add to the page:"
+  echo "      <!-- gate:ignore RULE reason: why this page is exempt -->"
+  echo "  Emergency override: git commit --no-verify  (CI will still catch it)"
+fi
+exit "$status"

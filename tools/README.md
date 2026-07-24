@@ -53,3 +53,27 @@ the gate. No directive = strict. Nothing is ever waived quietly.
 `ai-search-visibility.html` is the current maxed cornerstone (3 JSON-LD blocks:
 primary entity + `FAQPage` + `BreadcrumbList`). Use it as `--reference` for
 content/landing pages.
+
+## The lock (so it can't be skipped)
+
+The gate runs in two places. Both check only the pages a change actually
+touches, so existing debt never blocks unrelated work.
+
+**1. Local pre-commit hook** — blocks a bad page before it's even committed.
+Activate once per clone:
+
+```bash
+git config core.hooksPath .githooks
+```
+
+Then any commit touching an HTML file runs the gate first. If it fails: fix the
+page, add a `<!-- gate:ignore RULE reason -->`, or (emergency only)
+`git commit --no-verify`.
+
+**2. CI check** (`.github/workflows/gate.yml`) — the real lock. Runs on every
+push and PR on GitHub, where `--no-verify` can't reach it. To make it *block
+merges*, protect `main` in **Settings → Branches** and require the **gate**
+status check.
+
+Verified: committing a page missing lang/OG/canonical is rejected by the hook,
+and nothing lands.
