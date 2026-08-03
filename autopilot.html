@@ -510,5 +510,50 @@
 
 <aside class="sticky-cta" aria-label="Get started"><a href="#start">Generate my 2 free articles</a></aside>
 
+<script>
+(function(){
+  var API = "/api/reveal";
+  function wire(form){
+    if(!form) return;
+    var btn = form.querySelector('button[type=submit]') || form.querySelector('button');
+    var status = document.createElement('p');
+    status.setAttribute('role','status');
+    status.style.cssText = 'margin-top:12px;font-size:13px;line-height:1.5;min-height:18px;';
+    form.parentNode.insertBefore(status, form.nextSibling);
+    var busy = false, origLabel = btn ? btn.textContent : '';
+    function fail(msg){
+      busy = false; if(btn){ btn.disabled = false; btn.textContent = origLabel; }
+      status.style.color = '#e04b4b';
+      status.textContent = msg || 'Something went wrong. Please try again.';
+    }
+    function poll(runId, tries){
+      if(tries > 105){ fail('Sorry, that took longer than expected. Please try again in a minute.'); return; }
+      var dots = new Array((tries % 3) + 2).join('.');
+      fetch(API + '/status/' + runId).then(function(r){ return r.json(); }).then(function(s){
+        if(s.status === 'done' && s.reveal_url){ status.style.color=''; status.textContent = 'Done. Opening your results now.'; window.location.href = s.reveal_url; return; }
+        if(s.status === 'error'){ fail('We hit a snag generating your samples. Please try again in a moment.'); return; }
+        status.style.color=''; status.textContent = 'Researching your site and writing your two articles' + dots + ' (about 60 to 90 seconds, please keep this tab open)';
+        setTimeout(function(){ poll(runId, tries+1); }, 4000);
+      }).catch(function(){ setTimeout(function(){ poll(runId, tries+1); }, 4000); });
+    }
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(busy) return;
+      var website = (form.querySelector('[name=website]')||{}).value || '';
+      var email = (form.querySelector('[name=email]')||{}).value || '';
+      if(!website || !email){ fail('Please enter your website and email.'); return; }
+      busy = true; if(btn){ btn.disabled = true; btn.textContent = 'Working...'; }
+      status.style.color=''; status.textContent = 'Researching your site and writing your two articles (about 60 to 90 seconds, please keep this tab open)';
+      fetch(API, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({website:website, email:email})})
+        .then(function(r){ return r.json().then(function(j){ return {ok:r.ok, j:j}; }); })
+        .then(function(res){ if(!res.ok){ throw new Error(res.j && res.j.error ? res.j.error : 'Something went wrong. Please try again.'); } poll(res.j.run_id, 0); })
+        .catch(function(err){ fail(err.message); });
+    });
+  }
+  wire(document.getElementById('hero-signup'));
+  wire(document.getElementById('autopilot-signup'));
+})();
+</script>
+
 </body>
 </html>
