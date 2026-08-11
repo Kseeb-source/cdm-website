@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+# /sites/* are per-tenant build/preview URLs served on this domain.
+# Customer sites are indexed on their own domain, not here.
+Disallow: /sites/
 
 Sitemap: https://www.carpedmstrategies.co.uk/sitemap.xml
