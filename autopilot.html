@@ -406,7 +406,7 @@
           <li>Featured images included</li>
           <li>Your brand voice</li>
         </ul>
-        <a href="#start" class="tier-btn dark">Start free</a>
+        <a data-plan="starter" href="#start" class="tier-btn dark">Start free</a>
       </div>
       <div class="tier featured">
         <span class="tier-pop">Most popular</span>
@@ -420,7 +420,7 @@
           <li>Internal links to your pages</li>
           <li>Social add-ons, one click</li>
         </ul>
-        <a href="#start" class="tier-btn light">Start free</a>
+        <a data-plan="growth" href="#start" class="tier-btn light">Start free</a>
       </div>
       <div class="tier">
         <div class="tier-name">Scale</div>
@@ -433,7 +433,7 @@
           <li>All social add-ons included</li>
           <li>Priority support</li>
         </ul>
-        <a href="#start" class="tier-btn ghost">Start free</a>
+        <a data-plan="scale" href="#start" class="tier-btn ghost">Start free</a>
       </div>
       <div class="tier">
         <div class="tier-name">Authority</div>
@@ -446,7 +446,7 @@
           <li>All add-ons plus a strategy layer</li>
           <li>Dedicated support</li>
         </ul>
-        <a href="#start" class="tier-btn ghost">Start free</a>
+        <a data-plan="authority" href="#start" class="tier-btn ghost">Start free</a>
       </div>
     </div>
     <div class="trust-stack">
@@ -555,5 +555,215 @@
 })();
 </script>
 
+<!-- ===== Content Autopilot self-serve checkout (plan picker + Direct Debit) ===== -->
+<style>
+  #co-overlay { position:fixed; inset:0; background:rgba(22,20,15,.55); backdrop-filter:blur(3px); display:none; align-items:flex-start; justify-content:center; padding:40px 16px; overflow-y:auto; z-index:9000; }
+  #co-overlay.open { display:flex; }
+  #co-overlay .checkout { background:var(--white); border-radius:14px; width:100%; max-width:520px; box-shadow:0 30px 80px rgba(22,20,15,.35); overflow:hidden; animation:coRise .25s ease; }
+  @keyframes coRise { from { transform:translateY(14px); opacity:0; } to { transform:translateY(0); opacity:1; } }
+  @media (prefers-reduced-motion:reduce){ #co-overlay .checkout{ animation:none; } }
+  #co-overlay .co-head { padding:22px 26px 18px; border-bottom:1px solid var(--border); display:flex; align-items:flex-start; justify-content:space-between; gap:16px; }
+  #co-overlay .co-head .lbl { font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--blue-dark); font-weight:500; margin-bottom:8px; }
+  #co-overlay .co-head h3 { font-family:var(--font-display); font-size:27px; font-weight:400; margin:0; line-height:1.1; color:var(--text-dark); }
+  #co-overlay .co-head .free { font-size:13px; color:var(--text-mid); margin-top:5px; }
+  #co-overlay .co-close { background:none; border:none; font-size:22px; line-height:1; color:var(--text-light); cursor:pointer; padding:2px 6px; border-radius:6px; }
+  #co-overlay .co-close:hover { background:var(--light-grey); color:var(--text-dark); }
+  #co-overlay .co-body { padding:22px 26px; display:flex; flex-direction:column; gap:22px; }
+  #co-overlay .field-lbl { font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--text-light); font-weight:500; margin-bottom:11px; }
+  #co-overlay .plan-switch { display:grid; grid-template-columns:repeat(4,1fr); gap:7px; }
+  #co-overlay .plan-opt { border:1px solid var(--border); border-radius:8px; padding:11px 8px; text-align:center; cursor:pointer; background:var(--white); transition:border-color .15s, background .15s; }
+  #co-overlay .plan-opt:hover { border-color:var(--text-light); }
+  #co-overlay .plan-opt.sel { border-color:var(--text-dark); background:var(--text-dark); }
+  #co-overlay .plan-opt .pn { font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--text-mid); }
+  #co-overlay .plan-opt.sel .pn { color:var(--blue); }
+  #co-overlay .plan-opt .pp { font-family:var(--font-display); font-size:21px; margin-top:3px; color:var(--text-dark); }
+  #co-overlay .plan-opt.sel .pp { color:var(--white); }
+  #co-overlay .plan-detail { font-size:13.5px; color:var(--text-mid); margin-top:11px; min-height:20px; }
+  #co-overlay .addons { display:flex; flex-direction:column; gap:8px; }
+  #co-overlay .addon { display:flex; align-items:center; gap:11px; border:1px solid var(--border); border-radius:8px; padding:11px 13px; cursor:pointer; user-select:none; transition:border-color .15s; position:relative; }
+  #co-overlay .addon:hover { border-color:var(--text-light); }
+  #co-overlay .addon.on { border-color:var(--blue); background:color-mix(in srgb, var(--blue) 7%, white); }
+  #co-overlay .addon input { position:absolute; opacity:0; pointer-events:none; }
+  #co-overlay .addon .box { width:18px; height:18px; border:1.5px solid var(--mid-grey); border-radius:5px; flex:none; display:grid; place-items:center; color:transparent; font-size:12px; }
+  #co-overlay .addon.on .box { background:var(--blue); border-color:var(--blue); color:var(--text-dark); }
+  #co-overlay .addon .ch { flex:1; font-size:14px; color:var(--text-dark); }
+  #co-overlay .addon .pr { font-size:12.5px; color:var(--text-light); }
+  #co-overlay .addon-note { font-size:12px; color:var(--text-light); margin-top:9px; }
+  #co-overlay .co-fields { display:flex; flex-direction:column; gap:10px; }
+  #co-overlay .co-fields input { width:100%; padding:13px 15px; border:1px solid var(--border); border-radius:7px; font-family:inherit; font-size:15px; color:var(--text-dark); background:var(--off-white); }
+  #co-overlay .co-fields input:focus { outline:2px solid var(--blue); outline-offset:1px; border-color:var(--blue); background:#fff; }
+  #co-overlay .summary { background:var(--off-white); border:1px solid var(--border); border-radius:10px; padding:16px 18px; }
+  #co-overlay .sum-row { display:flex; justify-content:space-between; align-items:baseline; font-size:14px; color:var(--text-mid); padding:4px 0; }
+  #co-overlay .sum-row.total { border-top:1px solid var(--border); margin-top:8px; padding-top:12px; }
+  #co-overlay .sum-row.total .k { font-size:14px; color:var(--text-dark); font-weight:500; }
+  #co-overlay .sum-row.total .v { font-family:var(--font-display); font-size:30px; color:var(--text-dark); font-variant-numeric:tabular-nums; }
+  #co-overlay .sum-row .v { font-variant-numeric:tabular-nums; }
+  #co-overlay .sum-today { display:flex; justify-content:space-between; align-items:center; margin-top:12px; padding-top:12px; border-top:1px dashed var(--mid-grey); }
+  #co-overlay .sum-today .k { font-size:13px; color:var(--text-mid); }
+  #co-overlay .sum-today .v { font-size:15px; font-weight:500; color:var(--blue-dark); }
+  #co-overlay .co-submit { width:100%; padding:16px; border:none; border-radius:8px; background:var(--text-dark); color:#fff; font-family:inherit; font-size:15px; letter-spacing:.01em; cursor:pointer; transition:opacity .2s; }
+  #co-overlay .co-submit:hover { opacity:.9; }
+  #co-overlay .co-submit:disabled { opacity:.55; cursor:default; }
+  #co-overlay .co-reassure { font-size:12.5px; color:var(--text-light); text-align:center; line-height:1.55; margin:14px 0 2px; }
+  #co-overlay .co-reassure b { color:var(--text-mid); font-weight:500; }
+  #co-overlay .co-status { font-size:13px; line-height:1.5; min-height:18px; text-align:center; margin:12px 0 0; }
+  #co-overlay .co-status a { color:var(--blue-dark); }
+  @media (max-width:520px){ #co-overlay .plan-switch{ grid-template-columns:1fr 1fr; } }
+</style>
+
+<div id="co-overlay" role="dialog" aria-modal="true" aria-labelledby="co-title">
+  <div class="checkout">
+    <div class="co-head">
+      <div>
+        <div class="lbl">Start free &middot; step 1 of 2</div>
+        <h3 id="co-title">Your first month is free</h3>
+        <div class="free" id="co-plan-line">Growth &middot; 4 articles a month</div>
+      </div>
+      <button class="co-close" id="co-close" aria-label="Close">&times;</button>
+    </div>
+    <div class="co-body">
+      <div>
+        <div class="field-lbl">Plan</div>
+        <div class="plan-switch" id="co-plan-switch"></div>
+        <div class="plan-detail" id="co-plan-detail"></div>
+      </div>
+      <div>
+        <div class="field-lbl">Add social channels &middot; &pound;39 each / month</div>
+        <div class="addons" id="co-addons"></div>
+        <div class="addon-note">Optional. The same articles, adapted and posted to each channel you add.</div>
+      </div>
+      <div>
+        <div class="field-lbl">Where it publishes</div>
+        <div class="co-fields">
+          <input type="url" id="co-website" placeholder="yourbusiness.com" aria-label="Your website" required>
+          <input type="email" id="co-email" placeholder="you@email.com" aria-label="Your email" required>
+        </div>
+      </div>
+      <div class="summary">
+        <div class="sum-row"><span class="k" id="co-sum-plan-k">Growth plan</span><span class="v" id="co-sum-plan-v">&pound;199</span></div>
+        <div class="sum-row" id="co-sum-addon-row" style="display:none"><span class="k" id="co-sum-addon-k">Social channels</span><span class="v" id="co-sum-addon-v">&pound;0</span></div>
+        <div class="sum-row total"><span class="k">Per month after your free month</span><span class="v" id="co-sum-total">&pound;199</span></div>
+        <div class="sum-today"><span class="k">Due today</span><span class="v">&pound;0.00</span></div>
+      </div>
+      <button class="co-submit" id="co-submit">Start free month &middot; set up Direct Debit</button>
+      <p class="co-status" id="co-status" role="status"></p>
+      <p class="co-reassure">You will set up a Direct Debit with <b>GoCardless</b>. Nothing is collected for 30 days. Cancel any time before then and you pay nothing.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var PLANS = {
+    starter:   { name:'Starter',   price:99,  cadence:'2 articles a month',    detail:'2 SEO articles a month, auto-published to your site with featured images, in your brand voice.' },
+    growth:    { name:'Growth',    price:199, cadence:'4 articles a month',    detail:'One article every week, priority topic research, and internal links to your own pages.' },
+    scale:     { name:'Scale',     price:399, cadence:'8 articles a month',    detail:'Two articles a week across up to 3 websites, with every social channel included.' },
+    authority: { name:'Authority', price:699, cadence:'12 to 16 articles a month', detail:'Up to 16 articles a month across up to 5 websites, with a strategy layer and dedicated support.' }
+  };
+  var ORDER = ['starter','growth','scale','authority'];
+  var CHANNELS = [
+    {k:'facebook',  label:'Facebook'},
+    {k:'instagram', label:'Instagram'},
+    {k:'linkedin',  label:'LinkedIn'},
+    {k:'x',         label:'X (Twitter)'},
+    {k:'tiktok',    label:'TikTok'},
+    {k:'gbp',       label:'Google Business Profile'}
+  ];
+  var ADDON_PRICE = 39, API = '/api/billing';
+  var state = { plan:'growth', addons:{} }, busy = false;
+
+  var overlay = document.getElementById('co-overlay');
+  var switchEl = document.getElementById('co-plan-switch');
+  var addonsEl = document.getElementById('co-addons');
+  var statusEl = document.getElementById('co-status');
+  var submitBtn = document.getElementById('co-submit');
+
+  ORDER.forEach(function(key){
+    var p = PLANS[key];
+    var o = document.createElement('div');
+    o.className='plan-opt'; o.dataset.plan=key;
+    o.innerHTML='<div class="pn">'+p.name+'</div><div class="pp">£'+p.price+'</div>';
+    o.addEventListener('click', function(){ state.plan=key; render(); });
+    switchEl.appendChild(o);
+  });
+  CHANNELS.forEach(function(c){
+    var l = document.createElement('label');
+    l.className='addon'; l.dataset.k=c.k;
+    l.innerHTML='<span class="box">✓</span><span class="ch">'+c.label+'</span><span class="pr">£39/mo</span><input type="checkbox" value="'+c.k+'">';
+    l.querySelector('input').addEventListener('change', function(e){ state.addons[c.k]=e.target.checked; render(); });
+    addonsEl.appendChild(l);
+  });
+
+  function count(){ return CHANNELS.filter(function(c){return state.addons[c.k];}).length; }
+
+  function render(){
+    var p = PLANS[state.plan], n = count(), addCost = n*ADDON_PRICE;
+    document.getElementById('co-plan-line').textContent = p.name+' · '+p.cadence;
+    document.getElementById('co-plan-detail').textContent = p.detail;
+    [].forEach.call(switchEl.children, function(o){ o.classList.toggle('sel', o.dataset.plan===state.plan); });
+    [].forEach.call(addonsEl.children, function(l){ l.classList.toggle('on', !!state.addons[l.dataset.k]); });
+    document.getElementById('co-sum-plan-k').textContent = p.name+' plan';
+    document.getElementById('co-sum-plan-v').innerHTML = '£'+p.price;
+    var arow = document.getElementById('co-sum-addon-row');
+    if(n){ arow.style.display='flex';
+      document.getElementById('co-sum-addon-k').textContent = n+' social channel'+(n>1?'s':'');
+      document.getElementById('co-sum-addon-v').innerHTML = '£'+addCost;
+    } else { arow.style.display='none'; }
+    document.getElementById('co-sum-total').innerHTML = '£'+(p.price+addCost);
+  }
+
+  var lastFocus=null;
+  function open(plan){
+    state.plan = PLANS[plan] ? plan : 'growth';
+    busy=false; submitBtn.disabled=false; submitBtn.textContent='Start free month · set up Direct Debit';
+    statusEl.textContent=''; statusEl.style.color='';
+    render(); overlay.classList.add('open'); lastFocus=document.activeElement;
+    setTimeout(function(){ document.getElementById('co-website').focus(); }, 40);
+  }
+  function close(){ overlay.classList.remove('open'); if(lastFocus&&lastFocus.focus)lastFocus.focus(); }
+
+  // intercept the pricing tier buttons
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('[data-plan]');
+    if(b && !overlay.contains(b)){ e.preventDefault(); open(b.getAttribute('data-plan')); }
+  });
+  document.getElementById('co-close').addEventListener('click', close);
+  overlay.addEventListener('click', function(e){ if(e.target===overlay) close(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape'&&overlay.classList.contains('open')) close(); });
+
+  function fail(msg, html){
+    busy=false; submitBtn.disabled=false; submitBtn.textContent='Start free month · set up Direct Debit';
+    statusEl.style.color='#c0392b';
+    if(html){ statusEl.innerHTML = html; } else { statusEl.textContent = msg || 'Something went wrong. Please try again.'; }
+  }
+
+  submitBtn.addEventListener('click', function(){
+    if(busy) return;
+    var website=document.getElementById('co-website').value.trim();
+    var email=document.getElementById('co-email').value.trim();
+    if(!website){ fail('Please enter your website address.'); document.getElementById('co-website').focus(); return; }
+    if(!email || email.indexOf('@')<1){ fail('Please enter a valid email address.'); document.getElementById('co-email').focus(); return; }
+    busy=true; submitBtn.disabled=true; submitBtn.textContent='Setting up…';
+    statusEl.style.color=''; statusEl.textContent='Taking you to GoCardless to set up your Direct Debit…';
+    fetch(API+'/signup', {method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ plan:state.plan, website:website, email:email, social_addons:count() })})
+      .then(function(r){ return r.json().then(function(j){ return {ok:r.ok, status:r.status, j:j}; }); })
+      .then(function(res){
+        if(res.ok && res.j.authorisation_url){ window.location.href = res.j.authorisation_url; return; }
+        if(res.status===503){ // billing not switched on yet: never dead-end, offer the free samples
+          fail(null, 'Card signups are just being switched on. In the meantime, <a href="#start" id="co-toreveal">see two free articles written for your site</a>.');
+          var link=document.getElementById('co-toreveal');
+          if(link){ link.addEventListener('click', function(){ close(); }); }
+          return;
+        }
+        throw new Error(res.j && res.j.error ? res.j.error : 'Something went wrong. Please try again.');
+      })
+      .catch(function(err){ fail(err.message); });
+  });
+
+  render();
+})();
+</script>
+<!-- ===== end checkout ===== -->
 </body>
 </html>
