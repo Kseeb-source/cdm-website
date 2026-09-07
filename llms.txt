@@ -1,0 +1,41 @@
+# Carpe DM Strategies
+
+> We make businesses findable by AI assistants. When someone asks ChatGPT, Google AI
+> Overviews, Perplexity or Copilot who to use, our job is to make sure our client is the
+> name that comes back. We run the same work on our own business every day.
+
+Carpe DM Strategies Ltd, company number 14900297, registered in England and Wales.
+Remote service. Clients in the United Kingdom, the United States and Canada.
+Contact: info@carpedmstrategies.co.uk
+
+## Services
+- AI search visibility (GEO / AEO): getting a business named and cited inside AI answers
+- Website design and build: fast, accessible sites structured to be read by people and machines
+- Blog and content publishing: an always-on rail that answers real buyer questions
+- Business automation: lead capture, quoting, reporting and publishing without manual admin
+
+## Answers
+- [Why isn't my business showing up in AI search?](https://www.carpedmstrategies.co.uk/answers/why-is-my-business-not-showing-up-in-ai-search.html): Your business does not appear when someone asks ChatGPT for a recommendation. Here are the seven reasons that actually cause it, and how to tell which one is yours.
+- [How do I get my website to show up in ChatGPT?](https://www.carpedmstrategies.co.uk/answers/how-to-appear-in-chatgpt-search.html): A practical, step by step guide to getting your website surfaced and cited by ChatGPT, covering crawler access, the Bing index, answer-shaped content and entity schema.
+- [AI SEO vs traditional SEO: what actually changed?](https://www.carpedmstrategies.co.uk/answers/ai-seo-vs-traditional-seo.html): What is genuinely different about optimising for AI answers versus classic search rankings, what still works exactly as it did, and where to put your effort.
+- [What is generative engine optimization?](https://www.carpedmstrategies.co.uk/answers/what-is-generative-engine-optimization.html): A plain-English definition of generative engine optimization, how it differs from SEO and AEO, what the work involves in practice, and how to tell whether it is working.
+- [How do I check if AI can read my website?](https://www.carpedmstrategies.co.uk/answers/how-to-check-if-ai-can-read-your-website.html): A step by step check for whether GPTBot, OAI-SearchBot, PerplexityBot and other AI crawlers can actually fetch your site, and what to do when they cannot.
+- [How does ChatGPT decide which businesses to recommend?](https://www.carpedmstrategies.co.uk/answers/how-does-chatgpt-choose-which-businesses-to-recommend.html): What actually determines whether an AI assistant names your business in an answer: retrieval, source trust, entity confidence and answer fit, explained plainly.
+- [What schema markup do I need for AI search?](https://www.carpedmstrategies.co.uk/answers/schema-markup-for-ai-search.html): Which structured data actually helps AI assistants understand and cite your business, why a stable entity id matters more than the number of schema types, and what to skip.
+- [How long does it take to show up in AI search?](https://www.carpedmstrategies.co.uk/answers/how-long-does-it-take-to-get-cited-by-ai.html): Realistic timelines for AI search visibility, why live citations and model memory move at completely different speeds, and what to expect month by month.
+- [How do I track whether AI is recommending my business?](https://www.carpedmstrategies.co.uk/answers/how-to-track-your-ai-visibility.html): There is no ranking report for AI answers. Here is a measurement method that works: a fixed question set, a schedule, three signals, and a trend log.
+- [Why does ChatGPT recommend my competitor instead of me?](https://www.carpedmstrategies.co.uk/answers/why-does-chatgpt-recommend-my-competitor.html): A diagnostic walkthrough of why an AI assistant names a competitor rather than your business, how to read their winning page, and what to change first.
+
+## By market
+- [AI SEO Agency in London: How to Choose One](https://www.carpedmstrategies.co.uk/answers/ai-seo-agency-london.html): What an AI SEO or GEO agency in London should actually do for you, the questions to ask before you hire, and how to tell a real capability from a rebranded SEO package.
+- [AI SEO Agency in New York: How to Choose One](https://www.carpedmstrategies.co.uk/answers/ai-seo-agency-new-york.html): What an AI SEO or GEO agency in New York should actually do for you, the questions to ask before you hire, and how to tell a real capability from a rebranded SEO package.
+- [AI SEO Agency in Toronto: How to Choose One](https://www.carpedmstrategies.co.uk/answers/ai-seo-agency-toronto.html): What an AI SEO or GEO agency in Toronto should actually do for you, the questions to ask before you hire, and how to tell a real capability from a rebranded SEO package.
+
+## Key pages
+- [Home](https://www.carpedmstrategies.co.uk/): what we do and how to start
+- [AI search visibility guide](https://www.carpedmstrategies.co.uk/ai-search-visibility.html): the cornerstone guide
+- [Case study](https://www.carpedmstrategies.co.uk/case-study-damp-mould.html): a worked example with tracked results
+- [FAQs](https://www.carpedmstrategies.co.uk/faqs.html)
+- [About](https://www.carpedmstrategies.co.uk/about.html)
+
+Last updated: 2026-09-07
