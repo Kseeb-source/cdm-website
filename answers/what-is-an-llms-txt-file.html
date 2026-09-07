@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is an llms.txt File and Does My Site Need One?</title>
+<meta name="description" content="An llms.txt file is a plain text map of your key pages for AI models. It is a proposed, optional standard, useful for some sites but no ranking guarantee.">
+<meta name="keywords" content="llms.txt file, what is llms.txt, does my website need llms.txt, llms.txt vs robots.txt, llms.txt for AI, how to create llms.txt, llms.txt seo">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta name="author" content="Carpe DM Strategies Ltd">
+<link rel="canonical" href="https://www.carpedmstrategies.co.uk/answers/what-is-an-llms-txt-file.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.carpedmstrategies.co.uk/answers/what-is-an-llms-txt-file.html">
+<meta property="og:title" content="What Is an llms.txt File and Does My Site Need One?">
+<meta property="og:description" content="An llms.txt file is a plain text map of your key pages for AI models. It is a proposed, optional standard, useful for some sites but no ranking guarantee.">
+<meta property="og:image" content="https://www.carpedmstrategies.co.uk/cdm-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.carpedmstrategies.co.uk/cdm-og.png">
+<link rel="preload" href="/assets/fonts/dmsans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/cormorant.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/cormorant-italic.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+    .skip-link { position: absolute; left: -9999px; top: 0; z-index: 200; background: var(--text-dark); color: #fff; padding: 12px 20px; border-radius: 0 0 6px 0; font-size: 14px; text-decoration: none; }
+    .skip-link:focus { left: 0; }
+    main p a:not([class]), main li a:not([class]) { text-decoration: underline; text-underline-offset: 2px; }
+
+    /* Self-hosted variable fonts: no render-blocking third-party request */
+    @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 400 600; font-display: swap; src: url(/assets/fonts/cormorant.woff2) format('woff2'); }
+    @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 400 600; font-display: swap; src: url(/assets/fonts/cormorant-italic.woff2) format('woff2'); }
+    @font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 300 500; font-display: swap; src: url(/assets/fonts/dmsans.woff2) format('woff2'); }
+
+    :root {
+      --white: #FFFFFF; --off-white: #F8F7F4; --light-grey: #F0EFEb; --mid-grey: #E0DED8;
+      --text-dark: #16140F; --text-mid: #4A4840; --text-light: #73706A;
+      --blue: #00C4F0; --blue-dark: #007B9B; --purple: #6C47FF; --border: #E4E2DC;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --max-width: 1160px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--white); color: var(--text-dark); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .logo-mark { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-icon { display: block; width: 48px; height: 48px; animation: coinSpin 5s linear infinite; }
+    @keyframes coinSpin { from { transform: perspective(500px) rotateY(0deg); } to { transform: perspective(500px) rotateY(360deg); } }
+    .logo-divider { width: 1px; height: 32px; background: var(--border); flex-shrink: 0; }
+    .logo-words { display: flex; flex-direction: column; gap: 3px; }
+    .logo-cdm { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--text-dark); letter-spacing: 4px; line-height: 1; }
+    .logo-sub { font-size: 7.5px; font-weight: 300; color: var(--text-light); letter-spacing: 4px; line-height: 1; text-transform: uppercase; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,252,0.94); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); height: 70px; display: flex; align-items: center; }
+    .nav-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 36px; width: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+    .nav-links a { font-size: 13.5px; font-weight: 400; color: var(--text-mid); text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text-dark); }
+    .nav-cta { background: var(--text-dark) !important; color: var(--white) !important; padding: 9px 22px; border-radius: 5px; font-size: 13.5px !important; letter-spacing: 0.03em !important; transition: opacity 0.2s !important; }
+    .nav-cta:hover { opacity: 0.82 !important; }
+    .page-hero { padding: 150px 36px 50px; max-width: var(--max-width); margin: 0 auto; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue-dark); margin-bottom: 24px; }
+    .hero-eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--blue); }
+    .page-hero h1 { font-family: var(--font-display); font-size: clamp(40px, 6vw, 76px); line-height: 1.02; letter-spacing: -0.01em; font-weight: 400; color: var(--text-dark); max-width: 900px; margin-bottom: 28px; }
+    .page-hero h1 em { font-style: italic; color: var(--blue-dark); }
+    .page-hero .lead { font-size: 18px; font-weight: 300; color: var(--text-mid); max-width: 680px; line-height: 1.75; }
+    .rule { width: 100%; max-width: var(--max-width); margin: 0 auto; height: 1px; background: var(--border); }
+    .article { max-width: 760px; margin: 0 auto; padding: 64px 36px 24px; }
+    .tldr { background: var(--off-white); border: 1px solid var(--border); border-left: 3px solid var(--blue); border-radius: 8px; padding: 28px 30px; margin-bottom: 56px; }
+    .tldr h2 { font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-dark); margin-bottom: 14px; }
+    .tldr p { font-size: 16.5px; font-weight: 300; color: var(--text-mid); line-height: 1.75; }
+    .tldr p strong { font-weight: 500; color: var(--text-dark); }
+    .article h2.h { font-family: var(--font-display); font-size: clamp(28px, 3.4vw, 40px); font-weight: 400; color: var(--text-dark); line-height: 1.12; margin: 52px 0 18px; }
+    .article h3 { font-family: var(--font-display); font-size: 23px; font-weight: 600; color: var(--text-dark); margin: 34px 0 10px; }
+    .article p { font-size: 16.5px; font-weight: 300; color: var(--text-mid); line-height: 1.8; margin-bottom: 18px; }
+    .article p strong { font-weight: 500; color: var(--text-dark); }
+    .article ul { margin: 0 0 22px; padding-left: 0; list-style: none; }
+    .article ul li { font-size: 16px; font-weight: 300; color: var(--text-mid); line-height: 1.7; padding-left: 22px; position: relative; margin-bottom: 10px; }
+    .article ul li::before { content: '—'; position: absolute; left: 0; color: var(--blue-dark); }
+    .steps-block { border-top: 1px solid var(--border); margin: 28px 0 22px; }
+    .step-row { border-bottom: 1px solid var(--border); padding: 26px 0; display: grid; grid-template-columns: 54px 1fr; gap: 20px; }
+    .step-row .n { font-family: var(--font-display); font-size: 38px; font-weight: 400; color: var(--blue-dark); opacity: 1; line-height: 1; }
+    .step-row h3 { margin: 0 0 8px; font-size: 21px; }
+    .step-row p { margin: 0; font-size: 15.5px; }
+    .callout { background: var(--text-dark); border-radius: 8px; padding: 30px 32px; margin: 30px 0; }
+    .callout p { color: rgba(255,255,255,0.78); margin: 0; font-size: 16px; }
+    .callout p strong { color: var(--white); font-weight: 500; }
+    .faq-section { max-width: 760px; margin: 0 auto; padding: 40px 36px 88px; }
+    .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-dark); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+    .section-label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--blue); }
+    .faq-list { border-top: 1px solid var(--border); }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item summary { list-style: none; cursor: pointer; padding: 26px 0; display: flex; justify-content: space-between; align-items: center; gap: 24px; font-family: var(--font-display); font-size: clamp(19px, 2.1vw, 24px); font-weight: 400; color: var(--text-dark); line-height: 1.3; transition: color 0.2s; }
+    .faq-item summary:hover { color: var(--blue-dark); }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-icon { flex-shrink: 0; width: 22px; height: 22px; position: relative; }
+    .faq-icon::before, .faq-icon::after { content: ''; position: absolute; background: var(--text-mid); transition: transform 0.25s ease; }
+    .faq-icon::before { top: 50%; left: 0; width: 100%; height: 1px; transform: translateY(-50%); }
+    .faq-icon::after { left: 50%; top: 0; height: 100%; width: 1px; transform: translateX(-50%); }
+    .faq-item details[open] .faq-icon::after { transform: translateX(-50%) rotate(90deg); opacity: 0; }
+    .faq-item details[open] summary { color: var(--blue-dark); }
+    .faq-answer { padding: 0 0 30px; font-size: 16px; font-weight: 300; color: var(--text-mid); line-height: 1.8; }
+    .cta-band { padding: 88px 36px; text-align: center; border-top: 1px solid var(--border); background: var(--off-white); }
+    .cta-band h2 { font-family: var(--font-display); font-size: clamp(32px, 4vw, 54px); font-weight: 400; color: var(--text-dark); line-height: 1.1; margin-bottom: 16px; }
+    .cta-band h2 em { font-style: italic; color: var(--blue-dark); }
+    .cta-band p { font-size: 16px; font-weight: 300; color: var(--text-mid); margin-bottom: 36px; }
+    .btn-primary { background: var(--text-dark); color: var(--white); padding: 14px 30px; border-radius: 5px; font-size: 14px; font-weight: 400; letter-spacing: 0.04em; text-decoration: none; display: inline-block; transition: opacity 0.2s, transform 0.15s; }
+    .btn-primary:hover { opacity: 0.82; transform: translateY(-1px); }
+    footer { background: var(--text-dark); padding: 36px; }
+    .footer-inner { max-width: var(--max-width); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+    .footer-copy { font-size: 12.5px; color: rgba(255,255,255,0.6); font-weight: 300; line-height: 1.65; margin: 0; }
+    .footer-links { display: flex; gap: 22px; list-style: none; }
+    .footer-links a { font-size: 12.5px; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+    @media (max-width: 640px) {
+      .nav-inner { padding: 0 20px; }
+      .nav-links { display: none; }
+      .page-hero { padding: 110px 20px 44px; }
+      .article, .faq-section { padding-left: 20px; padding-right: 20px; }
+      .cta-band { padding: 64px 20px; }
+      footer { padding: 28px 20px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .step-row { grid-template-columns: 40px 1fr; gap: 14px; }
+    }
+  
+    .rel-band { max-width: 760px; margin: 0 auto; padding: 8px 36px 72px; }
+    .rel-band .section-label { margin-bottom: 18px; }
+    .rel-list { border-top: 1px solid var(--border); }
+    .rel-list a { display: block; border-bottom: 1px solid var(--border); padding: 20px 0; text-decoration: none; font-family: var(--font-display); font-size: 21px; font-weight: 400; color: var(--text-dark); line-height: 1.3; transition: color 0.2s; }
+    .rel-list a:hover { color: var(--blue-dark); }
+    .meta-line { font-size: 12.5px; color: var(--text-light); letter-spacing: 0.02em; margin-top: 26px; }
+    .ans-grid { max-width: var(--max-width); margin: 0 auto; padding: 56px 36px 88px; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+    .ans-card { background: var(--white); padding: 32px 30px; display: flex; flex-direction: column; gap: 12px; text-decoration: none; transition: background 0.2s; }
+    .ans-card:hover { background: var(--off-white); }
+    .ans-card .cat { font-size: 10.5px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue-dark); }
+    .ans-card h2 { font-family: var(--font-display); font-size: 25px; font-weight: 400; color: var(--text-dark); line-height: 1.18; margin: 0; }
+    .ans-card p { font-size: 14.5px; font-weight: 300; color: var(--text-mid); line-height: 1.65; margin: 0; }
+    .ans-group-h { max-width: var(--max-width); margin: 0 auto; padding: 40px 36px 0; }
+    .ans-group-h h2 { font-family: var(--font-display); font-size: clamp(26px, 3vw, 36px); font-weight: 400; color: var(--text-dark); }
+    @media (max-width: 640px) {
+      .rel-band { padding-left: 20px; padding-right: 20px; }
+      .ans-grid { padding: 36px 20px 64px; grid-template-columns: 1fr; }
+      .ans-group-h { padding-left: 20px; padding-right: 20px; }
+    }
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.carpedmstrategies.co.uk/answers/what-is-an-llms-txt-file.html#webpage","url":"https://www.carpedmstrategies.co.uk/answers/what-is-an-llms-txt-file.html","name":"What Is an llms.txt File and Does My Site Need One?","description":"An llms.txt file is a plain text map of your key pages for AI models. It is a proposed, optional standard, useful for some sites but no ranking guarantee.","isPartOf":{"@id":"https://www.carpedmstrategies.co.uk/#website"},"about":{"@id":"https://www.carpedmstrategies.co.uk/#service-sites"},"publisher":{"@id":"https://www.carpedmstrategies.co.uk/#organization"},"inLanguage":"en","breadcrumb":{"@id":"https://www.carpedmstrategies.co.uk/answers/what-is-an-llms-txt-file.html#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://www.carpedmstrategies.co.uk/answers/what-is-an-llms-txt-file.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.carpedmstrategies.co.uk/"},{"@type":"ListItem","position":2,"name":"Answers","item":"https://www.carpedmstrategies.co.uk/answers.html"},{"@type":"ListItem","position":3,"name":"What is an llms.txt file and does my website need one?","item":"https://www.carpedmstrategies.co.uk/answers/what-is-an-llms-txt-file.html"}]},{"@type":"Article","@id":"https://www.carpedmstrategies.co.uk/answers/what-is-an-llms-txt-file.html#article","headline":"What Is an llms.txt File and Does My Site Need One?","description":"An llms.txt file is a plain text map of your key pages for AI models. It is a proposed, optional standard, useful for some sites but no ranking guarantee.","url":"https://www.carpedmstrategies.co.uk/answers/what-is-an-llms-txt-file.html","mainEntityOfPage":{"@id":"https://www.carpedmstrategies.co.uk/answers/what-is-an-llms-txt-file.html#webpage"},"datePublished":"2026-09-07","dateModified":"2026-09-07","inLanguage":"en","author":{"@id":"https://www.carpedmstrategies.co.uk/#organization"},"publisher":{"@id":"https://www.carpedmstrategies.co.uk/#organization"},"about":{"@id":"https://www.carpedmstrategies.co.uk/#service-sites"},"isPartOf":{"@id":"https://www.carpedmstrategies.co.uk/#website"}},{"@type":"FAQPage","@id":"https://www.carpedmstrategies.co.uk/answers/what-is-an-llms-txt-file.html#faq","mainEntity":[{"@type":"Question","name":"Is llms.txt the same as robots.txt?","acceptedAnswer":{"@type":"Answer","text":"No, they do different jobs. Robots.txt tells crawlers which pages they may or may not access. An llms.txt file does the opposite, offering a curated list of pages you want AI models to read and understand. You can and should keep both files on your site."}},{"@type":"Question","name":"Does Google use llms.txt?","acceptedAnswer":{"@type":"Answer","text":"Google has not confirmed that it uses llms.txt for search or AI Overviews. As of 2026 it remains a proposed standard with voluntary adoption. Google-Extended controls whether Google can use your content for AI training, so that setting matters more for now."}},{"@type":"Question","name":"Will an llms.txt file help me rank higher?","acceptedAnswer":{"@type":"Answer","text":"No, there is no evidence that llms.txt affects search rankings or how often AI assistants cite you. It can make your key pages easier for supporting models to parse, but ranking and citation depend on your wider reputation, your content quality and the mentions you earn elsewhere."}},{"@type":"Question","name":"Where do I put the llms.txt file?","acceptedAnswer":{"@type":"Answer","text":"Place it at the root of your domain so it loads at yourdomain.com/llms.txt. This is the same location as robots.txt. Use a plain text file written in Markdown, upload it through your host or content system, and confirm it opens correctly in a browser."}},{"@type":"Question","name":"Can an llms.txt file get my business into ChatGPT answers?","acceptedAnswer":{"@type":"Answer","text":"Not on its own. ChatGPT names businesses based on what it learned during training and what it finds through live search, which reflect how the wider web describes you. An llms.txt file can help models read your own pages, but earned mentions and citations do the heavy lifting."}}]},{"@type":["Organization","ProfessionalService"],"@id":"https://www.carpedmstrategies.co.uk/#organization","name":"Carpe DM Strategies","legalName":"Carpe DM Strategies Ltd","alternateName":["CDM","CDM Strategies","Carpe DM"],"url":"https://www.carpedmstrategies.co.uk/","description":"Carpe DM Strategies helps businesses become the answer that AI assistants give. We build AI search visibility, websites, content and automations for companies that want to be named by ChatGPT, Google AI Overviews, Perplexity and Copilot when a buyer asks who to use.","slogan":"Be the answer the AI gives.","foundingDate":"2023-05-29","taxID":"14900297","identifier":{"@type":"PropertyValue","propertyID":"UK Companies House","value":"14900297"},"address":{"@type":"PostalAddress","streetAddress":"19 Ravenscroft Crescent","addressLocality":"London","postalCode":"SE9 4LL","addressCountry":"GB"},"email":"info@carpedmstrategies.co.uk","telephone":"+442030519579","areaServed":[{"@type":"Country","name":"United Kingdom","identifier":"GB"},{"@type":"Country","name":"United States","identifier":"US"},{"@type":"Country","name":"Canada","identifier":"CA"},{"@type":"Country","name":"Australia","identifier":"AU"},{"@type":"Country","name":"Ireland","identifier":"IE"}],"knowsAbout":["Generative Engine Optimization","Answer Engine Optimization","AI search visibility","Search engine optimization","Schema.org structured data","Content automation","Web design","Marketing automation"],"founder":{"@id":"https://www.carpedmstrategies.co.uk/#kerim-seeballuck"},"sameAs":["https://x.com/CarpeDM_UK","https://www.linkedin.com/company/carpe-dm-strategies","https://find-and-update.company-information.service.gov.uk/company/14900297"]},{"@type":"WebSite","@id":"https://www.carpedmstrategies.co.uk/#website","url":"https://www.carpedmstrategies.co.uk/","name":"Carpe DM Strategies","inLanguage":"en","publisher":{"@id":"https://www.carpedmstrategies.co.uk/#organization"}}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a><nav>
+  <div class="nav-inner">
+    <a href="/" class="logo-mark" aria-label="CDM Strategies home">
+      <svg class="logo-icon" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="28" cy="28" r="26" fill="#F0EFEb" stroke="#E4E2DC" stroke-width="0.8"/>
+        <path d="M 28,4 A 24,24 0 1,1 28,52" fill="none" stroke="#00C4F0" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M 28,13 A 15,15 0 1,1 28,43" fill="none" stroke="#6C47FF" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M 28,22 A 6,6 0 1,1 28,34" fill="none" stroke="#16140F" stroke-width="1.4" stroke-linecap="round"/>
+        <circle cx="52" cy="28" r="2.5" fill="#00C4F0"/>
+      </svg>
+      <div class="logo-divider"></div>
+      <div class="logo-words"><span class="logo-cdm">CDM</span> <span class="logo-sub">Strategies</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#features">Services</a></li>
+      <li><a href="/ai-search-visibility.html">AI Search</a></li><li><a href="/answers.html">Answers</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/answers.html">Answers</a></li><li><a href="/#start" class="nav-cta">Book a Call</a></li>
+    </ul>
+  </div>
+</nav>
+<main id="main">
+<section class="page-hero">
+<div class="hero-eyebrow">Technical check</div>
+<h1>What is an llms.txt file and <em>does my website need one?</em></h1>
+<p class="lead">AI assistants are starting to shape which businesses get recommended, and a new file format promises to help them read your site. Here is what an llms.txt file does, who benefits, and whether yours is worth the effort.</p>
+</section><div class="rule"></div>
+<article class="article">
+<div class="tldr"><h2>The short answer</h2><p><strong>An llms.txt file is a plain text file at your web root</strong> that gives AI models a curated list of your most important pages. It is a <strong>proposed, voluntary standard</strong>, not an official rule. Most sites can add it safely, but it is <strong>unproven and will not change your rankings</strong> on its own.</p></div>
+<h2 class="h">What an llms.txt file actually is</h2><p>An llms.txt file is a plain text file placed at the root of your website that offers a curated map of your most important pages to large language models. It sits alongside robots.txt and sitemap.xml. The proposal, published in 2024, suggests one Markdown file that points AI systems to the content you most want them to read and understand.</p><p>The idea is simple. Web pages carry navigation, adverts, scripts and boilerplate that waste an AI model's limited context. An llms.txt file strips that away and gives a clean list of links with short descriptions. It is written for machines that read Markdown well. Think of it as a reading list you hand to an assistant, rather than asking it to wander your whole site.</p><p>One point causes confusion. The file is a proposed standard, not an official rule that every AI company has agreed to follow. It was suggested by Jeremy Howard of Answer.AI. Adoption is voluntary. Some tools read it, many do not yet, and no major search engine has confirmed it as a ranking signal. Understanding that distinction stops you from treating the file as a magic switch.</p><h2 class="h">Does your website need one?</h2><p>Probably not urgently, but it rarely hurts to add one. If you run a documentation site, a software product or a large content library, an llms.txt file helps AI systems find your key pages quickly. If you run a small brochure site with ten pages, the benefit is slight. The honest position today is that it is low cost, low risk and unproven, so treat it as optional housekeeping.</p><p>Do not expect it to change whether ChatGPT or Perplexity names your business tomorrow. Those systems mostly learn from what the wider web says about you, from pages they crawled during training and from live search results they fetch at answer time. An llms.txt file can make your own content easier to parse, but it cannot manufacture the third party mentions and citations that push a brand into an AI answer.</p><ul><li><strong>Documentation and developer sites</strong> with deep, structured content.</li><li><strong>Software and SaaS products</strong> where accurate feature descriptions matter.</li><li><strong>Large publishers</strong> with hundreds of articles to prioritise.</li><li><strong>Small brochure sites</strong> gain little and can safely skip it for now.</li></ul><h2 class="h">What goes inside the file</h2><p>The format is deliberately plain. It starts with a single H1 heading that names your site or company. A short blockquote summary follows. After that you list sections as Markdown headings, and under each heading you place links written in standard Markdown format, each with a brief note explaining what the page covers. That is the whole structure, and it is meant to stay readable by a person.</p><p>Some sites also publish a longer companion file called llms-full.txt. That version includes the full text of the linked pages in one document, so a model can read everything without following links. Keep the descriptions honest and specific. Name the product, state what each page does and avoid marketing language. A model treats your words as fact, so vague or inflated claims can lead to a poor summary of your business.</p><p>Place the file at the top level of your domain so the address ends in /llms.txt. Use absolute links, not relative ones, so any system can resolve them. Update the file when you publish or retire important pages, because a stale reading list points models at content that no longer exists. Treat it the way you treat your sitemap, as a living index rather than a one time task.</p><h2 class="h">How to create one</h2><p>You can build the file by hand in a few minutes, and that is often the best approach because you control what gets prioritised. There are also generators that read your sitemap and draft a first version, though you should always review the output. Below is a straightforward process that works for most sites, whether you run WordPress, a headless build or a hand coded set of pages.</p><div class="steps-block"><div class="step-row"><div class="n">1</div><div><h3>List your key pages</h3><p>Pick the ten to thirty pages you most want AI systems to understand, such as your product pages, pricing overview, documentation and main service pages.</p></div></div><div class="step-row"><div class="n">2</div><div><h3>Write the file</h3><p>Create a Markdown file with one H1 title, a one line blockquote summary, then grouped links with a short note on each.</p></div></div><div class="step-row"><div class="n">3</div><div><h3>Save it as llms.txt</h3><p>Save the file as llms.txt and upload it to the root of your domain so it loads at yourdomain.com/llms.txt.</p></div></div><div class="step-row"><div class="n">4</div><div><h3>Keep it current</h3><p>Review it whenever you add or remove important pages, and add an llms-full.txt version if your content is short enough to include in full.</p></div></div></div><p>Test the result by opening the address in a browser to confirm it loads as plain text. Then check that every link resolves and points to a live page. There is no submission step and no dashboard to register with, because no central authority validates the file. You simply publish it and keep it current, the same way you would maintain any other file at your web root.</p><h2 class="h">What matters more than llms.txt</h2><p>If your goal is to be named inside AI answers, spend most of your effort elsewhere. AI systems cite sources they trust, and trust is built by other websites referencing you, by clear consistent information about your business across the web, and by content that answers real questions directly. An llms.txt file is a tidy final touch, not the foundation. Get the reputation signals right first.</p><p>Make sure AI crawlers can reach your site at all. Check that your robots.txt does not block GPTBot, which OpenAI uses, or PerplexityBot, or Google-Extended, which controls Google AI training access. Many businesses accidentally block these while trying to stop scrapers. Then structure your pages so the answer comes first, use plain headings that match how people ask questions, and back claims with facts a model can quote.</p><p>So add the file if you have the time, because it is cheap and may help as adoption grows. Just keep your expectations realistic and your priorities in order. The businesses that get recommended by AI assistants are the ones the wider web already describes clearly and often. A single text file at your web root supports that work, but it will never replace it.</p>
+<p class="meta-line">Published 07 September 2026 by Carpe DM Strategies. We run this work on our own business every day, which is where the examples come from.</p>
+</article>
+<section class="faq-section"><div class="section-label">Frequently asked</div><div class="faq-list"><div class="faq-item"><details><summary>Is llms.txt the same as robots.txt?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-answer">No, they do different jobs. Robots.txt tells crawlers which pages they may or may not access. An llms.txt file does the opposite, offering a curated list of pages you want AI models to read and understand. You can and should keep both files on your site.</div></details></div><div class="faq-item"><details><summary>Does Google use llms.txt?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-answer">Google has not confirmed that it uses llms.txt for search or AI Overviews. As of 2026 it remains a proposed standard with voluntary adoption. Google-Extended controls whether Google can use your content for AI training, so that setting matters more for now.</div></details></div><div class="faq-item"><details><summary>Will an llms.txt file help me rank higher?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-answer">No, there is no evidence that llms.txt affects search rankings or how often AI assistants cite you. It can make your key pages easier for supporting models to parse, but ranking and citation depend on your wider reputation, your content quality and the mentions you earn elsewhere.</div></details></div><div class="faq-item"><details><summary>Where do I put the llms.txt file?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-answer">Place it at the root of your domain so it loads at yourdomain.com/llms.txt. This is the same location as robots.txt. Use a plain text file written in Markdown, upload it through your host or content system, and confirm it opens correctly in a browser.</div></details></div><div class="faq-item"><details><summary>Can an llms.txt file get my business into ChatGPT answers?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-answer">Not on its own. ChatGPT names businesses based on what it learned during training and what it finds through live search, which reflect how the wider web describes you. An llms.txt file can help models read your own pages, but earned mentions and citations do the heavy lifting.</div></details></div></div></section>
+<section class="rel-band"><div class="section-label">Keep reading</div><div class="rel-list"><a href="/answers/schema-markup-for-ai-search.html">What schema markup do I need for AI search?</a><a href="/answers/how-long-does-it-take-to-get-cited-by-ai.html">How long does it take to show up in AI search?</a><a href="/answers/how-to-track-your-ai-visibility.html">How do I track whether AI is recommending my business?</a></div></section>
+<div class="cta-band"><h2>Want to be the business <em>AI assistants recommend?</em></h2><p>Book a free 30 minute call with Carpe DM Strategies and we will show you where you stand in AI answers today.</p><a href="/#start" class="btn-primary">Book a Free Call</a></div>
+</main>
+<footer>
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 Carpe DM Strategies Ltd &middot; Company No. 14900297</p>
+    <ul class="footer-links"><li><a href="/answers.html">Answers</a></li>
+      <li><a href="/ai-search-visibility.html">AI Search</a></li>
+      <li><a href="/answers.html">Answers</a></li><li><a href="/about.html">About</a></li>
+      <li><a href="/faqs.html">FAQs</a></li>
+      <li><a href="/privacy.html">Privacy</a></li>
+      <li><a href="/terms.html">Terms</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>
