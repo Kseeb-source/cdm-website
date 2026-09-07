@@ -122,7 +122,10 @@
     'background:#007B9B;color:#fff;font:600 14px "DM Sans",system-ui,sans-serif}',
     '.cdmc-err{color:#C42B2B;font-size:12px;margin:-5px 0 8px}',
     '.cdmc-foot{display:flex;gap:8px;padding:11px;border-top:1px solid #E4E2DC;background:#fff}',
-    '.cdmc-foot input{flex:1;padding:11px 13px;border:1px solid #E0DED8;border-radius:999px;',
+    /* min-width:0 matters: a text input carries an intrinsic width of about 20
+       characters, so without it the input refuses to shrink and shoves the send
+       button onto its own line inside a 372px panel. */
+    '.cdmc-foot input{flex:1;min-width:0;padding:11px 13px;border:1px solid #E0DED8;border-radius:999px;',
     'font:14px "DM Sans",system-ui,sans-serif;background:#fff;color:#16140F}',
     '.cdmc-foot input:focus{outline:2px solid #00C4F0;outline-offset:-1px}',
     '.cdmc-send{border:0;border-radius:50%;width:41px;height:41px;flex:none;cursor:pointer;',
