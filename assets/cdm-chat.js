@@ -20,7 +20,10 @@
 
   var API = '/api/chat';
   var NAME = 'Remi';
-  var GREETING = "Hi, I'm " + NAME + " from Carpe DM Strategies. Tell me what your business does and I'll show you where you stand in AI search.";
+  /* No promise of a free anything in the opener. The audit is paid, and a
+     greeting that implies otherwise sets up a conversation the bot then has to
+     walk back. It asks instead, which is the whole design. */
+  var GREETING = "Hi, I'm " + NAME + " from Carpe DM Strategies. Tell me what your business does and what you're trying to fix, and I'll point you the right way.";
   var IDLE_RESET_MS = 6 * 60 * 60 * 1000;
   var MAX_TURNS = 24;
 
@@ -51,18 +54,18 @@
   }
   function nudgeText() {
     switch (pageKind()) {
-      case 'ai': return 'Want to see if AI names your business yet?';
+      case 'ai': return 'Does ChatGPT name you when your buyers ask?';
       case 'autopilot': return 'Want to see what it would write for you?';
-      case 'proof': return 'Want the same tracker run on your site?';
+      case 'proof': return 'Want this run for your business?';
       case 'faq': return 'Anything I can answer for you?';
-      default: return 'Want to see where you stand in AI search?';
+      default: return 'Do your buyers find you when they ask ChatGPT?';
     }
   }
   function yesMessage() {
     switch (pageKind()) {
       case 'autopilot': return "Yes please, I'd like to see what it would write for my business.";
-      case 'proof': return "Yes please, I'd like that run on my site.";
-      default: return "Yes please, I'd like to know if AI is naming my business.";
+      case 'proof': return "Yes please, I'd like this for my business.";
+      default: return "Yes please, I want to know if AI is naming my business.";
     }
   }
 
