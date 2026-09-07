@@ -122,14 +122,18 @@
     'background:#007B9B;color:#fff;font:600 14px "DM Sans",system-ui,sans-serif}',
     '.cdmc-err{color:#C42B2B;font-size:12px;margin:-5px 0 8px}',
     '.cdmc-foot{display:flex;gap:8px;padding:11px;border-top:1px solid #E4E2DC;background:#fff}',
-    /* min-width:0 matters: a text input carries an intrinsic width of about 20
+    /* Two things fight us here, and both were seen live on the site.
+       min-width:0 because a text input carries an intrinsic width of about 20
        characters, so without it the input refuses to shrink and shoves the send
-       button onto its own line inside a 372px panel. */
-    '.cdmc-foot input{flex:1;min-width:0;padding:11px 13px;border:1px solid #E0DED8;border-radius:999px;',
+       button onto its own line inside a 372px panel. box-sizing and an explicit
+       flex basis because the host page styles bare input and button elements,
+       and its padding was making the send button 56px wide inside a 41px box. */
+    '.cdmc-foot input{flex:1 1 auto;min-width:0;box-sizing:border-box;padding:11px 13px;',
+    'border:1px solid #E0DED8;border-radius:999px;',
     'font:14px "DM Sans",system-ui,sans-serif;background:#fff;color:#16140F}',
     '.cdmc-foot input:focus{outline:2px solid #00C4F0;outline-offset:-1px}',
-    '.cdmc-send{border:0;border-radius:50%;width:41px;height:41px;flex:none;cursor:pointer;',
-    'background:#007B9B;color:#fff;font-size:16px}',
+    '.cdmc-send{border:0;border-radius:50%;flex:0 0 41px;width:41px;height:41px;padding:0;',
+    'box-sizing:border-box;cursor:pointer;background:#007B9B;color:#fff;font-size:16px;line-height:1}',
     '.cdmc-send:disabled{opacity:.45;cursor:default}',
     '@media(max-width:480px){.cdmc-panel{right:0;bottom:0;width:100%;max-width:100%;height:100%;',
     'max-height:100%;border-radius:0}.cdmc-card{max-width:calc(100vw - 40px)}}'
