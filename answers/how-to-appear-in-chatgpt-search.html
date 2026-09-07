@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Do I Get My Website to Show Up in ChatGPT?</title>
+<meta name="description" content="A practical, step by step guide to getting your website surfaced and cited by ChatGPT, covering crawler access, the Bing index, answer-shaped content and entity schema.">
+<meta name="keywords" content="how to show up in ChatGPT, appear in ChatGPT search, get cited by ChatGPT, ChatGPT SEO, GPTBot, OAI-SearchBot">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta name="author" content="Carpe DM Strategies Ltd">
+<link rel="canonical" href="https://www.carpedmstrategies.co.uk/answers/how-to-appear-in-chatgpt-search.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.carpedmstrategies.co.uk/answers/how-to-appear-in-chatgpt-search.html">
+<meta property="og:title" content="How Do I Get My Website to Show Up in ChatGPT?">
+<meta property="og:description" content="A practical, step by step guide to getting your website surfaced and cited by ChatGPT, covering crawler access, the Bing index, answer-shaped content and entity schema.">
+<meta property="og:image" content="https://www.carpedmstrategies.co.uk/cdm-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.carpedmstrategies.co.uk/cdm-og.png">
+<link rel="preload" href="/assets/fonts/dmsans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/cormorant.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/cormorant-italic.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+    .skip-link { position: absolute; left: -9999px; top: 0; z-index: 200; background: var(--text-dark); color: #fff; padding: 12px 20px; border-radius: 0 0 6px 0; font-size: 14px; text-decoration: none; }
+    .skip-link:focus { left: 0; }
+    main p a:not([class]), main li a:not([class]) { text-decoration: underline; text-underline-offset: 2px; }
+
+    /* Self-hosted variable fonts: no render-blocking third-party request */
+    @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 400 600; font-display: swap; src: url(/assets/fonts/cormorant.woff2) format('woff2'); }
+    @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 400 600; font-display: swap; src: url(/assets/fonts/cormorant-italic.woff2) format('woff2'); }
+    @font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 300 500; font-display: swap; src: url(/assets/fonts/dmsans.woff2) format('woff2'); }
+
+    :root {
+      --white: #FFFFFF; --off-white: #F8F7F4; --light-grey: #F0EFEb; --mid-grey: #E0DED8;
+      --text-dark: #16140F; --text-mid: #4A4840; --text-light: #73706A;
+      --blue: #00C4F0; --blue-dark: #007B9B; --purple: #6C47FF; --border: #E4E2DC;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --max-width: 1160px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--white); color: var(--text-dark); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .logo-mark { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-icon { display: block; width: 48px; height: 48px; animation: coinSpin 5s linear infinite; }
+    @keyframes coinSpin { from { transform: perspective(500px) rotateY(0deg); } to { transform: perspective(500px) rotateY(360deg); } }
+    .logo-divider { width: 1px; height: 32px; background: var(--border); flex-shrink: 0; }
+    .logo-words { display: flex; flex-direction: column; gap: 3px; }
+    .logo-cdm { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--text-dark); letter-spacing: 4px; line-height: 1; }
+    .logo-sub { font-size: 7.5px; font-weight: 300; color: var(--text-light); letter-spacing: 4px; line-height: 1; text-transform: uppercase; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,252,0.94); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); height: 70px; display: flex; align-items: center; }
+    .nav-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 36px; width: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+    .nav-links a { font-size: 13.5px; font-weight: 400; color: var(--text-mid); text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text-dark); }
+    .nav-cta { background: var(--text-dark) !important; color: var(--white) !important; padding: 9px 22px; border-radius: 5px; font-size: 13.5px !important; letter-spacing: 0.03em !important; transition: opacity 0.2s !important; }
+    .nav-cta:hover { opacity: 0.82 !important; }
+    .page-hero { padding: 150px 36px 50px; max-width: var(--max-width); margin: 0 auto; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue-dark); margin-bottom: 24px; }
+    .hero-eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--blue); }
+    .page-hero h1 { font-family: var(--font-display); font-size: clamp(40px, 6vw, 76px); line-height: 1.02; letter-spacing: -0.01em; font-weight: 400; color: var(--text-dark); max-width: 900px; margin-bottom: 28px; }
+    .page-hero h1 em { font-style: italic; color: var(--blue-dark); }
+    .page-hero .lead { font-size: 18px; font-weight: 300; color: var(--text-mid); max-width: 680px; line-height: 1.75; }
+    .rule { width: 100%; max-width: var(--max-width); margin: 0 auto; height: 1px; background: var(--border); }
+    .article { max-width: 760px; margin: 0 auto; padding: 64px 36px 24px; }
+    .tldr { background: var(--off-white); border: 1px solid var(--border); border-left: 3px solid var(--blue); border-radius: 8px; padding: 28px 30px; margin-bottom: 56px; }
+    .tldr h2 { font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-dark); margin-bottom: 14px; }
+    .tldr p { font-size: 16.5px; font-weight: 300; color: var(--text-mid); line-height: 1.75; }
+    .tldr p strong { font-weight: 500; color: var(--text-dark); }
+    .article h2.h { font-family: var(--font-display); font-size: clamp(28px, 3.4vw, 40px); font-weight: 400; color: var(--text-dark); line-height: 1.12; margin: 52px 0 18px; }
+    .article h3 { font-family: var(--font-display); font-size: 23px; font-weight: 600; color: var(--text-dark); margin: 34px 0 10px; }
+    .article p { font-size: 16.5px; font-weight: 300; color: var(--text-mid); line-height: 1.8; margin-bottom: 18px; }
+    .article p strong { font-weight: 500; color: var(--text-dark); }
+    .article ul { margin: 0 0 22px; padding-left: 0; list-style: none; }
+    .article ul li { font-size: 16px; font-weight: 300; color: var(--text-mid); line-height: 1.7; padding-left: 22px; position: relative; margin-bottom: 10px; }
+    .article ul li::before { content: '—'; position: absolute; left: 0; color: var(--blue-dark); }
+    .steps-block { border-top: 1px solid var(--border); margin: 28px 0 22px; }
+    .step-row { border-bottom: 1px solid var(--border); padding: 26px 0; display: grid; grid-template-columns: 54px 1fr; gap: 20px; }
+    .step-row .n { font-family: var(--font-display); font-size: 38px; font-weight: 400; color: var(--blue-dark); opacity: 1; line-height: 1; }
+    .step-row h3 { margin: 0 0 8px; font-size: 21px; }
+    .step-row p { margin: 0; font-size: 15.5px; }
+    .callout { background: var(--text-dark); border-radius: 8px; padding: 30px 32px; margin: 30px 0; }
+    .callout p { color: rgba(255,255,255,0.78); margin: 0; font-size: 16px; }
+    .callout p strong { color: var(--white); font-weight: 500; }
+    .faq-section { max-width: 760px; margin: 0 auto; padding: 40px 36px 88px; }
+    .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-dark); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+    .section-label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--blue); }
+    .faq-list { border-top: 1px solid var(--border); }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item summary { list-style: none; cursor: pointer; padding: 26px 0; display: flex; justify-content: space-between; align-items: center; gap: 24px; font-family: var(--font-display); font-size: clamp(19px, 2.1vw, 24px); font-weight: 400; color: var(--text-dark); line-height: 1.3; transition: color 0.2s; }
+    .faq-item summary:hover { color: var(--blue-dark); }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-icon { flex-shrink: 0; width: 22px; height: 22px; position: relative; }
+    .faq-icon::before, .faq-icon::after { content: ''; position: absolute; background: var(--text-mid); transition: transform 0.25s ease; }
+    .faq-icon::before { top: 50%; left: 0; width: 100%; height: 1px; transform: translateY(-50%); }
+    .faq-icon::after { left: 50%; top: 0; height: 100%; width: 1px; transform: translateX(-50%); }
+    .faq-item details[open] .faq-icon::after { transform: translateX(-50%) rotate(90deg); opacity: 0; }
+    .faq-item details[open] summary { color: var(--blue-dark); }
+    .faq-answer { padding: 0 0 30px; font-size: 16px; font-weight: 300; color: var(--text-mid); line-height: 1.8; }
+    .cta-band { padding: 88px 36px; text-align: center; border-top: 1px solid var(--border); background: var(--off-white); }
+    .cta-band h2 { font-family: var(--font-display); font-size: clamp(32px, 4vw, 54px); font-weight: 400; color: var(--text-dark); line-height: 1.1; margin-bottom: 16px; }
+    .cta-band h2 em { font-style: italic; color: var(--blue-dark); }
+    .cta-band p { font-size: 16px; font-weight: 300; color: var(--text-mid); margin-bottom: 36px; }
+    .btn-primary { background: var(--text-dark); color: var(--white); padding: 14px 30px; border-radius: 5px; font-size: 14px; font-weight: 400; letter-spacing: 0.04em; text-decoration: none; display: inline-block; transition: opacity 0.2s, transform 0.15s; }
+    .btn-primary:hover { opacity: 0.82; transform: translateY(-1px); }
+    footer { background: var(--text-dark); padding: 36px; }
+    .footer-inner { max-width: var(--max-width); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+    .footer-copy { font-size: 12.5px; color: rgba(255,255,255,0.6); font-weight: 300; line-height: 1.65; margin: 0; }
+    .footer-links { display: flex; gap: 22px; list-style: none; }
+    .footer-links a { font-size: 12.5px; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+    @media (max-width: 640px) {
+      .nav-inner { padding: 0 20px; }
+      .nav-links { display: none; }
+      .page-hero { padding: 110px 20px 44px; }
+      .article, .faq-section { padding-left: 20px; padding-right: 20px; }
+      .cta-band { padding: 64px 20px; }
+      footer { padding: 28px 20px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .step-row { grid-template-columns: 40px 1fr; gap: 14px; }
+    }
+  
+    .rel-band { max-width: 760px; margin: 0 auto; padding: 8px 36px 72px; }
+    .rel-band .section-label { margin-bottom: 18px; }
+    .rel-list { border-top: 1px solid var(--border); }
+    .rel-list a { display: block; border-bottom: 1px solid var(--border); padding: 20px 0; text-decoration: none; font-family: var(--font-display); font-size: 21px; font-weight: 400; color: var(--text-dark); line-height: 1.3; transition: color 0.2s; }
+    .rel-list a:hover { color: var(--blue-dark); }
+    .meta-line { font-size: 12.5px; color: var(--text-light); letter-spacing: 0.02em; margin-top: 26px; }
+    .ans-grid { max-width: var(--max-width); margin: 0 auto; padding: 56px 36px 88px; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+    .ans-card { background: var(--white); padding: 32px 30px; display: flex; flex-direction: column; gap: 12px; text-decoration: none; transition: background 0.2s; }
+    .ans-card:hover { background: var(--off-white); }
+    .ans-card .cat { font-size: 10.5px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue-dark); }
+    .ans-card h2 { font-family: var(--font-display); font-size: 25px; font-weight: 400; color: var(--text-dark); line-height: 1.18; margin: 0; }
+    .ans-card p { font-size: 14.5px; font-weight: 300; color: var(--text-mid); line-height: 1.65; margin: 0; }
+    .ans-group-h { max-width: var(--max-width); margin: 0 auto; padding: 40px 36px 0; }
+    .ans-group-h h2 { font-family: var(--font-display); font-size: clamp(26px, 3vw, 36px); font-weight: 400; color: var(--text-dark); }
+    @media (max-width: 640px) {
+      .rel-band { padding-left: 20px; padding-right: 20px; }
+      .ans-grid { padding: 36px 20px 64px; grid-template-columns: 1fr; }
+      .ans-group-h { padding-left: 20px; padding-right: 20px; }
+    }
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.carpedmstrategies.co.uk/answers/how-to-appear-in-chatgpt-search.html#webpage","url":"https://www.carpedmstrategies.co.uk/answers/how-to-appear-in-chatgpt-search.html","name":"How Do I Get My Website to Show Up in ChatGPT?","description":"A practical, step by step guide to getting your website surfaced and cited by ChatGPT, covering crawler access, the Bing index, answer-shaped content and entity schema.","isPartOf":{"@id":"https://www.carpedmstrategies.co.uk/#website"},"about":{"@id":"https://www.carpedmstrategies.co.uk/#service-ai-visibility"},"publisher":{"@id":"https://www.carpedmstrategies.co.uk/#organization"},"inLanguage":"en","breadcrumb":{"@id":"https://www.carpedmstrategies.co.uk/answers/how-to-appear-in-chatgpt-search.html#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://www.carpedmstrategies.co.uk/answers/how-to-appear-in-chatgpt-search.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.carpedmstrategies.co.uk/"},{"@type":"ListItem","position":2,"name":"Answers","item":"https://www.carpedmstrategies.co.uk/answers.html"},{"@type":"ListItem","position":3,"name":"How do I get my website to show up in ChatGPT?","item":"https://www.carpedmstrategies.co.uk/answers/how-to-appear-in-chatgpt-search.html"}]},{"@type":"Article","@id":"https://www.carpedmstrategies.co.uk/answers/how-to-appear-in-chatgpt-search.html#article","headline":"How Do I Get My Website to Show Up in ChatGPT?","description":"A practical, step by step guide to getting your website surfaced and cited by ChatGPT, covering crawler access, the Bing index, answer-shaped content and entity schema.","url":"https://www.carpedmstrategies.co.uk/answers/how-to-appear-in-chatgpt-search.html","mainEntityOfPage":{"@id":"https://www.carpedmstrategies.co.uk/answers/how-to-appear-in-chatgpt-search.html#webpage"},"datePublished":"2026-09-07","dateModified":"2026-09-07","inLanguage":"en","author":{"@id":"https://www.carpedmstrategies.co.uk/#organization"},"publisher":{"@id":"https://www.carpedmstrategies.co.uk/#organization"},"about":{"@id":"https://www.carpedmstrategies.co.uk/#service-ai-visibility"},"isPartOf":{"@id":"https://www.carpedmstrategies.co.uk/#website"}},{"@type":"FAQPage","@id":"https://www.carpedmstrategies.co.uk/answers/how-to-appear-in-chatgpt-search.html#faq","mainEntity":[{"@type":"Question","name":"How do I let ChatGPT crawl my website?","acceptedAnswer":{"@type":"Answer","text":"Allow GPTBot, OAI-SearchBot and ChatGPT-User in your robots.txt, then confirm the change is real by requesting a page as each bot and checking you get a 200 with the full page body. Hosting and CDN layers often block these bots above robots.txt, so the file alone is not proof."}},{"@type":"Question","name":"Does ChatGPT use Bing?","acceptedAnswer":{"@type":"Answer","text":"ChatGPT search retrieves largely through Bing's web index, so being properly indexed in Bing is a practical prerequisite for appearing as a live source in ChatGPT answers."}},{"@type":"Question","name":"How long does it take to appear in ChatGPT?","acceptedAnswer":{"@type":"Answer","text":"Live retrieval can surface a new page within days or weeks of it being crawled and indexed. Being remembered by the model without a live search takes far longer, because it depends on training cycles."}},{"@type":"Question","name":"Do I need to submit my site to OpenAI?","acceptedAnswer":{"@type":"Answer","text":"There is no submission form. You become eligible by being crawlable and by being present in the web index that ChatGPT search retrieves from. There is no queue to join."}},{"@type":"Question","name":"Will blocking GPTBot protect my content?","acceptedAnswer":{"@type":"Answer","text":"It stops your content being used for training, and it also removes you from the model's long-term memory of your industry. That is a genuine trade-off and worth deciding deliberately rather than inheriting from a default setting."}}]},{"@type":["Organization","ProfessionalService"],"@id":"https://www.carpedmstrategies.co.uk/#organization","name":"Carpe DM Strategies","legalName":"Carpe DM Strategies Ltd","alternateName":["CDM","CDM Strategies","Carpe DM"],"url":"https://www.carpedmstrategies.co.uk/","description":"Carpe DM Strategies helps businesses become the answer that AI assistants give. We build AI search visibility, websites, content and automations for companies that want to be named by ChatGPT, Google AI Overviews, Perplexity and Copilot when a buyer asks who to use.","slogan":"Be the answer the AI gives.","foundingDate":"2023-05-29","taxID":"14900297","identifier":{"@type":"PropertyValue","propertyID":"UK Companies House","value":"14900297"},"address":{"@type":"PostalAddress","streetAddress":"19 Ravenscroft Crescent","addressLocality":"London","postalCode":"SE9 4LL","addressCountry":"GB"},"email":"info@carpedmstrategies.co.uk","telephone":"+442030519579","areaServed":[{"@type":"Country","name":"United Kingdom","identifier":"GB"},{"@type":"Country","name":"United States","identifier":"US"},{"@type":"Country","name":"Canada","identifier":"CA"},{"@type":"Country","name":"Australia","identifier":"AU"},{"@type":"Country","name":"Ireland","identifier":"IE"}],"knowsAbout":["Generative Engine Optimization","Answer Engine Optimization","AI search visibility","Search engine optimization","Schema.org structured data","Content automation","Web design","Marketing automation"],"founder":{"@id":"https://www.carpedmstrategies.co.uk/#kerim-seeballuck"},"sameAs":["https://x.com/CarpeDM_UK","https://www.linkedin.com/company/carpe-dm-strategies","https://find-and-update.company-information.service.gov.uk/company/14900297"]},{"@type":"WebSite","@id":"https://www.carpedmstrategies.co.uk/#website","url":"https://www.carpedmstrategies.co.uk/","name":"Carpe DM Strategies","inLanguage":"en","publisher":{"@id":"https://www.carpedmstrategies.co.uk/#organization"}}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a><nav>
+  <div class="nav-inner">
+    <a href="/" class="logo-mark" aria-label="CDM Strategies home">
+      <svg class="logo-icon" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="28" cy="28" r="26" fill="#F0EFEb" stroke="#E4E2DC" stroke-width="0.8"/>
+        <path d="M 28,4 A 24,24 0 1,1 28,52" fill="none" stroke="#00C4F0" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M 28,13 A 15,15 0 1,1 28,43" fill="none" stroke="#6C47FF" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M 28,22 A 6,6 0 1,1 28,34" fill="none" stroke="#16140F" stroke-width="1.4" stroke-linecap="round"/>
+        <circle cx="52" cy="28" r="2.5" fill="#00C4F0"/>
+      </svg>
+      <div class="logo-divider"></div>
+      <div class="logo-words"><span class="logo-cdm">CDM</span> <span class="logo-sub">Strategies</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#features">Services</a></li>
+      <li><a href="/ai-search-visibility.html">AI Search</a></li><li><a href="/answers.html">Answers</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/answers.html">Answers</a></li><li><a href="/#start" class="nav-cta">Book a Call</a></li>
+    </ul>
+  </div>
+</nav>
+<main id="main">
+<section class="page-hero">
+<div class="hero-eyebrow">How to</div>
+<h1>How do I get my website to <em>show up in ChatGPT?</em></h1>
+<p class="lead">ChatGPT is where most people now start. This is the plain-English version of what actually gets a website surfaced and named in its answers, in the order the work should be done.</p>
+</section><div class="rule"></div>
+<article class="article">
+<div class="tldr"><h2>The short answer</h2><p>Three things get you into ChatGPT: <strong>let its crawlers in</strong> (GPTBot, OAI-SearchBot and ChatGPT-User), <strong>be present in Bing's web index</strong>, which is what ChatGPT search retrieves from, and <strong>publish pages that answer the exact question a buyer asks</strong>. Everything else is refinement.</p></div>
+<h2 class="h">Understand the three different bots first</h2><p>OpenAI uses three separate crawlers and they do different jobs. Treating them as one thing is where most sites go wrong.</p><ul><li><strong>GPTBot</strong> collects content that may be used to train future models. Allowing it is how you get into long-term model memory, the kind that produces a recommendation with no live search at all.</li><li><strong>OAI-SearchBot</strong> builds the search index behind ChatGPT search. Allowing it is how you become eligible to appear as a live source.</li><li><strong>ChatGPT-User</strong> fetches a page in the moment, because a user asked something that needs it. Blocking this one means your page cannot be opened even when ChatGPT wants to read it.</li></ul><p>Blocking any of the three costs you something different. Blocking all three, which is what a default host setting often does, removes you from the picture entirely.</p><h2 class="h">Get into the index ChatGPT actually retrieves from</h2><p>ChatGPT search does not maintain a full web crawl of its own in the way Google does. Its live retrieval leans heavily on Bing's web index. That has a very practical consequence: work that gets you properly indexed in Bing is work that gets you eligible in ChatGPT.</p><p>So set up Bing Webmaster Tools, submit your sitemap, and confirm your pages are actually indexed rather than merely discovered. It is unglamorous and it is one of the highest leverage hours available.</p><p>Do the same in Google Search Console. Google AI Overviews and Gemini retrieve from Google, and the content work is identical, so you get two markets for one effort.</p><h2 class="h">Write pages a model can lift from</h2><p>A model writing an answer needs a sentence it can quote. That is a specific shape of writing and it is not how most marketing pages are written.</p><ul><li>Make the heading the question, phrased the way a person would say it out loud.</li><li>Answer it in the first two sentences underneath, before any context or setup.</li><li>Use short declarative sentences. A model extracts clauses, and a long sentence with three subordinate clauses extracts badly.</li><li>Put the specifics in. Numbers, timeframes, named tools and named standards are what make one page more quotable than a thousand similar ones.</li><li>Date the page and keep it current. Retrieval systems prefer content that looks maintained.</li></ul><h2 class="h">Make your business one entity, not five</h2><p>If your name, address, phone number and description differ across your site, your directory listings and your social profiles, a retrieval system sees several weakly-evidenced businesses rather than one well-evidenced one.</p><p>Fix it by picking one canonical version of every detail, using it everywhere without variation, and marking it up in Organization schema with a stable identifier so the pages on your own site all point at the same entity rather than declaring a new one each time. That single change is the difference between authority that compounds and authority that scatters.</p><h2 class="h">Earn corroboration you do not control</h2><p>The last step is the slowest and it is the one that separates businesses that get named occasionally from businesses that get named consistently. Models weight sources by trust, and your own site is the least trusted source about you.</p><p>Reviews on platforms people actually use, listings in real directories, inclusion in roundups written by other people, and genuine coverage all do the same job: they confirm from the outside what your site claims from the inside. You cannot manufacture this quickly, which is exactly why it works.</p>
+<p class="meta-line">Published 07 September 2026 by Carpe DM Strategies. We run this work on our own business every day, which is where the examples come from.</p>
+</article>
+<section class="faq-section"><div class="section-label">Frequently asked</div><div class="faq-list"><div class="faq-item"><details><summary>How do I let ChatGPT crawl my website?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-answer">Allow GPTBot, OAI-SearchBot and ChatGPT-User in your robots.txt, then confirm the change is real by requesting a page as each bot and checking you get a 200 with the full page body. Hosting and CDN layers often block these bots above robots.txt, so the file alone is not proof.</div></details></div><div class="faq-item"><details><summary>Does ChatGPT use Bing?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-answer">ChatGPT search retrieves largely through Bing&#x27;s web index, so being properly indexed in Bing is a practical prerequisite for appearing as a live source in ChatGPT answers.</div></details></div><div class="faq-item"><details><summary>How long does it take to appear in ChatGPT?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-answer">Live retrieval can surface a new page within days or weeks of it being crawled and indexed. Being remembered by the model without a live search takes far longer, because it depends on training cycles.</div></details></div><div class="faq-item"><details><summary>Do I need to submit my site to OpenAI?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-answer">There is no submission form. You become eligible by being crawlable and by being present in the web index that ChatGPT search retrieves from. There is no queue to join.</div></details></div><div class="faq-item"><details><summary>Will blocking GPTBot protect my content?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-answer">It stops your content being used for training, and it also removes you from the model&#x27;s long-term memory of your industry. That is a genuine trade-off and worth deciding deliberately rather than inheriting from a default setting.</div></details></div></div></section>
+<section class="rel-band"><div class="section-label">Keep reading</div><div class="rel-list"><a href="/answers/why-is-my-business-not-showing-up-in-ai-search.html">Why isn&#x27;t my business showing up in AI search?</a><a href="/answers/how-to-check-if-ai-can-read-your-website.html">How do I check if AI can read my website?</a><a href="/answers/ai-seo-vs-traditional-seo.html">AI SEO vs traditional SEO: what actually changed?</a></div></section>
+<div class="cta-band"><h2>Not sure whether ChatGPT can <em>even read your site?</em></h2><p>Book a free 30-minute call. We will fetch your site as each of the three bots while you watch and show you what comes back.</p><a href="/#start" class="btn-primary">Book a Free Call</a></div>
+</main>
+<footer>
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 Carpe DM Strategies Ltd &middot; Company No. 14900297</p>
+    <ul class="footer-links"><li><a href="/answers.html">Answers</a></li>
+      <li><a href="/ai-search-visibility.html">AI Search</a></li>
+      <li><a href="/answers.html">Answers</a></li><li><a href="/about.html">About</a></li>
+      <li><a href="/faqs.html">FAQs</a></li>
+      <li><a href="/privacy.html">Privacy</a></li>
+      <li><a href="/terms.html">Terms</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>
