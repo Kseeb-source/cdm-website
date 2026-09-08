@@ -25,9 +25,11 @@ Contact: info@carpedmstrategies.co.uk
 - [How long does it take to show up in AI search?](https://www.carpedmstrategies.co.uk/answers/how-long-does-it-take-to-get-cited-by-ai.html): Realistic timelines for AI search visibility, why live citations and model memory move at completely different speeds, and what to expect month by month.
 - [How do I track whether AI is recommending my business?](https://www.carpedmstrategies.co.uk/answers/how-to-track-your-ai-visibility.html): There is no ranking report for AI answers. Here is a measurement method that works: a fixed question set, a schedule, three signals, and a trend log.
 - [Why does ChatGPT recommend my competitor instead of me?](https://www.carpedmstrategies.co.uk/answers/why-does-chatgpt-recommend-my-competitor.html): A diagnostic walkthrough of why an AI assistant names a competitor rather than your business, how to read their winning page, and what to change first.
+- [Do I still need a blog if I want to be found by AI assistants?](https://www.carpedmstrategies.co.uk/answers/do-i-need-a-blog-for-ai-search.html): Yes. AI assistants quote text they can crawl, and a blog gives them clear, factual answers to cite. Without one, they tend to recommend your competitors instead.
 - [Does Google AI Overviews pick businesses the same way ChatGPT does, and what should I do differently for each?](https://www.carpedmstrategies.co.uk/answers/does-google-ai-overviews-use-the-same-signals-as-chatgpt.html): No, they choose differently. Google AI Overviews leans on live search and reviews, while ChatGPT leans on training data and cited sources. Here is what to do for each.
 - [How do I write a page an AI assistant will actually quote from?](https://www.carpedmstrategies.co.uk/answers/how-to-write-a-page-that-ai-will-quote.html): Write the question as your heading, put the answer in the first two lines, and use short factual sentences. Clear, specific pages are the ones AI assistants quote.
 - [What is an llms.txt file and does my website need one?](https://www.carpedmstrategies.co.uk/answers/what-is-an-llms-txt-file.html): An llms.txt file is a plain text map of your key pages for AI models. It is a proposed, optional standard, useful for some sites but no ranking guarantee.
+- [Why does my competitor appear in AI Overviews when I outrank them in search?](https://www.carpedmstrategies.co.uk/answers/why-is-my-competitor-in-ai-overviews-and-i-am-not.html): AI Overviews quote the clearest answer, not the top ranked page. If a rival outshines you there while you outrank them in search, here is why and how to fix it.
 
 ## By market
 - [AI SEO Agency in London: How to Choose One](https://www.carpedmstrategies.co.uk/answers/ai-seo-agency-london.html): What an AI SEO or GEO agency in London should actually do for you, the questions to ask before you hire, and how to tell a real capability from a rebranded SEO package.
@@ -41,4 +43,4 @@ Contact: info@carpedmstrategies.co.uk
 - [FAQs](https://www.carpedmstrategies.co.uk/faqs.html)
 - [About](https://www.carpedmstrategies.co.uk/about.html)
 
-Last updated: 2026-09-07
+Last updated: 2026-09-08
