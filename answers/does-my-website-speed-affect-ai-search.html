@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Does Website Speed Affect Whether AI Assistants Cite You?</title>
+<meta name="description" content="Website speed affects AI citations indirectly. Slow pages get abandoned by crawlers before your content is read, so fix load time first, then win on clear content.">
+<meta name="keywords" content="does website speed affect ai citations, ai crawler page speed, get cited by chatgpt, time to first byte ai, perplexity crawler speed, ai overviews website speed, gptbot fetch timeout">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta name="author" content="Carpe DM Strategies Ltd">
+<link rel="canonical" href="https://www.carpedmstrategies.co.uk/answers/does-my-website-speed-affect-ai-search.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.carpedmstrategies.co.uk/answers/does-my-website-speed-affect-ai-search.html">
+<meta property="og:title" content="Does Website Speed Affect Whether AI Assistants Cite You?">
+<meta property="og:description" content="Website speed affects AI citations indirectly. Slow pages get abandoned by crawlers before your content is read, so fix load time first, then win on clear content.">
+<meta property="og:image" content="https://www.carpedmstrategies.co.uk/cdm-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.carpedmstrategies.co.uk/cdm-og.png">
+<link rel="preload" href="/assets/fonts/dmsans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/cormorant.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/cormorant-italic.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+    .skip-link { position: absolute; left: -9999px; top: 0; z-index: 200; background: var(--text-dark); color: #fff; padding: 12px 20px; border-radius: 0 0 6px 0; font-size: 14px; text-decoration: none; }
+    .skip-link:focus { left: 0; }
+    main p a:not([class]), main li a:not([class]) { text-decoration: underline; text-underline-offset: 2px; }
+
+    /* Self-hosted variable fonts: no render-blocking third-party request */
+    @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 400 600; font-display: swap; src: url(/assets/fonts/cormorant.woff2) format('woff2'); }
+    @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 400 600; font-display: swap; src: url(/assets/fonts/cormorant-italic.woff2) format('woff2'); }
+    @font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 300 500; font-display: swap; src: url(/assets/fonts/dmsans.woff2) format('woff2'); }
+
+    :root {
+      --white: #FFFFFF; --off-white: #F8F7F4; --light-grey: #F0EFEb; --mid-grey: #E0DED8;
+      --text-dark: #16140F; --text-mid: #4A4840; --text-light: #73706A;
+      --blue: #00C4F0; --blue-dark: #007B9B; --purple: #6C47FF; --border: #E4E2DC;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --max-width: 1160px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--white); color: var(--text-dark); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .logo-mark { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-icon { display: block; width: 48px; height: 48px; animation: coinSpin 5s linear infinite; }
+    @keyframes coinSpin { from { transform: perspective(500px) rotateY(0deg); } to { transform: perspective(500px) rotateY(360deg); } }
+    .logo-divider { width: 1px; height: 32px; background: var(--border); flex-shrink: 0; }
+    .logo-words { display: flex; flex-direction: column; gap: 3px; }
+    .logo-cdm { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--text-dark); letter-spacing: 4px; line-height: 1; }
+    .logo-sub { font-size: 7.5px; font-weight: 300; color: var(--text-light); letter-spacing: 4px; line-height: 1; text-transform: uppercase; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,252,0.94); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); height: 70px; display: flex; align-items: center; }
+    .nav-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 36px; width: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+    .nav-links a { font-size: 13.5px; font-weight: 400; color: var(--text-mid); text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text-dark); }
+    .nav-cta { background: var(--text-dark) !important; color: var(--white) !important; padding: 9px 22px; border-radius: 5px; font-size: 13.5px !important; letter-spacing: 0.03em !important; transition: opacity 0.2s !important; }
+    .nav-cta:hover { opacity: 0.82 !important; }
+    .page-hero { padding: 150px 36px 50px; max-width: var(--max-width); margin: 0 auto; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue-dark); margin-bottom: 24px; }
+    .hero-eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--blue); }
+    .page-hero h1 { font-family: var(--font-display); font-size: clamp(40px, 6vw, 76px); line-height: 1.02; letter-spacing: -0.01em; font-weight: 400; color: var(--text-dark); max-width: 900px; margin-bottom: 28px; }
+    .page-hero h1 em { font-style: italic; color: var(--blue-dark); }
+    .page-hero .lead { font-size: 18px; font-weight: 300; color: var(--text-mid); max-width: 680px; line-height: 1.75; }
+    .rule { width: 100%; max-width: var(--max-width); margin: 0 auto; height: 1px; background: var(--border); }
+    .article { max-width: 760px; margin: 0 auto; padding: 64px 36px 24px; }
+    .tldr { background: var(--off-white); border: 1px solid var(--border); border-left: 3px solid var(--blue); border-radius: 8px; padding: 28px 30px; margin-bottom: 56px; }
+    .tldr h2 { font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-dark); margin-bottom: 14px; }
+    .tldr p { font-size: 16.5px; font-weight: 300; color: var(--text-mid); line-height: 1.75; }
+    .tldr p strong { font-weight: 500; color: var(--text-dark); }
+    .article h2.h { font-family: var(--font-display); font-size: clamp(28px, 3.4vw, 40px); font-weight: 400; color: var(--text-dark); line-height: 1.12; margin: 52px 0 18px; }
+    .article h3 { font-family: var(--font-display); font-size: 23px; font-weight: 600; color: var(--text-dark); margin: 34px 0 10px; }
+    .article p { font-size: 16.5px; font-weight: 300; color: var(--text-mid); line-height: 1.8; margin-bottom: 18px; }
+    .article p strong { font-weight: 500; color: var(--text-dark); }
+    .article ul { margin: 0 0 22px; padding-left: 0; list-style: none; }
+    .article ul li { font-size: 16px; font-weight: 300; color: var(--text-mid); line-height: 1.7; padding-left: 22px; position: relative; margin-bottom: 10px; }
+    .article ul li::before { content: '—'; position: absolute; left: 0; color: var(--blue-dark); }
+    .steps-block { border-top: 1px solid var(--border); margin: 28px 0 22px; }
+    .step-row { border-bottom: 1px solid var(--border); padding: 26px 0; display: grid; grid-template-columns: 54px 1fr; gap: 20px; }
+    .step-row .n { font-family: var(--font-display); font-size: 38px; font-weight: 400; color: var(--blue-dark); opacity: 1; line-height: 1; }
+    .step-row h3 { margin: 0 0 8px; font-size: 21px; }
+    .step-row p { margin: 0; font-size: 15.5px; }
+    .callout { background: var(--text-dark); border-radius: 8px; padding: 30px 32px; margin: 30px 0; }
+    .callout p { color: rgba(255,255,255,0.78); margin: 0; font-size: 16px; }
+    .callout p strong { color: var(--white); font-weight: 500; }
+    .faq-section { max-width: 760px; margin: 0 auto; padding: 40px 36px 88px; }
+    .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-dark); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+    .section-label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--blue); }
+    .faq-list { border-top: 1px solid var(--border); }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item summary { list-style: none; cursor: pointer; padding: 26px 0; display: flex; justify-content: space-between; align-items: center; gap: 24px; font-family: var(--font-display); font-size: clamp(19px, 2.1vw, 24px); font-weight: 400; color: var(--text-dark); line-height: 1.3; transition: color 0.2s; }
+    .faq-item summary:hover { color: var(--blue-dark); }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-icon { flex-shrink: 0; width: 22px; height: 22px; position: relative; }
+    .faq-icon::before, .faq-icon::after { content: ''; position: absolute; background: var(--text-mid); transition: transform 0.25s ease; }
+    .faq-icon::before { top: 50%; left: 0; width: 100%; height: 1px; transform: translateY(-50%); }
+    .faq-icon::after { left: 50%; top: 0; height: 100%; width: 1px; transform: translateX(-50%); }
+    .faq-item details[open] .faq-icon::after { transform: translateX(-50%) rotate(90deg); opacity: 0; }
+    .faq-item details[open] summary { color: var(--blue-dark); }
+    .faq-answer { padding: 0 0 30px; font-size: 16px; font-weight: 300; color: var(--text-mid); line-height: 1.8; }
+    .cta-band { padding: 88px 36px; text-align: center; border-top: 1px solid var(--border); background: var(--off-white); }
+    .cta-band h2 { font-family: var(--font-display); font-size: clamp(32px, 4vw, 54px); font-weight: 400; color: var(--text-dark); line-height: 1.1; margin-bottom: 16px; }
+    .cta-band h2 em { font-style: italic; color: var(--blue-dark); }
+    .cta-band p { font-size: 16px; font-weight: 300; color: var(--text-mid); margin-bottom: 36px; }
+    .btn-primary { background: var(--text-dark); color: var(--white); padding: 14px 30px; border-radius: 5px; font-size: 14px; font-weight: 400; letter-spacing: 0.04em; text-decoration: none; display: inline-block; transition: opacity 0.2s, transform 0.15s; }
+    .btn-primary:hover { opacity: 0.82; transform: translateY(-1px); }
+    footer { background: var(--text-dark); padding: 36px; }
+    .footer-inner { max-width: var(--max-width); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+    .footer-copy { font-size: 12.5px; color: rgba(255,255,255,0.6); font-weight: 300; line-height: 1.65; margin: 0; }
+    .footer-links { display: flex; gap: 22px; list-style: none; }
+    .footer-links a { font-size: 12.5px; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+    @media (max-width: 640px) {
+      .nav-inner { padding: 0 20px; }
+      .nav-links { display: none; }
+      .page-hero { padding: 110px 20px 44px; }
+      .article, .faq-section { padding-left: 20px; padding-right: 20px; }
+      .cta-band { padding: 64px 20px; }
+      footer { padding: 28px 20px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .step-row { grid-template-columns: 40px 1fr; gap: 14px; }
+    }
+  
+    .rel-band { max-width: 760px; margin: 0 auto; padding: 8px 36px 72px; }
+    .rel-band .section-label { margin-bottom: 18px; }
+    .rel-list { border-top: 1px solid var(--border); }
+    .rel-list a { display: block; border-bottom: 1px solid var(--border); padding: 20px 0; text-decoration: none; font-family: var(--font-display); font-size: 21px; font-weight: 400; color: var(--text-dark); line-height: 1.3; transition: color 0.2s; }
+    .rel-list a:hover { color: var(--blue-dark); }
+    .meta-line { font-size: 12.5px; color: var(--text-light); letter-spacing: 0.02em; margin-top: 26px; }
+    .ans-grid { max-width: var(--max-width); margin: 0 auto; padding: 56px 36px 88px; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+    .ans-card { background: var(--white); padding: 32px 30px; display: flex; flex-direction: column; gap: 12px; text-decoration: none; transition: background 0.2s; }
+    .ans-card:hover { background: var(--off-white); }
+    .ans-card .cat { font-size: 10.5px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue-dark); }
+    .ans-card h2 { font-family: var(--font-display); font-size: 25px; font-weight: 400; color: var(--text-dark); line-height: 1.18; margin: 0; }
+    .ans-card p { font-size: 14.5px; font-weight: 300; color: var(--text-mid); line-height: 1.65; margin: 0; }
+    .ans-group-h { max-width: var(--max-width); margin: 0 auto; padding: 40px 36px 0; }
+    .ans-group-h h2 { font-family: var(--font-display); font-size: clamp(26px, 3vw, 36px); font-weight: 400; color: var(--text-dark); }
+    @media (max-width: 640px) {
+      .rel-band { padding-left: 20px; padding-right: 20px; }
+      .ans-grid { padding: 36px 20px 64px; grid-template-columns: 1fr; }
+      .ans-group-h { padding-left: 20px; padding-right: 20px; }
+    }
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.carpedmstrategies.co.uk/answers/does-my-website-speed-affect-ai-search.html#webpage","url":"https://www.carpedmstrategies.co.uk/answers/does-my-website-speed-affect-ai-search.html","name":"Does Website Speed Affect Whether AI Assistants Cite You?","description":"Website speed affects AI citations indirectly. Slow pages get abandoned by crawlers before your content is read, so fix load time first, then win on clear content.","isPartOf":{"@id":"https://www.carpedmstrategies.co.uk/#website"},"about":{"@id":"https://www.carpedmstrategies.co.uk/#service-sites"},"publisher":{"@id":"https://www.carpedmstrategies.co.uk/#organization"},"inLanguage":"en","breadcrumb":{"@id":"https://www.carpedmstrategies.co.uk/answers/does-my-website-speed-affect-ai-search.html#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://www.carpedmstrategies.co.uk/answers/does-my-website-speed-affect-ai-search.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.carpedmstrategies.co.uk/"},{"@type":"ListItem","position":2,"name":"Answers","item":"https://www.carpedmstrategies.co.uk/answers.html"},{"@type":"ListItem","position":3,"name":"Does Website Speed Affect Whether AI Assistants Cite You?","item":"https://www.carpedmstrategies.co.uk/answers/does-my-website-speed-affect-ai-search.html"}]},{"@type":"Article","@id":"https://www.carpedmstrategies.co.uk/answers/does-my-website-speed-affect-ai-search.html#article","headline":"Does Website Speed Affect Whether AI Assistants Cite You?","description":"Website speed affects AI citations indirectly. Slow pages get abandoned by crawlers before your content is read, so fix load time first, then win on clear content.","url":"https://www.carpedmstrategies.co.uk/answers/does-my-website-speed-affect-ai-search.html","mainEntityOfPage":{"@id":"https://www.carpedmstrategies.co.uk/answers/does-my-website-speed-affect-ai-search.html#webpage"},"datePublished":"2026-09-11","dateModified":"2026-09-11","inLanguage":"en","author":{"@id":"https://www.carpedmstrategies.co.uk/#organization"},"publisher":{"@id":"https://www.carpedmstrategies.co.uk/#organization"},"about":{"@id":"https://www.carpedmstrategies.co.uk/#service-sites"},"isPartOf":{"@id":"https://www.carpedmstrategies.co.uk/#website"}},{"@type":"FAQPage","@id":"https://www.carpedmstrategies.co.uk/answers/does-my-website-speed-affect-ai-search.html#faq","mainEntity":[{"@type":"Question","name":"How fast does my website need to be for AI crawlers?","acceptedAnswer":{"@type":"Answer","text":"Aim for a time to first byte under about 600 milliseconds and a full load within a couple of seconds. Most AI crawlers abandon a page that takes too long to respond. Hitting those numbers on your main pages removes speed as a reason to skip you."}},{"@type":"Question","name":"Will a fast site guarantee I get cited by ChatGPT?","acceptedAnswer":{"@type":"Answer","text":"No. Speed removes a barrier but does not create a citation. ChatGPT quotes pages that answer a question clearly and specifically. A fast page with weak content still gets ignored. Treat speed as a requirement to be readable, then win the citation with the quality of your answer."}},{"@type":"Question","name":"Does JavaScript slow down how AI assistants read my page?","acceptedAnswer":{"@type":"Answer","text":"It can stop them reading it at all. Some crawlers never run JavaScript, so text that only appears after scripts run is invisible to them. Serve your main content as plain HTML through server side rendering or a static build so every crawler sees your words on the first fetch."}},{"@type":"Question","name":"How long before a speed fix shows up in AI answers?","acceptedAnswer":{"@type":"Answer","text":"Usually a few days to a few weeks. Crawlers such as GPTBot and PerplexityBot revisit on their own schedules, and the models update after they refetch your pages. Make the change, keep a record of the date, and check your citations again after two or three weeks."}},{"@type":"Question","name":"Can slow hosting cost me citations even if my content is good?","acceptedAnswer":{"@type":"Answer","text":"Yes. If your server stalls when several bots fetch at once, crawlers collect fewer pages and may miss your best content entirely. Strong writing cannot be quoted if it is never fetched. Stable hosting that holds up under load protects the content you worked hard to create."}}]},{"@type":["Organization","ProfessionalService"],"@id":"https://www.carpedmstrategies.co.uk/#organization","name":"Carpe DM Strategies","legalName":"Carpe DM Strategies Ltd","alternateName":["CDM","CDM Strategies","Carpe DM"],"url":"https://www.carpedmstrategies.co.uk/","description":"Carpe DM Strategies helps businesses become the answer that AI assistants give. We build AI search visibility, websites, content and automations for companies that want to be named by ChatGPT, Google AI Overviews, Perplexity and Copilot when a buyer asks who to use.","slogan":"Be the answer the AI gives.","foundingDate":"2023-05-29","taxID":"14900297","identifier":{"@type":"PropertyValue","propertyID":"UK Companies House","value":"14900297"},"address":{"@type":"PostalAddress","streetAddress":"19 Ravenscroft Crescent","addressLocality":"London","postalCode":"SE9 4LL","addressCountry":"GB"},"email":"info@carpedmstrategies.co.uk","telephone":"+442030519579","areaServed":[{"@type":"Country","name":"United Kingdom","identifier":"GB"},{"@type":"Country","name":"United States","identifier":"US"},{"@type":"Country","name":"Canada","identifier":"CA"},{"@type":"Country","name":"Australia","identifier":"AU"},{"@type":"Country","name":"Ireland","identifier":"IE"}],"knowsAbout":["Generative Engine Optimization","Answer Engine Optimization","AI search visibility","Search engine optimization","Schema.org structured data","Content automation","Web design","Marketing automation"],"founder":{"@id":"https://www.carpedmstrategies.co.uk/#kerim-seeballuck"},"sameAs":["https://x.com/CarpeDM_UK","https://www.linkedin.com/company/carpe-dm-strategies","https://find-and-update.company-information.service.gov.uk/company/14900297"]},{"@type":"WebSite","@id":"https://www.carpedmstrategies.co.uk/#website","url":"https://www.carpedmstrategies.co.uk/","name":"Carpe DM Strategies","inLanguage":"en","publisher":{"@id":"https://www.carpedmstrategies.co.uk/#organization"}}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a><nav>
+  <div class="nav-inner">
+    <a href="/" class="logo-mark" aria-label="CDM Strategies home">
+      <svg class="logo-icon" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="28" cy="28" r="26" fill="#F0EFEb" stroke="#E4E2DC" stroke-width="0.8"/>
+        <path d="M 28,4 A 24,24 0 1,1 28,52" fill="none" stroke="#00C4F0" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M 28,13 A 15,15 0 1,1 28,43" fill="none" stroke="#6C47FF" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M 28,22 A 6,6 0 1,1 28,34" fill="none" stroke="#16140F" stroke-width="1.4" stroke-linecap="round"/>
+        <circle cx="52" cy="28" r="2.5" fill="#00C4F0"/>
+      </svg>
+      <div class="logo-divider"></div>
+      <div class="logo-words"><span class="logo-cdm">CDM</span> <span class="logo-sub">Strategies</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#features">Services</a></li>
+      <li><a href="/ai-search-visibility.html">AI Search</a></li><li><a href="/answers.html">Answers</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/answers.html">Answers</a></li><li><a href="/#start" class="nav-cta">Book a Call</a></li>
+    </ul>
+  </div>
+</nav>
+<main id="main">
+<section class="page-hero">
+<div class="hero-eyebrow">Technical check</div>
+<h1>Does Website Speed Affect <em>Whether AI Assistants Cite You?</em></h1>
+<p class="lead">AI assistants now send buyers straight to a named source. If your pages are slow, the crawlers that feed those answers may never read you, and a faster rival gets recommended instead. Here is what speed does and does not do.</p>
+</section><div class="rule"></div>
+<article class="article">
+<div class="tldr"><h2>The short answer</h2><p><strong>Yes, but the effect is indirect.</strong> AI assistants cite pages their crawlers can fetch and read quickly. A slow or script heavy page can be abandoned before your content is collected, so you are never quoted. <strong>Speed removes the barrier</strong>, then <strong>clear content earns the citation</strong>. Fix the fetch, then win on substance.</p></div>
+<h2 class="h">How speed connects to being cited</h2><p>Yes, but the effect is indirect. AI assistants cite pages they can fetch, read and trust quickly. When a page loads slowly or times out, the crawlers that feed ChatGPT, Google AI Overviews, Perplexity and Copilot may collect less of your content or skip it altogether. A page that is never fully read is a page that is never quoted. Speed protects your visibility rather than creating it on its own.</p><p>Think of it as a gate, not a ranking factor. Crawlers work to a budget of time and requests. GPTBot, Google-Extended, PerplexityBot and Bingbot each fetch your pages on a schedule you do not control. If your server is slow under load, fewer pages get fetched in each visit. Over weeks that means thinner coverage of your site inside the models that answer real buyer questions.</p><p>Speed also shapes what a person sees after the citation. When an AI answer links to you, the reader clicks through to check you out. A page that takes several seconds to appear loses that reader before the value lands. So speed works twice, once for the machine that decides whether to quote you, and once for the human who arrives because it did.</p><h2 class="h">What the crawlers actually do</h2><p>AI systems reach your site in two ways. Some crawl and store your pages in advance, the way Googlebot has for years. Others fetch a page live at the moment a user asks a question. Live fetching is common in Perplexity and in some ChatGPT browsing modes. Live fetching is where speed bites hardest, because a slow response can miss the short window the assistant allows before it moves on.</p><p>Each crawler sets its own timeout. If your server does not respond within that limit, the request is abandoned and your content is absent from the answer. This is not a penalty you can appeal. It is a silent miss. You will not see an error message. You will simply notice that a competitor is named and you are not, with no obvious reason showing on the page itself.</p><ul><li><strong>GPTBot</strong> collects content used to inform ChatGPT.</li><li><strong>Google-Extended</strong> governs how Google uses your pages for AI answers.</li><li><strong>PerplexityBot</strong> fetches sources for Perplexity results.</li><li><strong>Bingbot</strong> feeds Microsoft Copilot and Bing.</li><li><strong>ClaudeBot</strong> gathers pages for Anthropic models.</li></ul><h2 class="h">The speed signals that matter</h2><p>Focus on the time to first byte and the time to a fully rendered page. Time to first byte is how long your server takes to start sending anything at all. Crawlers feel this directly. A slow first byte, often caused by an overloaded server or a distant host, is the most common reason a fetch fails. Fixing it usually helps every crawler at once, not just one of them.</p><p>Rendering matters when your content depends on JavaScript. Some crawlers read the raw HTML and never run scripts. If your main text only appears after the browser executes code, those crawlers see an empty shell. Server side rendering or static HTML puts your words in the first response, where every crawler can read them. This single change often does more for citations than any raw speed tuning.</p><ul><li><strong>Time to first byte</strong> under roughly 600 milliseconds keeps most crawlers happy.</li><li><strong>Text in the HTML</strong> so no script is needed to read it.</li><li><strong>Stable hosting</strong> that holds up when several bots fetch at once.</li><li><strong>Compressed images</strong> so pages weigh less and load faster.</li></ul><h2 class="h">How to fix a slow site</h2><p>Work in order from the cheapest fix to the deepest one. Most sites gain the most from the first two steps and never need the rest. Measure before and after each change so you know what worked. A free tool such as Google PageSpeed Insights or WebPageTest gives you the time to first byte and the render time that the crawlers actually care about, in numbers you can track.</p><div class="steps-block"><div class="step-row"><div class="n">1</div><div><h3>Measure the baseline</h3><p>Run your key pages through PageSpeed Insights and note the time to first byte.</p></div></div><div class="step-row"><div class="n">2</div><div><h3>Serve text as HTML</h3><p>Use server side rendering or a static build so content does not wait on scripts.</p></div></div><div class="step-row"><div class="n">3</div><div><h3>Fix the server</h3><p>Add caching, upgrade the host or move it closer to your readers to cut first byte time.</p></div></div><div class="step-row"><div class="n">4</div><div><h3>Trim the weight</h3><p>Compress images and remove unused code so each page fetches faster under load.</p></div></div></div><p>Give each change a week before you judge it. Crawlers revisit on their own cycles, so a fix made today may not show up in AI answers until the next fetch. Keep a simple log of what you changed and when. When you later see yourself cited more often, you will know which change earned it, and you can repeat the same discipline across the rest of your pages.</p><h2 class="h">Where speed stops mattering</h2><p>Speed is a floor, not a ceiling. Once your pages load quickly and your text sits in the HTML, extra milliseconds bring little more. At that point the thing that decides whether you are cited is the content itself. Clear answers, real specifics and a structure a machine can quote will beat a faster rival whose pages say nothing that is actually worth repeating.</p><p>So do not chase a perfect score at the expense of substance. A page that loads instantly but hedges every sentence gives an assistant nothing to lift. A slightly slower page that answers the question in its first two lines will win the citation. Fix the speed problems that block the crawler, then put your effort into being the clearest source on your topic.</p><p>Balance also matters across your whole site. One fast landing page will not carry a slow blog and a heavy product catalogue. Crawlers judge each page on its own fetch. Spread the same care across the pages that answer buyer questions, because those are the ones an assistant is most likely to reach for when someone asks what to buy or who to trust.</p>
+<p class="meta-line">Published 11 September 2026 by Carpe DM Strategies. We run this work on our own business every day, which is where the examples come from.</p>
+</article>
+<section class="faq-section"><div class="section-label">Frequently asked</div><div class="faq-list"><div class="faq-item"><details><summary>How fast does my website need to be for AI crawlers?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-answer">Aim for a time to first byte under about 600 milliseconds and a full load within a couple of seconds. Most AI crawlers abandon a page that takes too long to respond. Hitting those numbers on your main pages removes speed as a reason to skip you.</div></details></div><div class="faq-item"><details><summary>Will a fast site guarantee I get cited by ChatGPT?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-answer">No. Speed removes a barrier but does not create a citation. ChatGPT quotes pages that answer a question clearly and specifically. A fast page with weak content still gets ignored. Treat speed as a requirement to be readable, then win the citation with the quality of your answer.</div></details></div><div class="faq-item"><details><summary>Does JavaScript slow down how AI assistants read my page?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-answer">It can stop them reading it at all. Some crawlers never run JavaScript, so text that only appears after scripts run is invisible to them. Serve your main content as plain HTML through server side rendering or a static build so every crawler sees your words on the first fetch.</div></details></div><div class="faq-item"><details><summary>How long before a speed fix shows up in AI answers?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-answer">Usually a few days to a few weeks. Crawlers such as GPTBot and PerplexityBot revisit on their own schedules, and the models update after they refetch your pages. Make the change, keep a record of the date, and check your citations again after two or three weeks.</div></details></div><div class="faq-item"><details><summary>Can slow hosting cost me citations even if my content is good?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-answer">Yes. If your server stalls when several bots fetch at once, crawlers collect fewer pages and may miss your best content entirely. Strong writing cannot be quoted if it is never fetched. Stable hosting that holds up under load protects the content you worked hard to create.</div></details></div></div></section>
+<section class="rel-band"><div class="section-label">Keep reading</div><div class="rel-list"><a href="/answers/why-is-my-business-not-showing-up-in-ai-search.html">Why isn&#x27;t my business showing up in AI search?</a><a href="/answers/how-to-appear-in-chatgpt-search.html">How do I get my website to show up in ChatGPT?</a><a href="/answers/ai-seo-vs-traditional-seo.html">AI SEO vs traditional SEO: what actually changed?</a></div></section>
+<div class="cta-band"><h2>Find out why AI names your rivals <em>and not you</em></h2><p>Book a free 30 minute call and we will show you where speed or content is keeping you out of the answers.</p><a href="/#start" class="btn-primary">Book a Free Call</a></div>
+</main>
+<footer>
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 Carpe DM Strategies Ltd &middot; Company No. 14900297</p>
+    <ul class="footer-links"><li><a href="/answers.html">Answers</a></li>
+      <li><a href="/ai-search-visibility.html">AI Search</a></li>
+      <li><a href="/answers.html">Answers</a></li><li><a href="/about.html">About</a></li>
+      <li><a href="/faqs.html">FAQs</a></li>
+      <li><a href="/privacy.html">Privacy</a></li>
+      <li><a href="/terms.html">Terms</a></li>
+    </ul>
+  </div>
+</footer>
+<script src="/assets/cdm-chat.js?v=3" defer></script>
+</body>
+</html>
