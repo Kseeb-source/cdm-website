@@ -25,6 +25,7 @@ Contact: info@carpedmstrategies.co.uk
 - [How long does it take to show up in AI search?](https://www.carpedmstrategies.co.uk/answers/how-long-does-it-take-to-get-cited-by-ai.html): Realistic timelines for AI search visibility, why live citations and model memory move at completely different speeds, and what to expect month by month.
 - [How do I track whether AI is recommending my business?](https://www.carpedmstrategies.co.uk/answers/how-to-track-your-ai-visibility.html): There is no ranking report for AI answers. Here is a measurement method that works: a fixed question set, a schedule, three signals, and a trend log.
 - [Why does ChatGPT recommend my competitor instead of me?](https://www.carpedmstrategies.co.uk/answers/why-does-chatgpt-recommend-my-competitor.html): A diagnostic walkthrough of why an AI assistant names a competitor rather than your business, how to read their winning page, and what to change first.
+- [Can automation replace what my marketing agency does?](https://www.carpedmstrategies.co.uk/answers/can-automation-replace-my-marketing-agency.html): Automation can replace the repetitive parts of what an agency does, like reporting and scheduling, but not the strategy, judgement or AI visibility work.
 - [Do I still need a blog if I want to be found by AI assistants?](https://www.carpedmstrategies.co.uk/answers/do-i-need-a-blog-for-ai-search.html): Yes. AI assistants quote text they can crawl, and a blog gives them clear, factual answers to cite. Without one, they tend to recommend your competitors instead.
 - [Does Google AI Overviews pick businesses the same way ChatGPT does, and what should I do differently for each?](https://www.carpedmstrategies.co.uk/answers/does-google-ai-overviews-use-the-same-signals-as-chatgpt.html): No, they choose differently. Google AI Overviews leans on live search and reviews, while ChatGPT leans on training data and cited sources. Here is what to do for each.
 - [Does Website Speed Affect Whether AI Assistants Cite You?](https://www.carpedmstrategies.co.uk/answers/does-my-website-speed-affect-ai-search.html): Website speed affects AI citations indirectly. Slow pages get abandoned by crawlers before your content is read, so fix load time first, then win on clear content.
@@ -41,6 +42,7 @@ Contact: info@carpedmstrategies.co.uk
 - [What are AI crawlers, and which ones actually matter?](https://www.carpedmstrategies.co.uk/answers/what-are-ai-crawlers-and-which-ones-matter.html): AI crawlers are bots that read your site so assistants can cite you. The ones that matter are GPTBot, PerplexityBot, Bingbot and Google-Extended.
 - [What is an llms.txt file and does my website need one?](https://www.carpedmstrategies.co.uk/answers/what-is-an-llms-txt-file.html): An llms.txt file is a plain text map of your key pages for AI models. It is a proposed, optional standard, useful for some sites but no ranking guarantee.
 - [What is entity SEO, and why does it matter more now?](https://www.carpedmstrategies.co.uk/answers/what-is-entity-seo.html): Entity SEO makes your business a clearly defined thing that AI models recognise and name. It matters now because assistants give one answer, not ten links.
+- [What Should an AI Visibility Report Actually Contain?](https://www.carpedmstrategies.co.uk/answers/what-should-an-ai-visibility-report-contain.html): A good AI visibility report shows which assistants name you or your rivals, the prompts and sources behind each answer, and a ranked list of fixes to act on.
 - [Why did my business stop appearing in AI answers?](https://www.carpedmstrategies.co.uk/answers/why-did-my-ai-citations-disappear.html): Your business stopped appearing in AI answers because a crawler was blocked, a trusted source changed, or a rival gave cleaner facts. Here is how to fix it.
 - [Why does my competitor appear in AI Overviews when I outrank them in search?](https://www.carpedmstrategies.co.uk/answers/why-is-my-competitor-in-ai-overviews-and-i-am-not.html): AI Overviews quote the clearest answer, not the top ranked page. If a rival outshines you there while you outrank them in search, here is why and how to fix it.
 
@@ -56,4 +58,4 @@ Contact: info@carpedmstrategies.co.uk
 - [FAQs](https://www.carpedmstrategies.co.uk/faqs.html)
 - [About](https://www.carpedmstrategies.co.uk/about.html)
 
-Last updated: 2026-09-15
+Last updated: 2026-09-16
