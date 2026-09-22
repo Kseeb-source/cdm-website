@@ -287,7 +287,7 @@
         <span class="logo-sub">Autopilot</span>
       </div>
     </a>
-    <ul class="nav-links">
+    <ul class="nav-links"><li><a href="tel:+442030519579" class="nav-call" style="font-weight:500;white-space:nowrap;">Call 020 3051 9579</a></li>
       <li><a href="#how">How it works</a></li>
       <li><a href="#features">Features</a></li>
       <li><a href="#pricing">Pricing</a></li>
@@ -301,12 +301,12 @@
 <main id="main">
 
 <section class="hero">
-  <div class="hero-eyebrow">Content on autopilot</div>
-  <h1 class="fade-in">Your blog and socials,<br><em>on autopilot.</em></h1>
-  <p class="hero-sub fade-in">Fresh, on-brand content published to your website and every social account you have, every week, fully automatic. Connect your accounts once. It runs itself from there.</p>
+  <div class="hero-eyebrow">The CRM for trade businesses</div>
+  <h1 class="fade-in">Run leads, quotes and jobs<br><em>from your phone.</em></h1>
+  <p class="hero-sub fade-in">One place for enquiries, quotes, jobs and invoices, built for a one-person trade business. First month free while we onboard the first firms.</p>
   <div class="hero-actions fade-in">
-    <a href="#start" class="btn-primary">Start free →</a>
-    <a href="#agency" class="btn-secondary">Prefer done-for-you?</a>
+    <a href="#start" class="btn-primary">Start free month →</a>
+    <a href="tel:+442030519579" class="btn-secondary">Call 020 3051 9579</a>
   </div>
 </section>
 
@@ -477,33 +477,27 @@
   <div class="contact-inner">
     <div class="contact-left">
       <h2>Start your <em>free month</em></h2>
-      <p>One post a week, live on your site and socials, free for a month. We are onboarding the first businesses now, drop your details and we will get you set up.</p>
+      <p>The CRM for leads, quotes, jobs and invoices, run from your phone. We are onboarding the first businesses now, drop your details and we will get you set up.</p>
       <ul class="promise-list">
         <li>First month completely free</li>
-        <li>No card needed to join the early list</li>
-        <li>No onboarding call, no account manager</li>
+        <li>No card needed to get started</li>
+        <li>Set up on a call with us, not left to work it out alone</li>
         <li>Cancel anytime, in one click</li>
       </ul>
     </div>
     <div class="contact-right">
       <div class="form-card">
-        <h3>Get early access</h3>
-        <p>Tell us where to reach you and which accounts you would connect. We will be in touch within one business day.</p>
-        <form action="https://n8n-q4os8s4o0s4wc8wows4o044o.187.77.98.198.sslip.io/webhook/cdm-contact" method="POST" id="cdm-autopilot-form">
-          <input type="hidden" name="product" value="CDM Autopilot">
-          <input type="hidden" name="interest" id="interest" value="Autopilot early access">
+        <h3>Get started</h3>
+        <p>Tell us a little about your business and we will be in touch to set you up, usually within one business day.</p>
+        <form action="https://www.carpedmstrategies.co.uk/api/contact" method="POST" id="cdm-autopilot-form">
+          <input type="hidden" name="product" value="CRM">
+          <input type="hidden" name="interest" id="interest" value="CRM early access">
           <input type="text" name="name" placeholder="Your name" required>
           <input type="text" name="company" placeholder="Your business name" required>
           <input type="email" name="email" placeholder="Your email address" required>
-          <input type="url" name="website" placeholder="Your website (optional)">
-          <div class="socials-pick">
-            <label><input type="checkbox" name="socials" value="Facebook"> Facebook</label>
-            <label><input type="checkbox" name="socials" value="Instagram"> Instagram</label>
-            <label><input type="checkbox" name="socials" value="LinkedIn"> LinkedIn</label>
-            <label><input type="checkbox" name="socials" value="Google Business"> Google Business</label>
-          </div>
-          <textarea name="message" placeholder="Anything you'd like us to know? (optional)"></textarea>
-          <button type="submit">Get early access →</button>
+          <input type="tel" name="phone" placeholder="Your phone number (optional)">
+          <textarea name="message" placeholder="What does your business do, and what would you want the CRM to handle for you? (optional)"></textarea>
+          <button type="submit">Start free month →</button>
         </form>
       </div>
     </div>
@@ -543,22 +537,27 @@
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
       const btn = form.querySelector('button');
+      const originalLabel = btn.textContent;
       btn.textContent = 'Sending...';
       btn.disabled = true;
       try {
         const data = new FormData(form);
         const obj = Object.fromEntries(data.entries());
-        obj.socials = data.getAll('socials').join(', ');
-        await fetch(form.action, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(obj) });
-        btn.textContent = '✓ You\'re on the list — we\'ll be in touch shortly';
+        if (!obj.message) { obj.message = 'Interested in: ' + (obj.interest || 'the CRM'); }
+        obj.company_name = obj.company;
+        obj.landing_page = window.location.href;
+        const res = await fetch(form.action, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(obj) });
+        if (!res.ok) { throw new Error('bad response'); }
+        btn.textContent = 'Thanks, that has reached us';
         form.reset();
-      } catch {
-        btn.textContent = 'Something went wrong — please email us directly';
+      } catch (err) {
+        btn.textContent = originalLabel;
         btn.disabled = false;
+        alert('Something went wrong sending that. Please call 020 3051 9579 or email info@carpedmstrategies.co.uk instead.');
       }
     });
   }
 </script>
-  <script src="/assets/cdm-chat.js?v=3" defer></script>
+  <script src="/assets/cdm-chat.js?v=4" defer></script>
 </body>
 </html>

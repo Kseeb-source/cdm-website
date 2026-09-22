@@ -19,7 +19,7 @@
   if (window.__cdmChat) return; window.__cdmChat = true;
 
   var API = '/api/chat';
-  var NAME = 'Remi';
+  var NAME = 'Sonai';
   /* No promise of a free anything in the opener. The audit is paid, and a
      greeting that implies otherwise sets up a conversation the bot then has to
      walk back. It asks instead, which is the whole design. */
